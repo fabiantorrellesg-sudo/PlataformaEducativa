@@ -33,7 +33,7 @@ namespace PlataformaEducativa
             txtLogin.ForeColor = SystemColors.ButtonFace;
             txtLogin.Location = new Point(118, 34);
             txtLogin.Name = "txtLogin";
-            txtLogin.Size = new Size(37, 15);
+            txtLogin.Size = new Size(46, 20);
             txtLogin.TabIndex = 0;
             txtLogin.Text = "Login";
             // 
@@ -44,7 +44,7 @@ namespace PlataformaEducativa
             txtUsuario.ForeColor = SystemColors.ButtonFace;
             txtUsuario.Location = new Point(57, 75);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(47, 15);
+            txtUsuario.Size = new Size(59, 20);
             txtUsuario.TabIndex = 1;
             txtUsuario.Text = "Usuario";
             // 
@@ -55,7 +55,7 @@ namespace PlataformaEducativa
             txtClave.ForeColor = SystemColors.ButtonFace;
             txtClave.Location = new Point(57, 116);
             txtClave.Name = "txtClave";
-            txtClave.Size = new Size(36, 15);
+            txtClave.Size = new Size(45, 20);
             txtClave.TabIndex = 2;
             txtClave.Text = "Clave";
             // 
@@ -65,7 +65,7 @@ namespace PlataformaEducativa
             textBoxUsuario.ForeColor = SystemColors.Info;
             textBoxUsuario.Location = new Point(121, 72);
             textBoxUsuario.Name = "textBoxUsuario";
-            textBoxUsuario.Size = new Size(100, 23);
+            textBoxUsuario.Size = new Size(100, 27);
             textBoxUsuario.TabIndex = 3;
             // 
             // textBoxClave
@@ -74,7 +74,7 @@ namespace PlataformaEducativa
             textBoxClave.ForeColor = SystemColors.Info;
             textBoxClave.Location = new Point(121, 113);
             textBoxClave.Name = "textBoxClave";
-            textBoxClave.Size = new Size(100, 23);
+            textBoxClave.Size = new Size(100, 27);
             textBoxClave.TabIndex = 4;
             // 
             // btnIngresar
@@ -94,7 +94,7 @@ namespace PlataformaEducativa
             // 
             BackgroundImage = Properties.Resources.cat1;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(284, 261);
+            ClientSize = new Size(692, 354);
             Controls.Add(btnIngresar);
             Controls.Add(textBoxClave);
             Controls.Add(textBoxUsuario);
