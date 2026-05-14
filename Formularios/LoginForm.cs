@@ -10,17 +10,14 @@ namespace PlataformaEducativa
         }
 
         private Label txtLogin;
-        private Label txtUsuario;
-        private Label txtClave;
         private TextBox textBoxUsuario;
         private TextBox textBoxClave;
         private Button btnIngresar;
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             txtLogin = new Label();
-            txtUsuario = new Label();
-            txtClave = new Label();
             textBoxUsuario = new TextBox();
             textBoxClave = new TextBox();
             btnIngresar = new Button();
@@ -30,61 +27,47 @@ namespace PlataformaEducativa
             // 
             txtLogin.AutoSize = true;
             txtLogin.BackColor = Color.Transparent;
+            txtLogin.Font = new Font("Courier New", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtLogin.ForeColor = SystemColors.ButtonFace;
-            txtLogin.Location = new Point(118, 34);
+            txtLogin.Location = new Point(34, 29);
             txtLogin.Name = "txtLogin";
-            txtLogin.Size = new Size(46, 20);
+            txtLogin.Size = new Size(105, 34);
             txtLogin.TabIndex = 0;
             txtLogin.Text = "Login";
             // 
-            // txtUsuario
-            // 
-            txtUsuario.AutoSize = true;
-            txtUsuario.BackColor = Color.Transparent;
-            txtUsuario.ForeColor = SystemColors.ButtonFace;
-            txtUsuario.Location = new Point(57, 75);
-            txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(59, 20);
-            txtUsuario.TabIndex = 1;
-            txtUsuario.Text = "Usuario";
-            // 
-            // txtClave
-            // 
-            txtClave.AutoSize = true;
-            txtClave.BackColor = Color.Transparent;
-            txtClave.ForeColor = SystemColors.ButtonFace;
-            txtClave.Location = new Point(57, 116);
-            txtClave.Name = "txtClave";
-            txtClave.Size = new Size(45, 20);
-            txtClave.TabIndex = 2;
-            txtClave.Text = "Clave";
-            // 
             // textBoxUsuario
             // 
-            textBoxUsuario.BackColor = SystemColors.InactiveCaptionText;
-            textBoxUsuario.ForeColor = SystemColors.Info;
-            textBoxUsuario.Location = new Point(121, 72);
+            textBoxUsuario.BackColor = Color.FromArgb(227, 214, 179);
+            textBoxUsuario.Font = new Font("Courier New", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBoxUsuario.ForeColor = Color.IndianRed;
+            textBoxUsuario.Location = new Point(437, 75);
             textBoxUsuario.Name = "textBoxUsuario";
-            textBoxUsuario.Size = new Size(100, 27);
+            textBoxUsuario.PlaceholderText = "USUARIO";
+            textBoxUsuario.Size = new Size(207, 30);
             textBoxUsuario.TabIndex = 3;
             // 
             // textBoxClave
             // 
-            textBoxClave.BackColor = SystemColors.InactiveCaptionText;
+            textBoxClave.BackColor = Color.FromArgb(227, 214, 179);
+            textBoxClave.Font = new Font("Courier New", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBoxClave.ForeColor = SystemColors.Info;
-            textBoxClave.Location = new Point(121, 113);
+            textBoxClave.Location = new Point(437, 130);
             textBoxClave.Name = "textBoxClave";
-            textBoxClave.Size = new Size(100, 27);
+            textBoxClave.PlaceholderText = "CLAVE";
+            textBoxClave.Size = new Size(207, 30);
             textBoxClave.TabIndex = 4;
             // 
             // btnIngresar
             // 
-            btnIngresar.BackColor = Color.FromArgb(62, 62, 66);
+            btnIngresar.BackColor = Color.FromArgb(95, 163, 126);
+            btnIngresar.FlatAppearance.BorderColor = Color.FromArgb(45, 49, 58);
+            btnIngresar.FlatAppearance.BorderSize = 2;
             btnIngresar.FlatStyle = FlatStyle.Flat;
-            btnIngresar.ForeColor = SystemColors.Control;
-            btnIngresar.Location = new Point(99, 160);
+            btnIngresar.Font = new Font("Courier New", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnIngresar.ForeColor = Color.White;
+            btnIngresar.Location = new Point(476, 248);
             btnIngresar.Name = "btnIngresar";
-            btnIngresar.Size = new Size(75, 23);
+            btnIngresar.Size = new Size(168, 46);
             btnIngresar.TabIndex = 5;
             btnIngresar.Text = "Ingresar";
             btnIngresar.UseVisualStyleBackColor = false;
@@ -92,14 +75,12 @@ namespace PlataformaEducativa
             // 
             // LoginForm
             // 
-            BackgroundImage = Properties.Resources.cat1;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(692, 354);
+            ClientSize = new Size(673, 405);
             Controls.Add(btnIngresar);
             Controls.Add(textBoxClave);
             Controls.Add(textBoxUsuario);
-            Controls.Add(txtClave);
-            Controls.Add(txtUsuario);
             Controls.Add(txtLogin);
             Name = "LoginForm";
             Text = "Ingresar a Plataforma Educativa";
