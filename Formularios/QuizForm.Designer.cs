@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuizForm));
             pbMateriaIcon = new PictureBox();
             lblMateria = new Label();
-            pBoxCat = new PictureBox();
-            rbOpciónA = new RadioButton();
             rbOpciónB = new RadioButton();
             rbOpciónC = new RadioButton();
             rbOpciónD = new RadioButton();
@@ -45,8 +43,12 @@
             pBar = new ProgressBar();
             lblProgreso = new Label();
             lblPorcentaje = new Label();
+            pbImagenPregunta = new PictureBox();
+            pictureBoxMichiLogin = new PictureBox();
+            rbOpciónA = new RadioButton();
             ((System.ComponentModel.ISupportInitialize)pbMateriaIcon).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pBoxCat).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbImagenPregunta).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMichiLogin).BeginInit();
             SuspendLayout();
             // 
             // pbMateriaIcon
@@ -70,32 +72,6 @@
             lblMateria.TabIndex = 2;
             lblMateria.Text = "Materia:";
             lblMateria.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // pBoxCat
-            // 
-            pBoxCat.BackColor = Color.Transparent;
-            pBoxCat.Image = (Image)resources.GetObject("pBoxCat.Image");
-            pBoxCat.Location = new Point(456, -28);
-            pBoxCat.Margin = new Padding(3, 2, 3, 2);
-            pBoxCat.Name = "pBoxCat";
-            pBoxCat.Size = new Size(284, 208);
-            pBoxCat.SizeMode = PictureBoxSizeMode.StretchImage;
-            pBoxCat.TabIndex = 6;
-            pBoxCat.TabStop = false;
-            // 
-            // rbOpciónA
-            // 
-            rbOpciónA.BackColor = Color.Transparent;
-            rbOpciónA.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rbOpciónA.ForeColor = Color.White;
-            rbOpciónA.Location = new Point(38, 208);
-            rbOpciónA.Name = "rbOpciónA";
-            rbOpciónA.Size = new Size(69, 24);
-            rbOpciónA.TabIndex = 7;
-            rbOpciónA.TabStop = true;
-            rbOpciónA.Text = "a)";
-            rbOpciónA.TextAlign = ContentAlignment.MiddleCenter;
-            rbOpciónA.UseVisualStyleBackColor = false;
             // 
             // rbOpciónB
             // 
@@ -220,7 +196,7 @@
             pBar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pBar.Location = new Point(472, 157);
             pBar.Name = "pBar";
-            pBar.Size = new Size(166, 11);
+            pBar.Size = new Size(166, 10);
             pBar.Style = ProgressBarStyle.Continuous;
             pBar.TabIndex = 17;
             // 
@@ -249,6 +225,42 @@
             lblPorcentaje.Text = "0%";
             lblPorcentaje.TextAlign = ContentAlignment.MiddleRight;
             // 
+            // pbImagenPregunta
+            // 
+            pbImagenPregunta.BorderStyle = BorderStyle.FixedSingle;
+            pbImagenPregunta.Location = new Point(490, 222);
+            pbImagenPregunta.Name = "pbImagenPregunta";
+            pbImagenPregunta.Size = new Size(127, 118);
+            pbImagenPregunta.SizeMode = PictureBoxSizeMode.Zoom;
+            pbImagenPregunta.TabIndex = 20;
+            pbImagenPregunta.TabStop = false;
+            pbImagenPregunta.Visible = false;
+            // 
+            // pictureBoxMichiLogin
+            // 
+            pictureBoxMichiLogin.BackColor = Color.Transparent;
+            pictureBoxMichiLogin.Image = (Image)resources.GetObject("pictureBoxMichiLogin.Image");
+            pictureBoxMichiLogin.Location = new Point(548, 12);
+            pictureBoxMichiLogin.Name = "pictureBoxMichiLogin";
+            pictureBoxMichiLogin.Size = new Size(87, 101);
+            pictureBoxMichiLogin.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxMichiLogin.TabIndex = 21;
+            pictureBoxMichiLogin.TabStop = false;
+            // 
+            // rbOpciónA
+            // 
+            rbOpciónA.BackColor = Color.Transparent;
+            rbOpciónA.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rbOpciónA.ForeColor = Color.White;
+            rbOpciónA.Location = new Point(38, 208);
+            rbOpciónA.Name = "rbOpciónA";
+            rbOpciónA.Size = new Size(69, 24);
+            rbOpciónA.TabIndex = 22;
+            rbOpciónA.TabStop = true;
+            rbOpciónA.Text = "a)";
+            rbOpciónA.TextAlign = ContentAlignment.MiddleCenter;
+            rbOpciónA.UseVisualStyleBackColor = false;
+            // 
             // QuizForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -257,6 +269,9 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(667, 472);
+            Controls.Add(rbOpciónA);
+            Controls.Add(pictureBoxMichiLogin);
+            Controls.Add(pbImagenPregunta);
             Controls.Add(lblPorcentaje);
             Controls.Add(lblProgreso);
             Controls.Add(pBar);
@@ -269,14 +284,13 @@
             Controls.Add(rbOpciónD);
             Controls.Add(rbOpciónC);
             Controls.Add(rbOpciónB);
-            Controls.Add(rbOpciónA);
             Controls.Add(lblMateria);
             Controls.Add(pbMateriaIcon);
-            Controls.Add(pBoxCat);
             Name = "QuizForm";
             Text = "QuizForm";
             ((System.ComponentModel.ISupportInitialize)pbMateriaIcon).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pBoxCat).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbImagenPregunta).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMichiLogin).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -285,8 +299,6 @@
 
         private PictureBox pbMateriaIcon;
         private Label lblMateria;
-        private PictureBox pBoxCat;
-        private RadioButton rbOpciónA;
         private RadioButton rbOpciónB;
         private RadioButton rbOpciónC;
         private RadioButton rbOpciónD;
@@ -299,5 +311,8 @@
         private ProgressBar pBar;
         private Label lblProgreso;
         private Label lblPorcentaje;
+        private PictureBox pbImagenPregunta;
+        private PictureBox pictureBoxMichiLogin;
+        private RadioButton rbOpciónA;
     }
 }
