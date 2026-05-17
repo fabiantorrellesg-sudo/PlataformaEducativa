@@ -122,7 +122,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>31, 127</value>
+    <value>31, 132</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 15</value>
@@ -130,14 +130,11 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Current Question</value>
   </data>
-  <data name="lblContadorPreguntas.Location" type="System.Drawing.Point, System.Drawing">
-    <value>365, 51</value>
-  </data>
   <data name="lblContadorPreguntas.Text" xml:space="preserve">
     <value>Question: 0 / 0</value>
   </data>
   <data name="lblPuntaje.Location" type="System.Drawing.Point, System.Drawing">
-    <value>365, 73</value>
+    <value>365, 75</value>
   </data>
   <data name="lblPuntaje.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 15</value>
@@ -6773,7 +6770,7 @@
         BMgWSYewNUDsJAjbBsQuLykoAbIDQOyikCBnIDsFyNZIR2InIbGTC4pA6nuAbJvcnNJkhLsZeFLzQoOB
         NAcQyzAUMwQxuDM4gfwPUZK/iIHB4isDA/MEhFjSTAaG7a0MDBK3EGIqCxgY+FsYGLadR4ghwqQgsSgR
         LMQCxExpaQwMn5YzMPBGMjAIX2Bg4IqGBQQOtymA3ebOkA+E6Qw5DKlAEU+GPIZkBj0gy4jBgMGQwQwA
-        ptY/P1N/5B4AAAAJcEhZcwAADr0AAA69AUf7kK0AAP6vSURBVHhe7P33cytHtq4N6peJ7957Tre0vfee
+        ptY/P1N/5B4AAAAJcEhZcwAADrwAAA68AZW8ckkAAP6vSURBVHhe7P33cytHtq4N6peJ7957Tre0vfee
         m96CIAmQ3N57Ky+1pDZyLdv2nHu/mPli5r+eJ+sFFhIrC6gCCHJzU4h4oiKRyMxKs3LlelEg+M75i7Nv
         hLPnp3vCVd8yzl2YMdSTM+emDOXEZVz1N456mBKPIkVl4nF1ylfOxnHdHrJB0jWyxc1dx/gt5bgGc7Hq
         Vl4tp1iVIUMGxblLs2cuTJ+62AOuhSE7DOd2DFdsiMNNl+GKbVtctwtx1X+zuGkxXDHDFTP0LmEA6TjG

@@ -44,8 +44,8 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(45, 45, 48);
             resources.ApplyResources(panel1, "panel1");
+            panel1.BackColor = Color.FromArgb(45, 45, 48);
             panel1.Controls.Add(buttonCerrar);
             panel1.Controls.Add(buttonReportes);
             panel1.Controls.Add(buttonEditarMaterias);
@@ -95,8 +95,8 @@
             // 
             // labelTitulo
             // 
-            labelTitulo.BackColor = Color.Transparent;
             resources.ApplyResources(labelTitulo, "labelTitulo");
+            labelTitulo.BackColor = Color.Transparent;
             labelTitulo.ForeColor = SystemColors.ButtonHighlight;
             labelTitulo.Name = "labelTitulo";
             // 
@@ -109,15 +109,15 @@
             // 
             // lblMensaje
             // 
-            lblMensaje.BackColor = Color.Transparent;
             resources.ApplyResources(lblMensaje, "lblMensaje");
+            lblMensaje.BackColor = Color.Transparent;
             lblMensaje.ForeColor = Color.White;
             lblMensaje.Name = "lblMensaje";
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.Transparent;
             resources.ApplyResources(pictureBox1, "pictureBox1");
+            pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Name = "pictureBox1";
             pictureBox1.TabStop = false;
             // 

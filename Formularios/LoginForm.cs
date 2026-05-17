@@ -47,24 +47,24 @@ namespace PlataformaEducativa
             // 
             // textBoxUsuario
             // 
-            textBoxUsuario.BackColor = Color.FromArgb(227, 214, 179);
             resources.ApplyResources(textBoxUsuario, "textBoxUsuario");
+            textBoxUsuario.BackColor = Color.FromArgb(227, 214, 179);
             textBoxUsuario.ForeColor = Color.IndianRed;
             textBoxUsuario.Name = "textBoxUsuario";
             // 
             // textBoxClave
             // 
-            textBoxClave.BackColor = Color.FromArgb(227, 214, 179);
             resources.ApplyResources(textBoxClave, "textBoxClave");
+            textBoxClave.BackColor = Color.FromArgb(227, 214, 179);
             textBoxClave.ForeColor = SystemColors.Info;
             textBoxClave.Name = "textBoxClave";
             // 
             // btnIngresar
             // 
+            resources.ApplyResources(btnIngresar, "btnIngresar");
             btnIngresar.BackColor = Color.FromArgb(95, 163, 126);
             btnIngresar.FlatAppearance.BorderColor = Color.FromArgb(45, 49, 58);
             btnIngresar.FlatAppearance.BorderSize = 2;
-            resources.ApplyResources(btnIngresar, "btnIngresar");
             btnIngresar.ForeColor = Color.White;
             btnIngresar.Name = "btnIngresar";
             btnIngresar.UseVisualStyleBackColor = false;
@@ -72,37 +72,37 @@ namespace PlataformaEducativa
             // 
             // pictureBoxCandado
             // 
-            pictureBoxCandado.BackColor = Color.Transparent;
             resources.ApplyResources(pictureBoxCandado, "pictureBoxCandado");
+            pictureBoxCandado.BackColor = Color.Transparent;
             pictureBoxCandado.Name = "pictureBoxCandado";
             pictureBoxCandado.TabStop = false;
             // 
             // pictureBoxUsuarioLogin
             // 
-            pictureBoxUsuarioLogin.BackColor = Color.Transparent;
             resources.ApplyResources(pictureBoxUsuarioLogin, "pictureBoxUsuarioLogin");
+            pictureBoxUsuarioLogin.BackColor = Color.Transparent;
             pictureBoxUsuarioLogin.Name = "pictureBoxUsuarioLogin";
             pictureBoxUsuarioLogin.TabStop = false;
             // 
             // pictureBoxMichiLogin
             // 
-            pictureBoxMichiLogin.BackColor = Color.Transparent;
             resources.ApplyResources(pictureBoxMichiLogin, "pictureBoxMichiLogin");
+            pictureBoxMichiLogin.BackColor = Color.Transparent;
             pictureBoxMichiLogin.Name = "pictureBoxMichiLogin";
             pictureBoxMichiLogin.TabStop = false;
             // 
             // pbIdiomaEN
             // 
-            pbIdiomaEN.BackColor = Color.Transparent;
             resources.ApplyResources(pbIdiomaEN, "pbIdiomaEN");
+            pbIdiomaEN.BackColor = Color.Transparent;
             pbIdiomaEN.Cursor = Cursors.Hand;
             pbIdiomaEN.Name = "pbIdiomaEN";
             pbIdiomaEN.TabStop = false;
             // 
             // pbIdiomaES
             // 
-            pbIdiomaES.BackColor = Color.Transparent;
             resources.ApplyResources(pbIdiomaES, "pbIdiomaES");
+            pbIdiomaES.BackColor = Color.Transparent;
             pbIdiomaES.Cursor = Cursors.Hand;
             pbIdiomaES.Name = "pbIdiomaES";
             pbIdiomaES.TabStop = false;
