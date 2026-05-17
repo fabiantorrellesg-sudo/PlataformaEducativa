@@ -10,99 +10,122 @@ namespace PlataformaEducativa
         }
 
         private Label txtLogin;
-        private Label txtUsuario;
-        private Label txtClave;
         private TextBox textBoxUsuario;
         private TextBox textBoxClave;
+        private PictureBox pictureBoxCandado;
+        private PictureBox pictureBoxUsuarioLogin;
+        private PictureBox pictureBoxMichiLogin;
+        private PictureBox pbIdiomaEN;
+        private PictureBox pbIdiomaES;
         private Button btnIngresar;
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             txtLogin = new Label();
-            txtUsuario = new Label();
-            txtClave = new Label();
             textBoxUsuario = new TextBox();
             textBoxClave = new TextBox();
             btnIngresar = new Button();
+            pictureBoxCandado = new PictureBox();
+            pictureBoxUsuarioLogin = new PictureBox();
+            pictureBoxMichiLogin = new PictureBox();
+            pbIdiomaEN = new PictureBox();
+            pbIdiomaES = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCandado).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxUsuarioLogin).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMichiLogin).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbIdiomaEN).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbIdiomaES).BeginInit();
             SuspendLayout();
             // 
-            // txtLogin
+            // txtLogi 
             // 
-            txtLogin.AutoSize = true;
+            resources.ApplyResources(txtLogin, "txtLogin");
             txtLogin.BackColor = Color.Transparent;
             txtLogin.ForeColor = SystemColors.ButtonFace;
-            txtLogin.Location = new Point(118, 34);
             txtLogin.Name = "txtLogin";
-            txtLogin.Size = new Size(37, 15);
-            txtLogin.TabIndex = 0;
-            txtLogin.Text = "Login";
-            // 
-            // txtUsuario
-            // 
-            txtUsuario.AutoSize = true;
-            txtUsuario.BackColor = Color.Transparent;
-            txtUsuario.ForeColor = SystemColors.ButtonFace;
-            txtUsuario.Location = new Point(57, 75);
-            txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(47, 15);
-            txtUsuario.TabIndex = 1;
-            txtUsuario.Text = "Usuario";
-            // 
-            // txtClave
-            // 
-            txtClave.AutoSize = true;
-            txtClave.BackColor = Color.Transparent;
-            txtClave.ForeColor = SystemColors.ButtonFace;
-            txtClave.Location = new Point(57, 116);
-            txtClave.Name = "txtClave";
-            txtClave.Size = new Size(36, 15);
-            txtClave.TabIndex = 2;
-            txtClave.Text = "Clave";
             // 
             // textBoxUsuario
             // 
-            textBoxUsuario.BackColor = SystemColors.InactiveCaptionText;
-            textBoxUsuario.ForeColor = SystemColors.Info;
-            textBoxUsuario.Location = new Point(121, 72);
+            resources.ApplyResources(textBoxUsuario, "textBoxUsuario");
+            textBoxUsuario.BackColor = Color.FromArgb(227, 214, 179);
+            textBoxUsuario.ForeColor = Color.IndianRed;
             textBoxUsuario.Name = "textBoxUsuario";
-            textBoxUsuario.Size = new Size(100, 23);
-            textBoxUsuario.TabIndex = 3;
             // 
             // textBoxClave
             // 
-            textBoxClave.BackColor = SystemColors.InactiveCaptionText;
+            resources.ApplyResources(textBoxClave, "textBoxClave");
+            textBoxClave.BackColor = Color.FromArgb(227, 214, 179);
             textBoxClave.ForeColor = SystemColors.Info;
-            textBoxClave.Location = new Point(121, 113);
             textBoxClave.Name = "textBoxClave";
-            textBoxClave.Size = new Size(100, 23);
-            textBoxClave.TabIndex = 4;
             // 
             // btnIngresar
             // 
-            btnIngresar.BackColor = Color.FromArgb(62, 62, 66);
-            btnIngresar.FlatStyle = FlatStyle.Flat;
-            btnIngresar.ForeColor = SystemColors.Control;
-            btnIngresar.Location = new Point(99, 160);
+            resources.ApplyResources(btnIngresar, "btnIngresar");
+            btnIngresar.BackColor = Color.FromArgb(95, 163, 126);
+            btnIngresar.FlatAppearance.BorderColor = Color.FromArgb(45, 49, 58);
+            btnIngresar.FlatAppearance.BorderSize = 2;
+            btnIngresar.ForeColor = Color.White;
             btnIngresar.Name = "btnIngresar";
-            btnIngresar.Size = new Size(75, 23);
-            btnIngresar.TabIndex = 5;
-            btnIngresar.Text = "Ingresar";
             btnIngresar.UseVisualStyleBackColor = false;
             btnIngresar.Click += btnIngresar_Click;
             // 
+            // pictureBoxCandado
+            // 
+            resources.ApplyResources(pictureBoxCandado, "pictureBoxCandado");
+            pictureBoxCandado.BackColor = Color.Transparent;
+            pictureBoxCandado.Name = "pictureBoxCandado";
+            pictureBoxCandado.TabStop = false;
+            // 
+            // pictureBoxUsuarioLogin
+            // 
+            resources.ApplyResources(pictureBoxUsuarioLogin, "pictureBoxUsuarioLogin");
+            pictureBoxUsuarioLogin.BackColor = Color.Transparent;
+            pictureBoxUsuarioLogin.Name = "pictureBoxUsuarioLogin";
+            pictureBoxUsuarioLogin.TabStop = false;
+            // 
+            // pictureBoxMichiLogin
+            // 
+            resources.ApplyResources(pictureBoxMichiLogin, "pictureBoxMichiLogin");
+            pictureBoxMichiLogin.BackColor = Color.Transparent;
+            pictureBoxMichiLogin.Name = "pictureBoxMichiLogin";
+            pictureBoxMichiLogin.TabStop = false;
+            // 
+            // pbIdiomaEN
+            // 
+            resources.ApplyResources(pbIdiomaEN, "pbIdiomaEN");
+            pbIdiomaEN.BackColor = Color.Transparent;
+            pbIdiomaEN.Cursor = Cursors.Hand;
+            pbIdiomaEN.Name = "pbIdiomaEN";
+            pbIdiomaEN.TabStop = false;
+            // 
+            // pbIdiomaES
+            // 
+            resources.ApplyResources(pbIdiomaES, "pbIdiomaES");
+            pbIdiomaES.BackColor = Color.Transparent;
+            pbIdiomaES.Cursor = Cursors.Hand;
+            pbIdiomaES.Name = "pbIdiomaES";
+            pbIdiomaES.TabStop = false;
+            // 
             // LoginForm
             // 
-            BackgroundImage = Properties.Resources.cat1;
-            BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(284, 261);
+            resources.ApplyResources(this, "$this");
+            Controls.Add(pbIdiomaES);
+            Controls.Add(pbIdiomaEN);
+            Controls.Add(pictureBoxMichiLogin);
+            Controls.Add(pictureBoxUsuarioLogin);
+            Controls.Add(pictureBoxCandado);
             Controls.Add(btnIngresar);
             Controls.Add(textBoxClave);
             Controls.Add(textBoxUsuario);
-            Controls.Add(txtClave);
-            Controls.Add(txtUsuario);
             Controls.Add(txtLogin);
+            DoubleBuffered = true;
             Name = "LoginForm";
-            Text = "Ingresar a Plataforma Educativa";
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCandado).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxUsuarioLogin).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMichiLogin).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbIdiomaEN).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbIdiomaES).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
