@@ -34,92 +34,60 @@ namespace PlataformaEducativa
             // 
             // txtLogin
             // 
-            txtLogin.AutoSize = true;
+            resources.ApplyResources(txtLogin, "txtLogin");
             txtLogin.BackColor = Color.Transparent;
-            txtLogin.Font = new Font("Courier New", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtLogin.ForeColor = SystemColors.ButtonFace;
-            txtLogin.Location = new Point(346, 54);
             txtLogin.Name = "txtLogin";
-            txtLogin.Size = new Size(267, 34);
-            txtLogin.TabIndex = 0;
-            txtLogin.Text = "Iniciar sesión";
             // 
             // textBoxUsuario
             // 
+            resources.ApplyResources(textBoxUsuario, "textBoxUsuario");
             textBoxUsuario.BackColor = Color.FromArgb(227, 214, 179);
-            textBoxUsuario.Font = new Font("Courier New", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBoxUsuario.ForeColor = Color.IndianRed;
-            textBoxUsuario.Location = new Point(396, 109);
             textBoxUsuario.Name = "textBoxUsuario";
-            textBoxUsuario.PlaceholderText = "USUARIO";
-            textBoxUsuario.Size = new Size(207, 30);
-            textBoxUsuario.TabIndex = 3;
             // 
             // textBoxClave
             // 
+            resources.ApplyResources(textBoxClave, "textBoxClave");
             textBoxClave.BackColor = Color.FromArgb(227, 214, 179);
-            textBoxClave.Font = new Font("Courier New", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBoxClave.ForeColor = SystemColors.Info;
-            textBoxClave.Location = new Point(396, 162);
             textBoxClave.Name = "textBoxClave";
-            textBoxClave.PlaceholderText = "CLAVE";
-            textBoxClave.Size = new Size(207, 30);
-            textBoxClave.TabIndex = 4;
             // 
             // btnIngresar
             // 
+            resources.ApplyResources(btnIngresar, "btnIngresar");
             btnIngresar.BackColor = Color.FromArgb(95, 163, 126);
             btnIngresar.FlatAppearance.BorderColor = Color.FromArgb(45, 49, 58);
             btnIngresar.FlatAppearance.BorderSize = 2;
-            btnIngresar.FlatStyle = FlatStyle.Flat;
-            btnIngresar.Font = new Font("Courier New", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnIngresar.ForeColor = Color.White;
-            btnIngresar.Location = new Point(435, 248);
             btnIngresar.Name = "btnIngresar";
-            btnIngresar.Size = new Size(168, 46);
-            btnIngresar.TabIndex = 5;
-            btnIngresar.Text = "Ingresar";
             btnIngresar.UseVisualStyleBackColor = false;
             btnIngresar.Click += btnIngresar_Click;
             // 
             // pictureBoxCandado
             // 
+            resources.ApplyResources(pictureBoxCandado, "pictureBoxCandado");
             pictureBoxCandado.BackColor = Color.Transparent;
-            pictureBoxCandado.Image = (Image)resources.GetObject("pictureBoxCandado.Image");
-            pictureBoxCandado.Location = new Point(346, 158);
             pictureBoxCandado.Name = "pictureBoxCandado";
-            pictureBoxCandado.Size = new Size(33, 34);
-            pictureBoxCandado.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxCandado.TabIndex = 6;
             pictureBoxCandado.TabStop = false;
             // 
             // pictureBoxUsuarioLogin
             // 
+            resources.ApplyResources(pictureBoxUsuarioLogin, "pictureBoxUsuarioLogin");
             pictureBoxUsuarioLogin.BackColor = Color.Transparent;
-            pictureBoxUsuarioLogin.Image = (Image)resources.GetObject("pictureBoxUsuarioLogin.Image");
-            pictureBoxUsuarioLogin.Location = new Point(346, 109);
             pictureBoxUsuarioLogin.Name = "pictureBoxUsuarioLogin";
-            pictureBoxUsuarioLogin.Size = new Size(33, 34);
-            pictureBoxUsuarioLogin.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxUsuarioLogin.TabIndex = 7;
             pictureBoxUsuarioLogin.TabStop = false;
             // 
             // pictureBoxMichiLogin
             // 
+            resources.ApplyResources(pictureBoxMichiLogin, "pictureBoxMichiLogin");
             pictureBoxMichiLogin.BackColor = Color.Transparent;
-            pictureBoxMichiLogin.Image = (Image)resources.GetObject("pictureBoxMichiLogin.Image");
-            pictureBoxMichiLogin.Location = new Point(17, 125);
             pictureBoxMichiLogin.Name = "pictureBoxMichiLogin";
-            pictureBoxMichiLogin.Size = new Size(181, 189);
-            pictureBoxMichiLogin.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxMichiLogin.TabIndex = 8;
             pictureBoxMichiLogin.TabStop = false;
             // 
             // LoginForm
             // 
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(624, 317);
+            resources.ApplyResources(this, "$this");
             Controls.Add(pictureBoxMichiLogin);
             Controls.Add(pictureBoxUsuarioLogin);
             Controls.Add(pictureBoxCandado);
@@ -129,7 +97,6 @@ namespace PlataformaEducativa
             Controls.Add(txtLogin);
             DoubleBuffered = true;
             Name = "LoginForm";
-            Text = "Ingresar a Plataforma Educativa";
             ((System.ComponentModel.ISupportInitialize)pictureBoxCandado).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUsuarioLogin).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMichiLogin).EndInit();
