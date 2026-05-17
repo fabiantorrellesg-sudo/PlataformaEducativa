@@ -117,359 +117,42 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pbMateriaIcon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 25</value>
-  </data>
-  <data name="pbMateriaIcon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 82</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="pbMateriaIcon.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="pbMateriaIcon.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pbMateriaIcon.Name" xml:space="preserve">
-    <value>pbMateriaIcon</value>
-  </data>
-  <data name="&gt;&gt;pbMateriaIcon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbMateriaIcon.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pbMateriaIcon.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="lblMateria.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 12pt</value>
-  </data>
-  <data name="lblMateria.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 31</value>
-  </data>
-  <data name="lblMateria.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 34</value>
-  </data>
-  <data name="lblMateria.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <data name="lblMateria.Text" xml:space="preserve">
-    <value>Materia:</value>
+    <value>Subject:</value>
   </data>
-  <data name="lblMateria.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;lblMateria.Name" xml:space="preserve">
-    <value>lblMateria</value>
-  </data>
-  <data name="&gt;&gt;lblMateria.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblMateria.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblMateria.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="lblPreguntaEnunciado.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="lblPreguntaEnunciado.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 9pt</value>
-  </data>
-  <data name="lblPreguntaEnunciado.Location" type="System.Drawing.Point, System.Drawing">
-    <value>31, 162</value>
-  </data>
-  <data name="lblPreguntaEnunciado.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="lblPreguntaEnunciado.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;lblPreguntaEnunciado.Name" xml:space="preserve">
-    <value>lblPreguntaEnunciado</value>
-  </data>
-  <data name="&gt;&gt;lblPreguntaEnunciado.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblPreguntaEnunciado.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblPreguntaEnunciado.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 9pt</value>
-  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>31, 135</value>
+    <value>31, 127</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 15</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>119, 15</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Pregunta Actual</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="lblContadorPreguntas.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblContadorPreguntas.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 9pt</value>
+    <value>Current Question</value>
   </data>
   <data name="lblContadorPreguntas.Location" type="System.Drawing.Point, System.Drawing">
-    <value>365, 53</value>
-  </data>
-  <data name="lblContadorPreguntas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 15</value>
-  </data>
-  <data name="lblContadorPreguntas.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>365, 51</value>
   </data>
   <data name="lblContadorPreguntas.Text" xml:space="preserve">
-    <value>Pregunta: 0 / 0</value>
-  </data>
-  <data name="&gt;&gt;lblContadorPreguntas.Name" xml:space="preserve">
-    <value>lblContadorPreguntas</value>
-  </data>
-  <data name="&gt;&gt;lblContadorPreguntas.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblContadorPreguntas.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblContadorPreguntas.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="lblPuntaje.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblPuntaje.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 9pt</value>
+    <value>Question: 0 / 0</value>
   </data>
   <data name="lblPuntaje.Location" type="System.Drawing.Point, System.Drawing">
-    <value>365, 76</value>
+    <value>365, 73</value>
   </data>
   <data name="lblPuntaje.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 15</value>
-  </data>
-  <data name="lblPuntaje.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>49, 15</value>
   </data>
   <data name="lblPuntaje.Text" xml:space="preserve">
-    <value>Puntaje:</value>
-  </data>
-  <data name="&gt;&gt;lblPuntaje.Name" xml:space="preserve">
-    <value>lblPuntaje</value>
-  </data>
-  <data name="&gt;&gt;lblPuntaje.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblPuntaje.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblPuntaje.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="btnAnterior.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="btnAnterior.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnAnterior.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 8pt</value>
-  </data>
-  <data name="btnAnterior.Location" type="System.Drawing.Point, System.Drawing">
-    <value>461, 437</value>
-  </data>
-  <data name="btnAnterior.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 23</value>
-  </data>
-  <data name="btnAnterior.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>Score:</value>
   </data>
   <data name="btnAnterior.Text" xml:space="preserve">
-    <value>Anterior</value>
-  </data>
-  <data name="&gt;&gt;btnAnterior.Name" xml:space="preserve">
-    <value>btnAnterior</value>
-  </data>
-  <data name="&gt;&gt;btnAnterior.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnAnterior.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnAnterior.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="btnSiguiente.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="btnSiguiente.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnSiguiente.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 8pt</value>
-  </data>
-  <data name="btnSiguiente.Location" type="System.Drawing.Point, System.Drawing">
-    <value>556, 437</value>
-  </data>
-  <data name="btnSiguiente.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 23</value>
-  </data>
-  <data name="btnSiguiente.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>Previus</value>
   </data>
   <data name="btnSiguiente.Text" xml:space="preserve">
-    <value>Siguiente</value>
-  </data>
-  <data name="&gt;&gt;btnSiguiente.Name" xml:space="preserve">
-    <value>btnSiguiente</value>
-  </data>
-  <data name="&gt;&gt;btnSiguiente.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnSiguiente.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnSiguiente.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="pBar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="pBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>472, 167</value>
-  </data>
-  <data name="pBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 10</value>
-  </data>
-  <data name="pBar.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;pBar.Name" xml:space="preserve">
-    <value>pBar</value>
-  </data>
-  <data name="&gt;&gt;pBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pBar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pBar.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="lblProgreso.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblProgreso.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 9pt</value>
-  </data>
-  <data name="lblProgreso.Location" type="System.Drawing.Point, System.Drawing">
-    <value>469, 144</value>
-  </data>
-  <data name="lblProgreso.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 15</value>
-  </data>
-  <data name="lblProgreso.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>Next</value>
   </data>
   <data name="lblProgreso.Text" xml:space="preserve">
-    <value>Progreso:</value>
-  </data>
-  <data name="&gt;&gt;lblProgreso.Name" xml:space="preserve">
-    <value>lblProgreso</value>
-  </data>
-  <data name="&gt;&gt;lblProgreso.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblProgreso.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblProgreso.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="lblPorcentaje.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblPorcentaje.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 9pt</value>
-  </data>
-  <data name="lblPorcentaje.Location" type="System.Drawing.Point, System.Drawing">
-    <value>620, 185</value>
-  </data>
-  <data name="lblPorcentaje.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 15</value>
-  </data>
-  <data name="lblPorcentaje.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="lblPorcentaje.Text" xml:space="preserve">
-    <value>0%</value>
-  </data>
-  <data name="lblPorcentaje.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;lblPorcentaje.Name" xml:space="preserve">
-    <value>lblPorcentaje</value>
-  </data>
-  <data name="&gt;&gt;lblPorcentaje.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblPorcentaje.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblPorcentaje.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="pbImagenPregunta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>483, 240</value>
-  </data>
-  <data name="pbImagenPregunta.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 140</value>
-  </data>
-  <data name="pbImagenPregunta.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="pbImagenPregunta.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="pbImagenPregunta.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;pbImagenPregunta.Name" xml:space="preserve">
-    <value>pbImagenPregunta</value>
-  </data>
-  <data name="&gt;&gt;pbImagenPregunta.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbImagenPregunta.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pbImagenPregunta.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>Progress:</value>
   </data>
   <data name="pictureBoxMichiLogin.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5179,33 +4862,6 @@
         q779+gt1/aW/9P8Hzk1XHXSlg60AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="pictureBoxMichiLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>548, 18</value>
-  </data>
-  <data name="pictureBoxMichiLogin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 101</value>
-  </data>
-  <data name="pictureBoxMichiLogin.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="pictureBoxMichiLogin.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxMichiLogin.Name" xml:space="preserve">
-    <value>pictureBoxMichiLogin</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxMichiLogin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxMichiLogin.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxMichiLogin.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="rbOpciónA.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
   <data name="rbOpciónA.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAikAAABcCAYAAACr4yVFAAAABGdBTUEAALGPC/xhBQAAbkpJREFUeF7t
@@ -5681,45 +5337,6 @@
         464FQBfuv4UIbKf430IWDBd0OZJWI2k4tlShUcE0zubmUOa4vlp/RR1oEN/SR9w/inJwbNP/NyT/gaT/
         w0j/RxD/q4f/EyTIf/cwj0mgDTxlR6VXr/8f9sfJpfILw80AAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="rbOpciónA.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
-  </data>
-  <data name="rbOpciónA.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="rbOpciónA.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 9pt</value>
-  </data>
-  <data name="rbOpciónA.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="rbOpciónA.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 203</value>
-  </data>
-  <data name="rbOpciónA.Size" type="System.Drawing.Size, System.Drawing">
-    <value>431, 80</value>
-  </data>
-  <data name="rbOpciónA.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="rbOpciónA.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;rbOpciónA.Name" xml:space="preserve">
-    <value>rbOpciónA</value>
-  </data>
-  <data name="&gt;&gt;rbOpciónA.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbOpciónA.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;rbOpciónA.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="radioButton1.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
   </data>
   <data name="radioButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -6197,45 +5814,6 @@
         w0j/RxD/q4f/EyTIf/cwj0mgDTxlR6VXr/8f9sfJpfILw80AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="radioButton1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
-  </data>
-  <data name="radioButton1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="radioButton1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 9pt</value>
-  </data>
-  <data name="radioButton1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="radioButton1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 272</value>
-  </data>
-  <data name="radioButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>431, 80</value>
-  </data>
-  <data name="radioButton1.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="radioButton1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;radioButton1.Name" xml:space="preserve">
-    <value>radioButton1</value>
-  </data>
-  <data name="&gt;&gt;radioButton1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButton1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;radioButton1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="radioButton2.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
   <data name="radioButton2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAikAAABcCAYAAACr4yVFAAAABGdBTUEAALGPC/xhBQAAbkpJREFUeF7t
@@ -6711,45 +6289,6 @@
         464FQBfuv4UIbKf430IWDBd0OZJWI2k4tlShUcE0zubmUOa4vlp/RR1oEN/SR9w/inJwbNP/NyT/gaT/
         w0j/RxD/q4f/EyTIf/cwj0mgDTxlR6VXr/8f9sfJpfILw80AAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="radioButton2.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
-  </data>
-  <data name="radioButton2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="radioButton2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 9pt</value>
-  </data>
-  <data name="radioButton2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="radioButton2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 343</value>
-  </data>
-  <data name="radioButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>431, 80</value>
-  </data>
-  <data name="radioButton2.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="radioButton2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;radioButton2.Name" xml:space="preserve">
-    <value>radioButton2</value>
-  </data>
-  <data name="&gt;&gt;radioButton2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButton2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;radioButton2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="radioButton3.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
   </data>
   <data name="radioButton3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -7227,48 +6766,6 @@
         w0j/RxD/q4f/EyTIf/cwj0mgDTxlR6VXr/8f9sfJpfILw80AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="radioButton3.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
-  </data>
-  <data name="radioButton3.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="radioButton3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 9pt</value>
-  </data>
-  <data name="radioButton3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="radioButton3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 414</value>
-  </data>
-  <data name="radioButton3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>431, 80</value>
-  </data>
-  <data name="radioButton3.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="radioButton3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;radioButton3.Name" xml:space="preserve">
-    <value>radioButton3</value>
-  </data>
-  <data name="&gt;&gt;radioButton3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButton3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;radioButton3.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>7, 15</value>
-  </data>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABH4AAAOQCAIAAADAPiEyAAABB2lDQ1BJQ0MgUHJvZmlsZQAAKM9jYGA8
@@ -7276,7 +6773,7 @@
         BMgWSYewNUDsJAjbBsQuLykoAbIDQOyikCBnIDsFyNZIR2InIbGTC4pA6nuAbJvcnNJkhLsZeFLzQoOB
         NAcQyzAUMwQxuDM4gfwPUZK/iIHB4isDA/MEhFjSTAaG7a0MDBK3EGIqCxgY+FsYGLadR4ghwqQgsSgR
         LMQCxExpaQwMn5YzMPBGMjAIX2Bg4IqGBQQOtymA3ebOkA+E6Qw5DKlAEU+GPIZkBj0gy4jBgMGQwQwA
-        ptY/P1N/5B4AAAAJcEhZcwAADrwAAA68AZW8ckkAAP6vSURBVHhe7P33cytHtq4N6peJ7957Tre0vfee
+        ptY/P1N/5B4AAAAJcEhZcwAADr8AAA6/ATgFUyQAAP6vSURBVHhe7P33cytHtq4N6peJ7957Tre0vfee
         m96CIAmQ3N57Ky+1pDZyLdv2nHu/mPli5r+eJ+sFFhIrC6gCCHJzU4h4oiKRyMxKs3LlelEg+M75i7Nv
         hLPnp3vCVd8yzl2YMdSTM+emDOXEZVz1N456mBKPIkVl4nF1ylfOxnHdHrJB0jWyxc1dx/gt5bgGc7Hq
         Vl4tp1iVIUMGxblLs2cuTJ+62AOuhSE7DOd2DFdsiMNNl+GKbVtctwtx1X+zuGkxXDHDFTP0LmEA6TjG
@@ -16623,20 +16120,5 @@
         ZZW47A7TXWpUQnHpxdAXxTqWNcuVLbfMj8tzNc1jHe4GwmHJNokr1tBukCae4THWXsfMzEoBMyv/P03L
         tdZrJOxjAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="$this.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>667, 501</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>QuizForm</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>QuizForm</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
