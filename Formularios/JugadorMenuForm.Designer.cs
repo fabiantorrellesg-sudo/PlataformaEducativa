@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JugadorMenuForm));
             panel1 = new Panel();
             pictureBoxUsuario = new PictureBox();
             labelNivel = new Label();
@@ -67,7 +68,9 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(64, 64, 64);
+            panel1.BackColor = Color.Transparent;
+            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(pictureBoxUsuario);
             panel1.Controls.Add(labelNivel);
@@ -81,6 +84,7 @@
             // 
             // pictureBoxUsuario
             // 
+            pictureBoxUsuario.BackColor = Color.Transparent;
             pictureBoxUsuario.ErrorImage = null;
             pictureBoxUsuario.Image = Properties.Resources.usuario;
             pictureBoxUsuario.InitialImage = null;
@@ -99,18 +103,18 @@
             labelNivel.ForeColor = SystemColors.ControlLightLight;
             labelNivel.Location = new Point(132, 51);
             labelNivel.Name = "labelNivel";
-            labelNivel.Size = new Size(37, 15);
+            labelNivel.Size = new Size(49, 15);
             labelNivel.TabIndex = 1;
             labelNivel.Text = "Nivel:";
             // 
             // labelJugador
             // 
             labelJugador.AutoSize = true;
-            labelJugador.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelJugador.Font = new Font("Courier New", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelJugador.ForeColor = SystemColors.ControlLightLight;
             labelJugador.Location = new Point(132, 16);
             labelJugador.Name = "labelJugador";
-            labelJugador.Size = new Size(87, 25);
+            labelJugador.Size = new Size(98, 22);
             labelJugador.TabIndex = 1;
             labelJugador.Text = "Jugador:";
             // 
@@ -119,12 +123,14 @@
             progressBar1.Location = new Point(132, 93);
             progressBar1.Margin = new Padding(3, 2, 3, 2);
             progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(407, 20);
+            progressBar1.Size = new Size(402, 20);
             progressBar1.TabIndex = 0;
             // 
             // panel2
             // 
-            panel2.BackColor = Color.Gray;
+            panel2.BackColor = Color.Transparent;
+            panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
+            panel2.BackgroundImageLayout = ImageLayout.Stretch;
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(pictureBoxArquitectura);
             panel2.Controls.Add(buttonProgresoArquitectura);
@@ -138,6 +144,7 @@
             // 
             // pictureBoxArquitectura
             // 
+            pictureBoxArquitectura.BackColor = Color.Transparent;
             pictureBoxArquitectura.ErrorImage = null;
             pictureBoxArquitectura.Image = Properties.Resources.arquitectura;
             pictureBoxArquitectura.InitialImage = null;
@@ -152,6 +159,10 @@
             // 
             // buttonProgresoArquitectura
             // 
+            buttonProgresoArquitectura.BackgroundImageLayout = ImageLayout.Stretch;
+            buttonProgresoArquitectura.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonProgresoArquitectura.ForeColor = Color.White;
+            buttonProgresoArquitectura.Image = (Image)resources.GetObject("buttonProgresoArquitectura.Image");
             buttonProgresoArquitectura.Location = new Point(116, 154);
             buttonProgresoArquitectura.Margin = new Padding(3, 2, 3, 2);
             buttonProgresoArquitectura.Name = "buttonProgresoArquitectura";
@@ -162,29 +173,36 @@
             // 
             // buttonComenzarArquitectura
             // 
+            buttonComenzarArquitectura.BackgroundImageLayout = ImageLayout.Stretch;
+            buttonComenzarArquitectura.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonComenzarArquitectura.ForeColor = Color.White;
+            buttonComenzarArquitectura.Image = (Image)resources.GetObject("buttonComenzarArquitectura.Image");
             buttonComenzarArquitectura.Location = new Point(27, 154);
             buttonComenzarArquitectura.Margin = new Padding(3, 2, 3, 2);
             buttonComenzarArquitectura.Name = "buttonComenzarArquitectura";
             buttonComenzarArquitectura.Size = new Size(82, 22);
             buttonComenzarArquitectura.TabIndex = 3;
             buttonComenzarArquitectura.Text = "Comenzar";
-            buttonComenzarArquitectura.UseVisualStyleBackColor = true;
+            buttonComenzarArquitectura.UseVisualStyleBackColor = false;
             // 
             // labelArquitectura
             // 
             labelArquitectura.AutoSize = true;
-            labelArquitectura.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelArquitectura.BackColor = Color.Transparent;
+            labelArquitectura.Font = new Font("Courier New", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelArquitectura.ForeColor = SystemColors.ControlLightLight;
-            labelArquitectura.Location = new Point(10, 12);
+            labelArquitectura.Location = new Point(15, 12);
             labelArquitectura.Name = "labelArquitectura";
-            labelArquitectura.Size = new Size(224, 21);
+            labelArquitectura.Size = new Size(223, 16);
             labelArquitectura.TabIndex = 2;
             labelArquitectura.Text = "Arquitectura del computador";
             labelArquitectura.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // panel3
             // 
-            panel3.BackColor = Color.Gray;
+            panel3.BackColor = Color.Transparent;
+            panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
+            panel3.BackgroundImageLayout = ImageLayout.Stretch;
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(pictureBoxAntropologia);
             panel3.Controls.Add(buttonProgresoAntropologia);
@@ -198,7 +216,7 @@
             // 
             // pictureBoxAntropologia
             // 
-            pictureBoxAntropologia.Image = Properties.Resources.antropologia;
+            pictureBoxAntropologia.Image = (Image)resources.GetObject("pictureBoxAntropologia.Image");
             pictureBoxAntropologia.Location = new Point(67, 41);
             pictureBoxAntropologia.Margin = new Padding(3, 2, 3, 2);
             pictureBoxAntropologia.Name = "pictureBoxAntropologia";
@@ -209,6 +227,8 @@
             // 
             // buttonProgresoAntropologia
             // 
+            buttonProgresoAntropologia.ForeColor = Color.White;
+            buttonProgresoAntropologia.Image = (Image)resources.GetObject("buttonProgresoAntropologia.Image");
             buttonProgresoAntropologia.Location = new Point(116, 154);
             buttonProgresoAntropologia.Margin = new Padding(3, 2, 3, 2);
             buttonProgresoAntropologia.Name = "buttonProgresoAntropologia";
@@ -219,6 +239,8 @@
             // 
             // buttonComenzarAntropologia
             // 
+            buttonComenzarAntropologia.ForeColor = Color.White;
+            buttonComenzarAntropologia.Image = (Image)resources.GetObject("buttonComenzarAntropologia.Image");
             buttonComenzarAntropologia.Location = new Point(27, 154);
             buttonComenzarAntropologia.Margin = new Padding(3, 2, 3, 2);
             buttonComenzarAntropologia.Name = "buttonComenzarAntropologia";
@@ -230,11 +252,11 @@
             // labelAntropologia
             // 
             labelAntropologia.AutoSize = true;
-            labelAntropologia.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelAntropologia.Font = new Font("Courier New", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelAntropologia.ForeColor = SystemColors.ControlLightLight;
             labelAntropologia.Location = new Point(67, 12);
             labelAntropologia.Name = "labelAntropologia";
-            labelAntropologia.Size = new Size(108, 21);
+            labelAntropologia.Size = new Size(128, 18);
             labelAntropologia.TabIndex = 2;
             labelAntropologia.Text = "Antropologia";
             labelAntropologia.TextAlign = ContentAlignment.MiddleLeft;
@@ -242,7 +264,9 @@
             // 
             // panel4
             // 
-            panel4.BackColor = Color.Gray;
+            panel4.BackColor = Color.Transparent;
+            panel4.BackgroundImage = (Image)resources.GetObject("panel4.BackgroundImage");
+            panel4.BackgroundImageLayout = ImageLayout.Stretch;
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(pictureBoxDeporte);
             panel4.Controls.Add(buttonProgresoDeporte);
@@ -256,7 +280,7 @@
             // 
             // pictureBoxDeporte
             // 
-            pictureBoxDeporte.Image = Properties.Resources.deporte;
+            pictureBoxDeporte.Image = (Image)resources.GetObject("pictureBoxDeporte.Image");
             pictureBoxDeporte.Location = new Point(69, 45);
             pictureBoxDeporte.Margin = new Padding(3, 2, 3, 2);
             pictureBoxDeporte.Name = "pictureBoxDeporte";
@@ -267,6 +291,8 @@
             // 
             // buttonProgresoDeporte
             // 
+            buttonProgresoDeporte.ForeColor = Color.White;
+            buttonProgresoDeporte.Image = (Image)resources.GetObject("buttonProgresoDeporte.Image");
             buttonProgresoDeporte.Location = new Point(116, 154);
             buttonProgresoDeporte.Margin = new Padding(3, 2, 3, 2);
             buttonProgresoDeporte.Name = "buttonProgresoDeporte";
@@ -277,6 +303,8 @@
             // 
             // buttonComenzarDeporte
             // 
+            buttonComenzarDeporte.ForeColor = Color.White;
+            buttonComenzarDeporte.Image = (Image)resources.GetObject("buttonComenzarDeporte.Image");
             buttonComenzarDeporte.Location = new Point(27, 154);
             buttonComenzarDeporte.Margin = new Padding(3, 2, 3, 2);
             buttonComenzarDeporte.Name = "buttonComenzarDeporte";
@@ -288,11 +316,11 @@
             // labelDeporte
             // 
             labelDeporte.AutoSize = true;
-            labelDeporte.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelDeporte.Font = new Font("Courier New", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelDeporte.ForeColor = SystemColors.ControlLightLight;
             labelDeporte.Location = new Point(88, 14);
             labelDeporte.Name = "labelDeporte";
-            labelDeporte.Size = new Size(71, 21);
+            labelDeporte.Size = new Size(78, 18);
             labelDeporte.TabIndex = 2;
             labelDeporte.Text = "Deporte";
             labelDeporte.TextAlign = ContentAlignment.MiddleLeft;
@@ -300,18 +328,20 @@
             // labelCalculo
             // 
             labelCalculo.AutoSize = true;
-            labelCalculo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelCalculo.Font = new Font("Courier New", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelCalculo.ForeColor = SystemColors.ControlLightLight;
             labelCalculo.Location = new Point(88, 14);
             labelCalculo.Name = "labelCalculo";
-            labelCalculo.Size = new Size(63, 21);
+            labelCalculo.Size = new Size(78, 18);
             labelCalculo.TabIndex = 2;
             labelCalculo.Text = "Calculo";
             labelCalculo.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // panel5
             // 
-            panel5.BackColor = Color.Gray;
+            panel5.BackColor = Color.Transparent;
+            panel5.BackgroundImage = (Image)resources.GetObject("panel5.BackgroundImage");
+            panel5.BackgroundImageLayout = ImageLayout.Stretch;
             panel5.BorderStyle = BorderStyle.FixedSingle;
             panel5.Controls.Add(pictureBox2);
             panel5.Controls.Add(buttonProgresoCalculo);
@@ -325,7 +355,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.calculo;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(63, 37);
             pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
@@ -336,6 +366,8 @@
             // 
             // buttonProgresoCalculo
             // 
+            buttonProgresoCalculo.ForeColor = Color.White;
+            buttonProgresoCalculo.Image = (Image)resources.GetObject("buttonProgresoCalculo.Image");
             buttonProgresoCalculo.Location = new Point(116, 154);
             buttonProgresoCalculo.Margin = new Padding(3, 2, 3, 2);
             buttonProgresoCalculo.Name = "buttonProgresoCalculo";
@@ -346,6 +378,8 @@
             // 
             // buttonComenzarCalculo
             // 
+            buttonComenzarCalculo.ForeColor = Color.White;
+            buttonComenzarCalculo.Image = (Image)resources.GetObject("buttonComenzarCalculo.Image");
             buttonComenzarCalculo.Location = new Point(27, 154);
             buttonComenzarCalculo.Margin = new Padding(3, 2, 3, 2);
             buttonComenzarCalculo.Name = "buttonComenzarCalculo";
@@ -359,12 +393,16 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(45, 45, 48);
-            ClientSize = new Size(605, 562);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(605, 576);
             Controls.Add(panel4);
             Controls.Add(panel5);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            DoubleBuffered = true;
+            Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 2, 3, 2);
             Name = "JugadorMenuForm";

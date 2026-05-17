@@ -53,15 +53,15 @@
             // 
             // pbMateriaIcon
             // 
-            resources.ApplyResources(pbMateriaIcon, "pbMateriaIcon");
             pbMateriaIcon.BackColor = Color.Transparent;
+            resources.ApplyResources(pbMateriaIcon, "pbMateriaIcon");
             pbMateriaIcon.Name = "pbMateriaIcon";
             pbMateriaIcon.TabStop = false;
             // 
             // lblMateria
             // 
-            resources.ApplyResources(lblMateria, "lblMateria");
             lblMateria.BackColor = Color.Transparent;
+            resources.ApplyResources(lblMateria, "lblMateria");
             lblMateria.ForeColor = Color.White;
             lblMateria.Name = "lblMateria";
             // 
@@ -131,15 +131,15 @@
             // 
             // pbImagenPregunta
             // 
-            resources.ApplyResources(pbImagenPregunta, "pbImagenPregunta");
             pbImagenPregunta.BorderStyle = BorderStyle.FixedSingle;
+            resources.ApplyResources(pbImagenPregunta, "pbImagenPregunta");
             pbImagenPregunta.Name = "pbImagenPregunta";
             pbImagenPregunta.TabStop = false;
             // 
             // pictureBoxMichiLogin
             // 
-            resources.ApplyResources(pictureBoxMichiLogin, "pictureBoxMichiLogin");
             pictureBoxMichiLogin.BackColor = Color.Transparent;
+            resources.ApplyResources(pictureBoxMichiLogin, "pictureBoxMichiLogin");
             pictureBoxMichiLogin.Name = "pictureBoxMichiLogin";
             pictureBoxMichiLogin.TabStop = false;
             // 
