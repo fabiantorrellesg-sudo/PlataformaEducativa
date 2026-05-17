@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestiónModulos));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panelContenido = new Panel();
             gbModulos = new GroupBox();
             panel1 = new Panel();
@@ -197,14 +197,14 @@
             dgvDatosGestionModulos.BackgroundColor = Color.FromArgb(55, 55, 55);
             dgvDatosGestionModulos.BorderStyle = BorderStyle.None;
             dgvDatosGestionModulos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Courier New", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(80, 80, 80);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dgvDatosGestionModulos.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Courier New", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(80, 80, 80);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvDatosGestionModulos.DefaultCellStyle = dataGridViewCellStyle2;
             dgvDatosGestionModulos.EnableHeadersVisualStyles = false;
             dgvDatosGestionModulos.GridColor = Color.Gainsboro;
             dgvDatosGestionModulos.Location = new Point(19, 63);
@@ -271,7 +271,7 @@
             Name = "GestiónModulos";
             Padding = new Padding(10, 40, 10, 10);
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "GestionMaterias";
+            Text = "GestionModulos";
             panelContenido.ResumeLayout(false);
             gbModulos.ResumeLayout(false);
             gbModulos.PerformLayout();
