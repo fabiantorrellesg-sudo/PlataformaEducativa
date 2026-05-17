@@ -15,6 +15,8 @@ namespace PlataformaEducativa
         private PictureBox pictureBoxCandado;
         private PictureBox pictureBoxUsuarioLogin;
         private PictureBox pictureBoxMichiLogin;
+        private PictureBox pbIdiomaEN;
+        private PictureBox pbIdiomaES;
         private Button btnIngresar;
 
         private void InitializeComponent()
@@ -27,9 +29,13 @@ namespace PlataformaEducativa
             pictureBoxCandado = new PictureBox();
             pictureBoxUsuarioLogin = new PictureBox();
             pictureBoxMichiLogin = new PictureBox();
+            pbIdiomaEN = new PictureBox();
+            pbIdiomaES = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCandado).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUsuarioLogin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMichiLogin).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbIdiomaEN).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbIdiomaES).BeginInit();
             SuspendLayout();
             // 
             // txtLogin
@@ -41,24 +47,24 @@ namespace PlataformaEducativa
             // 
             // textBoxUsuario
             // 
-            resources.ApplyResources(textBoxUsuario, "textBoxUsuario");
             textBoxUsuario.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(textBoxUsuario, "textBoxUsuario");
             textBoxUsuario.ForeColor = Color.IndianRed;
             textBoxUsuario.Name = "textBoxUsuario";
             // 
             // textBoxClave
             // 
-            resources.ApplyResources(textBoxClave, "textBoxClave");
             textBoxClave.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(textBoxClave, "textBoxClave");
             textBoxClave.ForeColor = SystemColors.Info;
             textBoxClave.Name = "textBoxClave";
             // 
             // btnIngresar
             // 
-            resources.ApplyResources(btnIngresar, "btnIngresar");
             btnIngresar.BackColor = Color.FromArgb(95, 163, 126);
             btnIngresar.FlatAppearance.BorderColor = Color.FromArgb(45, 49, 58);
             btnIngresar.FlatAppearance.BorderSize = 2;
+            resources.ApplyResources(btnIngresar, "btnIngresar");
             btnIngresar.ForeColor = Color.White;
             btnIngresar.Name = "btnIngresar";
             btnIngresar.UseVisualStyleBackColor = false;
@@ -66,28 +72,46 @@ namespace PlataformaEducativa
             // 
             // pictureBoxCandado
             // 
-            resources.ApplyResources(pictureBoxCandado, "pictureBoxCandado");
             pictureBoxCandado.BackColor = Color.Transparent;
+            resources.ApplyResources(pictureBoxCandado, "pictureBoxCandado");
             pictureBoxCandado.Name = "pictureBoxCandado";
             pictureBoxCandado.TabStop = false;
             // 
             // pictureBoxUsuarioLogin
             // 
-            resources.ApplyResources(pictureBoxUsuarioLogin, "pictureBoxUsuarioLogin");
             pictureBoxUsuarioLogin.BackColor = Color.Transparent;
+            resources.ApplyResources(pictureBoxUsuarioLogin, "pictureBoxUsuarioLogin");
             pictureBoxUsuarioLogin.Name = "pictureBoxUsuarioLogin";
             pictureBoxUsuarioLogin.TabStop = false;
             // 
             // pictureBoxMichiLogin
             // 
-            resources.ApplyResources(pictureBoxMichiLogin, "pictureBoxMichiLogin");
             pictureBoxMichiLogin.BackColor = Color.Transparent;
+            resources.ApplyResources(pictureBoxMichiLogin, "pictureBoxMichiLogin");
             pictureBoxMichiLogin.Name = "pictureBoxMichiLogin";
             pictureBoxMichiLogin.TabStop = false;
+            // 
+            // pbIdiomaEN
+            // 
+            pbIdiomaEN.BackColor = Color.Transparent;
+            resources.ApplyResources(pbIdiomaEN, "pbIdiomaEN");
+            pbIdiomaEN.Cursor = Cursors.Hand;
+            pbIdiomaEN.Name = "pbIdiomaEN";
+            pbIdiomaEN.TabStop = false;
+            // 
+            // pbIdiomaES
+            // 
+            pbIdiomaES.BackColor = Color.Transparent;
+            resources.ApplyResources(pbIdiomaES, "pbIdiomaES");
+            pbIdiomaES.Cursor = Cursors.Hand;
+            pbIdiomaES.Name = "pbIdiomaES";
+            pbIdiomaES.TabStop = false;
             // 
             // LoginForm
             // 
             resources.ApplyResources(this, "$this");
+            Controls.Add(pbIdiomaES);
+            Controls.Add(pbIdiomaEN);
             Controls.Add(pictureBoxMichiLogin);
             Controls.Add(pictureBoxUsuarioLogin);
             Controls.Add(pictureBoxCandado);
@@ -100,6 +124,8 @@ namespace PlataformaEducativa
             ((System.ComponentModel.ISupportInitialize)pictureBoxCandado).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUsuarioLogin).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMichiLogin).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbIdiomaEN).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbIdiomaES).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
