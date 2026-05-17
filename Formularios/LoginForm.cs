@@ -38,7 +38,7 @@ namespace PlataformaEducativa
             ((System.ComponentModel.ISupportInitialize)pbIdiomaES).BeginInit();
             SuspendLayout();
             // 
-            // txtLogi me gusta el pene uwu
+            // txtLogi 
             // 
             resources.ApplyResources(txtLogin, "txtLogin");
             txtLogin.BackColor = Color.Transparent;
