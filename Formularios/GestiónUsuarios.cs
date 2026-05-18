@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace PlataformaEducativa.Formularios
 {
-    public partial class GestiónUsuarios : Form
+    public partial class GestionUsuarios : Form
     {
-        public GestiónUsuarios()
+        public GestionUsuarios()
         {
             InitializeComponent();
         }
