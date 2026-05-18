@@ -1,4 +1,7 @@
 using PlataformaEducativa.Clases;
+using MySql.Data.MySqlClient;
+using System;
+using System.Data;
 
 namespace PlataformaEducativa
 {
@@ -38,7 +41,7 @@ namespace PlataformaEducativa
             ((System.ComponentModel.ISupportInitialize)pbIdiomaES).BeginInit();
             SuspendLayout();
             // 
-            // txtLogi 
+            // txtLogin
             // 
             resources.ApplyResources(txtLogin, "txtLogin");
             txtLogin.BackColor = Color.Transparent;
@@ -47,24 +50,25 @@ namespace PlataformaEducativa
             // 
             // textBoxUsuario
             // 
-            resources.ApplyResources(textBoxUsuario, "textBoxUsuario");
             textBoxUsuario.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(textBoxUsuario, "textBoxUsuario");
             textBoxUsuario.ForeColor = Color.IndianRed;
             textBoxUsuario.Name = "textBoxUsuario";
             // 
             // textBoxClave
             // 
-            resources.ApplyResources(textBoxClave, "textBoxClave");
             textBoxClave.BackColor = Color.FromArgb(227, 214, 179);
-            textBoxClave.ForeColor = SystemColors.Info;
+            resources.ApplyResources(textBoxClave, "textBoxClave");
+            textBoxClave.ForeColor = Color.IndianRed;
             textBoxClave.Name = "textBoxClave";
+            textBoxClave.UseSystemPasswordChar = true;
             // 
             // btnIngresar
             // 
-            resources.ApplyResources(btnIngresar, "btnIngresar");
             btnIngresar.BackColor = Color.FromArgb(95, 163, 126);
             btnIngresar.FlatAppearance.BorderColor = Color.FromArgb(45, 49, 58);
             btnIngresar.FlatAppearance.BorderSize = 2;
+            resources.ApplyResources(btnIngresar, "btnIngresar");
             btnIngresar.ForeColor = Color.White;
             btnIngresar.Name = "btnIngresar";
             btnIngresar.UseVisualStyleBackColor = false;
@@ -72,37 +76,37 @@ namespace PlataformaEducativa
             // 
             // pictureBoxCandado
             // 
-            resources.ApplyResources(pictureBoxCandado, "pictureBoxCandado");
             pictureBoxCandado.BackColor = Color.Transparent;
+            resources.ApplyResources(pictureBoxCandado, "pictureBoxCandado");
             pictureBoxCandado.Name = "pictureBoxCandado";
             pictureBoxCandado.TabStop = false;
             // 
             // pictureBoxUsuarioLogin
             // 
-            resources.ApplyResources(pictureBoxUsuarioLogin, "pictureBoxUsuarioLogin");
             pictureBoxUsuarioLogin.BackColor = Color.Transparent;
+            resources.ApplyResources(pictureBoxUsuarioLogin, "pictureBoxUsuarioLogin");
             pictureBoxUsuarioLogin.Name = "pictureBoxUsuarioLogin";
             pictureBoxUsuarioLogin.TabStop = false;
             // 
             // pictureBoxMichiLogin
             // 
-            resources.ApplyResources(pictureBoxMichiLogin, "pictureBoxMichiLogin");
             pictureBoxMichiLogin.BackColor = Color.Transparent;
+            resources.ApplyResources(pictureBoxMichiLogin, "pictureBoxMichiLogin");
             pictureBoxMichiLogin.Name = "pictureBoxMichiLogin";
             pictureBoxMichiLogin.TabStop = false;
             // 
             // pbIdiomaEN
             // 
-            resources.ApplyResources(pbIdiomaEN, "pbIdiomaEN");
             pbIdiomaEN.BackColor = Color.Transparent;
+            resources.ApplyResources(pbIdiomaEN, "pbIdiomaEN");
             pbIdiomaEN.Cursor = Cursors.Hand;
             pbIdiomaEN.Name = "pbIdiomaEN";
             pbIdiomaEN.TabStop = false;
             // 
             // pbIdiomaES
             // 
-            resources.ApplyResources(pbIdiomaES, "pbIdiomaES");
             pbIdiomaES.BackColor = Color.Transparent;
+            resources.ApplyResources(pbIdiomaES, "pbIdiomaES");
             pbIdiomaES.Cursor = Cursors.Hand;
             pbIdiomaES.Name = "pbIdiomaES";
             pbIdiomaES.TabStop = false;
@@ -133,38 +137,64 @@ namespace PlataformaEducativa
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            // creamos los roles (esto tiene que venir de la base de datos despues)
-            Administrador rolAdmin = new Administrador(1, "Administrador", "Acceso total");
-            Jugador rolJugador = new Jugador(2, "Jugador", "Acceso a módulos", 0);
+            string cadenaConexion = "Server=localhost; Database=peducativa; Uid = root; Pwd=;";
+            string consulta = "SELECT id, nombre, rol FROM usuario WHERE nombre = @usuario AND clave = @clave";
 
-            // creamos dos usuarios de prueba
-            Usuario user1 = new Usuario(101, "admin", "123", rolAdmin);
-            Usuario user2 = new Usuario(102, "proplayer", "abc", rolJugador);
+            if(string.IsNullOrWhiteSpace(textBoxUsuario.Text) || string.IsNullOrWhiteSpace(textBoxClave.Text))
+            {
+                MessageBox.Show("Ingrese el nombre de usuario y la contraseña para iniciar sesión", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-            // logica de identificación
-            if (textBoxUsuario.Text == user1.NombreUsuario && textBoxClave.Text == user1.Clave)
+            if (textBoxClave.Text.Trim().Length < 8)
             {
-                // verificar si el perfil es Administrador
-                if (user1.Perfil is Administrador)
-                {
-                    AdminMenuForm ventanaAdmin = new AdminMenuForm();
-                    ventanaAdmin.Show();
-                    this.Hide();
-                }
+                MessageBox.Show("La contraseña debe tener mínimo 8 carácteres", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (textBoxUsuario.Text == user2.NombreUsuario && textBoxClave.Text == user2.Clave)
+            try
             {
-                // verificamos si el perfil es Jugador
-                if (user2.Perfil is Jugador)
-                {
-                    JugadorMenuForm ventanaJugador = new JugadorMenuForm();
-                    ventanaJugador.Show();
-                    this.Hide();
-                }
+           
+            using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
+            using (MySqlCommand comando = new MySqlCommand(consulta,conexion))
+            {
+                comando.Parameters.AddWithValue("@usuario", textBoxUsuario.Text.ToLower());
+                comando.Parameters.AddWithValue("@clave", textBoxClave.Text);
+
+                    conexion.Open();
+
+              MySqlDataReader lector = comando.ExecuteReader();
+              
+                    if(lector.Read())
+                    {
+                        int rol = Convert.ToInt32(lector["rol"]);
+
+                        if(rol==0)
+                        {
+                            AdminMenuForm ventanaAdmin = new AdminMenuForm();
+                            ventanaAdmin.Show();
+
+                        }
+                        else if(rol==1)
+                        {
+                            int idBD = Convert.ToInt32(lector["id"]);
+                            string nombreBD = lector["nombre"].ToString();
+                            string descripcion = "Usuario tipo jugador";
+
+                            Jugador nuevoJugador = new Jugador(idBD, nombreBD, descripcion);
+                            JugadorMenuForm ventanaJugador = new JugadorMenuForm(nuevoJugador);
+                            MessageBox.Show($"¡Bienvenido al juego, {nuevoJugador.Nombre}!", "Ingreso al juego");
+                            ventanaJugador.Show();
+                        }
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuario o contraseña incorrectos", "Error de inició de sesión",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    }
+                    conexion.Close();
             }
-            else
+            }
+            catch(Exception ex)
             {
-                MessageBox.Show("Usuario o contraseña incorrectos.");
+                MessageBox.Show("Error: {0}", ex.Message,MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
     }
