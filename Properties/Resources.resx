@@ -118,19 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="antropologia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="calavera" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\antropologia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="arquitectura" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="cpu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arquitectura.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="calculo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="calculadora" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calculo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cat.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="deporte" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="pelota" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\deporte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -138,5 +138,50 @@
   </data>
   <data name="cat1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cat.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="usuarioLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usuarioLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="candado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\candado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="michiLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\michiLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fondoLadrillos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="barraDeProgresoEimagenes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Barra de progreso e imagenes.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fondoAdmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fondo Admin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fondoConDiseno" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fondo con Diseño.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fondoMaderaBordes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Madera con bordes .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="spain2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Spain2.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tramoDeMadera" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Madera pequeña.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fondoMaderaLimpio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fondo Madera Limpio.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="respuestas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Respuestas.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="preguntas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Preguntas.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="michiIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MichiIcon.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FondoRocasLimpio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fondo Rocas Limpio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
