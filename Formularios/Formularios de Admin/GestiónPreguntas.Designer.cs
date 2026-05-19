@@ -32,7 +32,7 @@ namespace PlataformaEducativa.Formularios
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             pictureBoxCat1 = new PictureBox();
             panelContenido = new Panel();
-            listBoxMaterias = new ListBox();
+            listBoxMaterias = new ComboBox();
             btnEditar = new Button();
             lblFiltrar = new Label();
             dgvGestionDePreguntas = new DataGridView();
@@ -80,10 +80,11 @@ namespace PlataformaEducativa.Formularios
             // 
             listBoxMaterias.AccessibleRole = AccessibleRole.MenuBar;
             listBoxMaterias.BackColor = Color.FromArgb(55, 55, 55);
+            listBoxMaterias.DropDownStyle = ComboBoxStyle.DropDownList;
             listBoxMaterias.Font = new Font("Courier New", 12F, FontStyle.Bold);
             listBoxMaterias.ForeColor = Color.White;
             listBoxMaterias.FormattingEnabled = true;
-            listBoxMaterias.Items.AddRange(new object[] { "Antropología filosófica", "Arquitectura y estructura del computador ", "Cálculo", "Deporte", "" });
+            listBoxMaterias.Items.AddRange(new object[] { "Todas", "Antropología filosófica", "Arquitectura y estructura del computador ", "Cálculo", "Deporte" });
             listBoxMaterias.Location = new Point(150, 35);
             listBoxMaterias.Name = "listBoxMaterias";
             listBoxMaterias.Size = new Size(678, 27);
@@ -123,7 +124,7 @@ namespace PlataformaEducativa.Formularios
             dgvGestionDePreguntas.BorderStyle = BorderStyle.None;
             dgvGestionDePreguntas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(55, 55, 55);
             dataGridViewCellStyle2.Font = new Font("Courier New", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(80, 80, 80);
@@ -242,7 +243,7 @@ namespace PlataformaEducativa.Formularios
         private PictureBox pictureBoxCandado;
         private TextBox textBoxClave;
         private TextBox textBoxUsuario;
-        private ListBox listBoxMaterias;
+        private ComboBox listBoxMaterias;
         private Button btnEditar;
         private Label lblFiltrar;
         private DataGridView dgvGestionDePreguntas;
