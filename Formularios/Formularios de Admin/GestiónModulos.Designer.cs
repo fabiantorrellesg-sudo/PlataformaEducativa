@@ -30,16 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestiónModulos));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panelContenido = new Panel();
             gbModulos = new GroupBox();
+            txtNombreEN = new TextBox();
+            dgvDatosGestionModulos = new DataGridView();
             button1 = new Button();
             btnVolverMenu = new Button();
             btnEliminar = new Button();
             btnCargarEditar = new Button();
-            dgvDatosGestionModulos = new DataGridView();
             btnLimpiar = new Button();
             btnGuardar = new Button();
-            txtNombreEN = new TextBox();
             txtNombreES = new TextBox();
             lblNombreEN = new Label();
             lblNombreES = new Label();
@@ -67,14 +69,14 @@
             // 
             // gbModulos
             // 
+            gbModulos.Controls.Add(txtNombreEN);
+            gbModulos.Controls.Add(dgvDatosGestionModulos);
             gbModulos.Controls.Add(button1);
             gbModulos.Controls.Add(btnVolverMenu);
             gbModulos.Controls.Add(btnEliminar);
             gbModulos.Controls.Add(btnCargarEditar);
-            gbModulos.Controls.Add(dgvDatosGestionModulos);
             gbModulos.Controls.Add(btnLimpiar);
             gbModulos.Controls.Add(btnGuardar);
-            gbModulos.Controls.Add(txtNombreEN);
             gbModulos.Controls.Add(txtNombreES);
             gbModulos.Controls.Add(lblNombreEN);
             gbModulos.Controls.Add(lblNombreES);
@@ -84,6 +86,54 @@
             gbModulos.TabIndex = 0;
             gbModulos.TabStop = false;
             // 
+            // txtNombreEN
+            // 
+            txtNombreEN.BackColor = Color.FromArgb(55, 55, 55);
+            txtNombreEN.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNombreEN.ForeColor = Color.White;
+            txtNombreEN.Location = new Point(416, 27);
+            txtNombreEN.Name = "txtNombreEN";
+            txtNombreEN.Size = new Size(174, 21);
+            txtNombreEN.TabIndex = 12;
+            // 
+            // dgvDatosGestionModulos
+            // 
+            dgvDatosGestionModulos.AllowUserToAddRows = false;
+            dgvDatosGestionModulos.AllowUserToResizeColumns = false;
+            dgvDatosGestionModulos.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(48, 43, 39);
+            dgvDatosGestionModulos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvDatosGestionModulos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvDatosGestionModulos.BackgroundColor = Color.FromArgb(43, 34, 28);
+            dgvDatosGestionModulos.BorderStyle = BorderStyle.None;
+            dgvDatosGestionModulos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(33, 26, 22);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ScrollBar;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvDatosGestionModulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvDatosGestionModulos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(56, 50, 45);
+            dataGridViewCellStyle3.Font = new Font("Courier New", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(238, 223, 190);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(120, 40, 35);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvDatosGestionModulos.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvDatosGestionModulos.EnableHeadersVisualStyles = false;
+            dgvDatosGestionModulos.GridColor = Color.FromArgb(75, 63, 54);
+            dgvDatosGestionModulos.Location = new Point(22, 54);
+            dgvDatosGestionModulos.Name = "dgvDatosGestionModulos";
+            dgvDatosGestionModulos.RowHeadersVisible = false;
+            dgvDatosGestionModulos.RowHeadersWidth = 51;
+            dgvDatosGestionModulos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvDatosGestionModulos.Size = new Size(657, 164);
+            dgvDatosGestionModulos.TabIndex = 11;
+            // 
             // button1
             // 
             button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
@@ -92,12 +142,13 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(176, 227);
+            button1.Location = new Point(271, 228);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 10;
             button1.Text = "Editar";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // btnVolverMenu
             // 
@@ -123,12 +174,13 @@
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(265, 228);
+            btnEliminar.Location = new Point(361, 228);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(75, 23);
             btnEliminar.TabIndex = 8;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnCargarEditar
             // 
@@ -138,37 +190,13 @@
             btnCargarEditar.FlatStyle = FlatStyle.Flat;
             btnCargarEditar.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCargarEditar.ForeColor = Color.White;
-            btnCargarEditar.Location = new Point(24, 228);
+            btnCargarEditar.Location = new Point(121, 228);
             btnCargarEditar.Name = "btnCargarEditar";
             btnCargarEditar.Size = new Size(141, 23);
             btnCargarEditar.TabIndex = 7;
             btnCargarEditar.Text = "Cargar para Editar";
             btnCargarEditar.UseVisualStyleBackColor = true;
-            // 
-            // dgvDatosGestionModulos
-            // 
-            dgvDatosGestionModulos.AllowUserToAddRows = false;
-            dgvDatosGestionModulos.AllowUserToResizeColumns = false;
-            dgvDatosGestionModulos.AllowUserToResizeRows = false;
-            dgvDatosGestionModulos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvDatosGestionModulos.BackgroundColor = Color.FromArgb(55, 55, 55);
-            dgvDatosGestionModulos.BorderStyle = BorderStyle.None;
-            dgvDatosGestionModulos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Courier New", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(80, 80, 80);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dgvDatosGestionModulos.DefaultCellStyle = dataGridViewCellStyle1;
-            dgvDatosGestionModulos.EnableHeadersVisualStyles = false;
-            dgvDatosGestionModulos.GridColor = Color.Gainsboro;
-            dgvDatosGestionModulos.Location = new Point(19, 63);
-            dgvDatosGestionModulos.Name = "dgvDatosGestionModulos";
-            dgvDatosGestionModulos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvDatosGestionModulos.Size = new Size(662, 150);
-            dgvDatosGestionModulos.TabIndex = 6;
+            btnCargarEditar.Click += btnCargarEditar_Click;
             // 
             // btnLimpiar
             // 
@@ -178,12 +206,13 @@
             btnLimpiar.FlatStyle = FlatStyle.Flat;
             btnLimpiar.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLimpiar.ForeColor = Color.White;
-            btnLimpiar.Location = new Point(606, 27);
+            btnLimpiar.Location = new Point(602, 27);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(75, 23);
             btnLimpiar.TabIndex = 5;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // btnGuardar
             // 
@@ -193,31 +222,22 @@
             btnGuardar.FlatStyle = FlatStyle.Flat;
             btnGuardar.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnGuardar.ForeColor = Color.White;
-            btnGuardar.Location = new Point(517, 27);
+            btnGuardar.Location = new Point(27, 228);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(83, 23);
             btnGuardar.TabIndex = 4;
             btnGuardar.Text = "Registrar";
             btnGuardar.UseVisualStyleBackColor = true;
-            // 
-            // txtNombreEN
-            // 
-            txtNombreEN.BackColor = Color.FromArgb(55, 55, 55);
-            txtNombreEN.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombreEN.ForeColor = Color.White;
-            txtNombreEN.Location = new Point(349, 27);
-            txtNombreEN.Name = "txtNombreEN";
-            txtNombreEN.Size = new Size(120, 21);
-            txtNombreEN.TabIndex = 3;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // txtNombreES
             // 
             txtNombreES.BackColor = Color.FromArgb(55, 55, 55);
             txtNombreES.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtNombreES.ForeColor = Color.White;
-            txtNombreES.Location = new Point(116, 27);
+            txtNombreES.Location = new Point(120, 26);
             txtNombreES.Name = "txtNombreES";
-            txtNombreES.Size = new Size(120, 21);
+            txtNombreES.Size = new Size(201, 21);
             txtNombreES.TabIndex = 2;
             // 
             // lblNombreEN
@@ -225,18 +245,18 @@
             lblNombreEN.AutoSize = true;
             lblNombreEN.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblNombreEN.ForeColor = Color.White;
-            lblNombreEN.Location = new Point(252, 30);
+            lblNombreEN.Location = new Point(334, 29);
             lblNombreEN.Name = "lblNombreEN";
-            lblNombreEN.Size = new Size(91, 15);
+            lblNombreEN.Size = new Size(77, 15);
             lblNombreEN.TabIndex = 1;
-            lblNombreEN.Text = "Nombre (EN):";
+            lblNombreEN.Text = "Name (EN):";
             // 
             // lblNombreES
             // 
             lblNombreES.AutoSize = true;
             lblNombreES.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblNombreES.ForeColor = Color.White;
-            lblNombreES.Location = new Point(19, 30);
+            lblNombreES.Location = new Point(23, 29);
             lblNombreES.Name = "lblNombreES";
             lblNombreES.Size = new Size(91, 15);
             lblNombreES.TabIndex = 0;
@@ -309,15 +329,15 @@
         private PictureBox pictureBox1;
         private Label lblNombreEN;
         private Label lblNombreES;
-        private TextBox txtNombreEN;
         private TextBox txtNombreES;
         private Button button2;
         private Button btnGuardar;
         private Button btnLimpiar;
-        private DataGridView dgvDatosGestionModulos;
         private Button btnVolverMenu;
         private Button btnEliminar;
         private Button btnCargarEditar;
         private Button button1;
+        private DataGridView dgvDatosGestionModulos;
+        private TextBox txtNombreEN;
     }
 }
