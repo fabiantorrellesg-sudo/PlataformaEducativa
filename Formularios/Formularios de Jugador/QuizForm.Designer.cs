@@ -1,4 +1,4 @@
-﻿namespace PlataformaEducativa.Formularios
+namespace PlataformaEducativa.Formularios
 {
     partial class QuizForm
     {
@@ -100,6 +100,7 @@
             btnAnterior.ForeColor = Color.White;
             btnAnterior.Name = "btnAnterior";
             btnAnterior.UseVisualStyleBackColor = true;
+            btnAnterior.Click += btnAnterior_Click;
             // 
             // btnSiguiente
             // 
@@ -108,6 +109,7 @@
             btnSiguiente.ForeColor = Color.White;
             btnSiguiente.Name = "btnSiguiente";
             btnSiguiente.UseVisualStyleBackColor = true;
+            btnSiguiente.Click += btnSiguiente_Click;
             // 
             // pBar
             // 
@@ -206,6 +208,7 @@
             Controls.Add(lblMateria);
             Controls.Add(pbMateriaIcon);
             Name = "QuizForm";
+            Load += QuizForm_Load;
             ((System.ComponentModel.ISupportInitialize)pbMateriaIcon).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbImagenPregunta).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMichiLogin).EndInit();
