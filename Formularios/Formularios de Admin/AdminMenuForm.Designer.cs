@@ -38,14 +38,15 @@ namespace PlataformaEducativa
             lblBienvenido = new Label();
             lblMensaje = new Label();
             pictureBox1 = new PictureBox();
+            label1 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
-            resources.ApplyResources(panel1, "panel1");
             panel1.BackColor = Color.FromArgb(45, 45, 48);
+            resources.ApplyResources(panel1, "panel1");
             panel1.Controls.Add(buttonCerrar);
             panel1.Controls.Add(buttonReportes);
             panel1.Controls.Add(buttonEditarMaterias);
@@ -99,8 +100,8 @@ namespace PlataformaEducativa
             // 
             // labelTitulo
             // 
-            resources.ApplyResources(labelTitulo, "labelTitulo");
             labelTitulo.BackColor = Color.Transparent;
+            resources.ApplyResources(labelTitulo, "labelTitulo");
             labelTitulo.ForeColor = SystemColors.ButtonHighlight;
             labelTitulo.Name = "labelTitulo";
             // 
@@ -113,26 +114,34 @@ namespace PlataformaEducativa
             // 
             // lblMensaje
             // 
-            resources.ApplyResources(lblMensaje, "lblMensaje");
             lblMensaje.BackColor = Color.Transparent;
+            resources.ApplyResources(lblMensaje, "lblMensaje");
             lblMensaje.ForeColor = Color.White;
             lblMensaje.Name = "lblMensaje";
             // 
             // pictureBox1
             // 
-            resources.ApplyResources(pictureBox1, "pictureBox1");
             pictureBox1.BackColor = Color.Transparent;
+            resources.ApplyResources(pictureBox1, "pictureBox1");
             pictureBox1.Name = "pictureBox1";
             pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            resources.ApplyResources(label1, "label1");
+            label1.BackColor = Color.Transparent;
+            label1.ForeColor = Color.White;
+            label1.Name = "label1";
             // 
             // AdminMenuForm
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(45, 47, 51);
+            Controls.Add(lblBienvenido);
+            Controls.Add(label1);
             Controls.Add(pictureBox1);
             Controls.Add(lblMensaje);
-            Controls.Add(lblBienvenido);
             Controls.Add(panel1);
             DoubleBuffered = true;
             Name = "AdminMenuForm";
@@ -154,5 +163,6 @@ namespace PlataformaEducativa
         private Label lblBienvenido;
         private Label lblMensaje;
         private PictureBox pictureBox1;
+        private Label label1;
     }
 }
