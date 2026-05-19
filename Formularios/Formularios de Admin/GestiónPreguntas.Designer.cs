@@ -88,10 +88,6 @@ namespace PlataformaEducativa.Formularios
             listBoxMaterias.Name = "listBoxMaterias";
             listBoxMaterias.Size = new Size(678, 27);
             listBoxMaterias.TabIndex = 11;
-            listBoxMaterias.SelectedIndexChanged += listBoxMaterias_SelectedIndexChanged;
-            // 
-            // btnEditar
-            // 
             btnEditar.BackgroundImage = (Image)resources.GetObject("btnEditar.BackgroundImage");
             btnEditar.BackgroundImageLayout = ImageLayout.Stretch;
             btnEditar.FlatAppearance.BorderSize = 0;
@@ -105,7 +101,6 @@ namespace PlataformaEducativa.Formularios
             btnEditar.TabIndex = 8;
             btnEditar.Text = "Editar ";
             btnEditar.UseVisualStyleBackColor = true;
-            btnEditar.Click += btnEditar_Click;
             // 
             // lblFiltrar
             // 
@@ -160,7 +155,6 @@ namespace PlataformaEducativa.Formularios
             btnVolverMenu.TabIndex = 9;
             btnVolverMenu.Text = "Volver al menú";
             btnVolverMenu.UseVisualStyleBackColor = true;
-            btnVolverMenu.Click += btnVolverMenu_Click;
             // 
             // btnEliminar
             // 
@@ -177,7 +171,6 @@ namespace PlataformaEducativa.Formularios
             btnEliminar.TabIndex = 8;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += btnEliminar_Click;
             // 
             // panel1
             // 
@@ -218,8 +211,6 @@ namespace PlataformaEducativa.Formularios
             btnNuevaPregunta.Size = new Size(240, 44);
             btnNuevaPregunta.TabIndex = 12;
             btnNuevaPregunta.Text = "Nueva pregunta";
-            btnNuevaPregunta.UseVisualStyleBackColor = true;
-            btnNuevaPregunta.Click += btnNuevaPregunta_Click;
             // 
             // GestiónPreguntas
             // 
@@ -234,7 +225,6 @@ namespace PlataformaEducativa.Formularios
             DoubleBuffered = true;
             Name = "GestiónPreguntas";
             Text = "Gestión de preguntas";
-            Load += GestiónPreguntas_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxCat1).EndInit();
             panelContenido.ResumeLayout(false);
             panelContenido.PerformLayout();
