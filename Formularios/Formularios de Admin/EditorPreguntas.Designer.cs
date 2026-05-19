@@ -47,9 +47,9 @@ namespace PlataformaEducativa.Formularios
             // 
             // panelTitulo
             // 
-            resources.ApplyResources(panelTitulo, "panelTitulo");
             panelTitulo.BackColor = Color.FromArgb(45, 45, 48);
             panelTitulo.Controls.Add(lblTitulo);
+            resources.ApplyResources(panelTitulo, "panelTitulo");
             panelTitulo.Name = "panelTitulo";
             // 
             // lblTitulo
@@ -60,9 +60,9 @@ namespace PlataformaEducativa.Formularios
             // 
             // panelContenido
             // 
-            resources.ApplyResources(panelContenido, "panelContenido");
             panelContenido.BackColor = Color.Transparent;
             panelContenido.BackgroundImage = Properties.Resources.fondoMaderaLimpio;
+            resources.ApplyResources(panelContenido, "panelContenido");
             panelContenido.Controls.Add(lblEnunciado);
             panelContenido.Controls.Add(txtEnunciado);
             panelContenido.Controls.Add(lblOpcionA);
@@ -89,8 +89,8 @@ namespace PlataformaEducativa.Formularios
             // 
             // txtEnunciado
             // 
-            resources.ApplyResources(txtEnunciado, "txtEnunciado");
             txtEnunciado.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(txtEnunciado, "txtEnunciado");
             txtEnunciado.ForeColor = Color.FromArgb(60, 40, 20);
             txtEnunciado.Name = "txtEnunciado";
             // 
@@ -102,8 +102,8 @@ namespace PlataformaEducativa.Formularios
             // 
             // txtOpcionA
             // 
-            resources.ApplyResources(txtOpcionA, "txtOpcionA");
             txtOpcionA.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(txtOpcionA, "txtOpcionA");
             txtOpcionA.ForeColor = Color.FromArgb(60, 40, 20);
             txtOpcionA.Name = "txtOpcionA";
             // 
@@ -115,8 +115,8 @@ namespace PlataformaEducativa.Formularios
             // 
             // txtOpcionB
             // 
-            resources.ApplyResources(txtOpcionB, "txtOpcionB");
             txtOpcionB.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(txtOpcionB, "txtOpcionB");
             txtOpcionB.ForeColor = Color.FromArgb(60, 40, 20);
             txtOpcionB.Name = "txtOpcionB";
             // 
@@ -128,8 +128,8 @@ namespace PlataformaEducativa.Formularios
             // 
             // txtOpcionC
             // 
-            resources.ApplyResources(txtOpcionC, "txtOpcionC");
             txtOpcionC.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(txtOpcionC, "txtOpcionC");
             txtOpcionC.ForeColor = Color.FromArgb(60, 40, 20);
             txtOpcionC.Name = "txtOpcionC";
             // 
@@ -141,8 +141,8 @@ namespace PlataformaEducativa.Formularios
             // 
             // txtOpcionD
             // 
-            resources.ApplyResources(txtOpcionD, "txtOpcionD");
             txtOpcionD.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(txtOpcionD, "txtOpcionD");
             txtOpcionD.ForeColor = Color.FromArgb(60, 40, 20);
             txtOpcionD.Name = "txtOpcionD";
             // 
@@ -154,9 +154,9 @@ namespace PlataformaEducativa.Formularios
             // 
             // cmbRespuesta
             // 
-            resources.ApplyResources(cmbRespuesta, "cmbRespuesta");
             cmbRespuesta.BackColor = Color.FromArgb(227, 214, 179);
             cmbRespuesta.DropDownStyle = ComboBoxStyle.DropDownList;
+            resources.ApplyResources(cmbRespuesta, "cmbRespuesta");
             cmbRespuesta.ForeColor = Color.FromArgb(60, 40, 20);
             cmbRespuesta.Items.AddRange(new object[] { resources.GetString("cmbRespuesta.Items"), resources.GetString("cmbRespuesta.Items1"), resources.GetString("cmbRespuesta.Items2"), resources.GetString("cmbRespuesta.Items3") });
             cmbRespuesta.Name = "cmbRespuesta";
@@ -169,17 +169,17 @@ namespace PlataformaEducativa.Formularios
             // 
             // cmbMateria
             // 
-            resources.ApplyResources(cmbMateria, "cmbMateria");
             cmbMateria.BackColor = Color.FromArgb(227, 214, 179);
             cmbMateria.DropDownStyle = ComboBoxStyle.DropDownList;
+            resources.ApplyResources(cmbMateria, "cmbMateria");
             cmbMateria.ForeColor = Color.FromArgb(60, 40, 20);
             cmbMateria.Items.AddRange(new object[] { resources.GetString("cmbMateria.Items"), resources.GetString("cmbMateria.Items1"), resources.GetString("cmbMateria.Items2"), resources.GetString("cmbMateria.Items3") });
             cmbMateria.Name = "cmbMateria";
             // 
             // btnGuardar
             // 
-            resources.ApplyResources(btnGuardar, "btnGuardar");
             btnGuardar.BackgroundImage = Properties.Resources.tramoDeMadera;
+            resources.ApplyResources(btnGuardar, "btnGuardar");
             btnGuardar.FlatAppearance.BorderSize = 0;
             btnGuardar.ForeColor = Color.White;
             btnGuardar.Name = "btnGuardar";
@@ -188,8 +188,8 @@ namespace PlataformaEducativa.Formularios
             // 
             // btnCancelar
             // 
-            resources.ApplyResources(btnCancelar, "btnCancelar");
             btnCancelar.BackgroundImage = Properties.Resources.tramoDeMadera;
+            resources.ApplyResources(btnCancelar, "btnCancelar");
             btnCancelar.FlatAppearance.BorderSize = 0;
             btnCancelar.ForeColor = Color.White;
             btnCancelar.Name = "btnCancelar";
