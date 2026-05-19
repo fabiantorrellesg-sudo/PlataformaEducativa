@@ -72,6 +72,7 @@ namespace PlataformaEducativa
             buttonReportes.ForeColor = SystemColors.ControlLightLight;
             buttonReportes.Name = "buttonReportes";
             buttonReportes.UseVisualStyleBackColor = false;
+            buttonReportes.Click += buttonReportes_Click;
             // 
             // buttonEditarMaterias
             // 
