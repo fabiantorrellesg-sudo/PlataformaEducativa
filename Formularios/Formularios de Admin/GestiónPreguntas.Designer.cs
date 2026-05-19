@@ -1,4 +1,4 @@
-﻿namespace PlataformaEducativa.Formularios
+namespace PlataformaEducativa.Formularios
 {
     partial class GestiónPreguntas
     {
@@ -88,6 +88,7 @@
             listBoxMaterias.Name = "listBoxMaterias";
             listBoxMaterias.Size = new Size(678, 27);
             listBoxMaterias.TabIndex = 11;
+            listBoxMaterias.SelectedIndexChanged += listBoxMaterias_SelectedIndexChanged;
             // 
             // btnEditar
             // 
@@ -104,6 +105,7 @@
             btnEditar.TabIndex = 8;
             btnEditar.Text = "Editar ";
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // lblFiltrar
             // 
@@ -158,6 +160,7 @@
             btnVolverMenu.TabIndex = 9;
             btnVolverMenu.Text = "Volver al menú";
             btnVolverMenu.UseVisualStyleBackColor = true;
+            btnVolverMenu.Click += btnVolverMenu_Click;
             // 
             // btnEliminar
             // 
@@ -174,6 +177,7 @@
             btnEliminar.TabIndex = 8;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // panel1
             // 
@@ -215,6 +219,7 @@
             btnNuevaPregunta.TabIndex = 12;
             btnNuevaPregunta.Text = "Nueva pregunta";
             btnNuevaPregunta.UseVisualStyleBackColor = true;
+            btnNuevaPregunta.Click += btnNuevaPregunta_Click;
             // 
             // GestiónPreguntas
             // 
@@ -229,6 +234,7 @@
             DoubleBuffered = true;
             Name = "GestiónPreguntas";
             Text = "Gestión de preguntas";
+            Load += GestiónPreguntas_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxCat1).EndInit();
             panelContenido.ResumeLayout(false);
             panelContenido.PerformLayout();
