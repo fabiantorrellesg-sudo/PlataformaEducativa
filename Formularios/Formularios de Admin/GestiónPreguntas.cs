@@ -13,6 +13,12 @@ namespace PlataformaEducativa.Formularios
         {
             InitializeComponent();
         }
-        
+
+        private void btnVolverMenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            AdminMenuForm volver = new AdminMenuForm();
+            volver.Show();
+        }
     }
 }
