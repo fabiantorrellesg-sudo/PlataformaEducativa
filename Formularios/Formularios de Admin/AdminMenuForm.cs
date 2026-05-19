@@ -18,20 +18,24 @@ namespace PlataformaEducativa
 
         private void buttonEditarMaterias_Click(object sender, EventArgs e)
         {
+            this.Close();
             GestiónModulos ventanaModulos = new GestiónModulos();
             ventanaModulos.ShowDialog();
+            
         }
 
         private void buttonGestionarUsuarios_Click(object sender, EventArgs e)
         {
+            this.Close();
             GestionUsuarios ventanaUsuarios = new GestionUsuarios();
             ventanaUsuarios.ShowDialog();
+           
         }
 
         private void buttonCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
-            AdminMenuForm regreso = new AdminMenuForm();
+            LoginForm regreso = new LoginForm();
             regreso.Show();
         }
 
