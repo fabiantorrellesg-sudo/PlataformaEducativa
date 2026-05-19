@@ -177,8 +177,8 @@ namespace PlataformaEducativa.Formularios
             {
                 MessageBox.Show("La contraseña debe tener mínimo 8 carácteres", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            DialogResult advertencia = MessageBox.Show($"¿Está seguro de editar los datos del usuario '{textBoxUsuario.Text}'?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            string nombre = dgvGestionDeUsuarios.CurrentRow.Cells["nombre"].Value.ToString();
+            DialogResult advertencia = MessageBox.Show($"¿Está seguro de editar los datos del usuario '{nombre}'?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (advertencia == DialogResult.Yes)
             {

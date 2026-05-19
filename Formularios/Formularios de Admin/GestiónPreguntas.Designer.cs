@@ -29,9 +29,10 @@ namespace PlataformaEducativa.Formularios
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestiónPreguntas));
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             pictureBoxCat1 = new PictureBox();
             panelContenido = new Panel();
+            btnNuevaPregunta = new Button();
             listBoxMaterias = new ListBox();
             btnEditar = new Button();
             lblFiltrar = new Label();
@@ -40,7 +41,6 @@ namespace PlataformaEducativa.Formularios
             btnEliminar = new Button();
             panel1 = new Panel();
             lblGestionPreguntas = new Label();
-            btnNuevaPregunta = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCat1).BeginInit();
             panelContenido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvGestionDePreguntas).BeginInit();
@@ -50,9 +50,10 @@ namespace PlataformaEducativa.Formularios
             // pictureBoxCat1
             // 
             pictureBoxCat1.Image = Properties.Resources.michiIcon;
-            pictureBoxCat1.Location = new Point(767, -4);
+            pictureBoxCat1.Location = new Point(671, -3);
+            pictureBoxCat1.Margin = new Padding(3, 2, 3, 2);
             pictureBoxCat1.Name = "pictureBoxCat1";
-            pictureBoxCat1.Size = new Size(93, 92);
+            pictureBoxCat1.Size = new Size(81, 69);
             pictureBoxCat1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxCat1.TabIndex = 16;
             pictureBoxCat1.TabStop = false;
@@ -70,11 +71,25 @@ namespace PlataformaEducativa.Formularios
             panelContenido.Controls.Add(dgvGestionDePreguntas);
             panelContenido.Controls.Add(btnVolverMenu);
             panelContenido.Controls.Add(btnEliminar);
-            panelContenido.Location = new Point(9, 122);
-            panelContenido.Margin = new Padding(3, 4, 3, 4);
+            panelContenido.Location = new Point(8, 92);
             panelContenido.Name = "panelContenido";
-            panelContenido.Size = new Size(872, 417);
+            panelContenido.Size = new Size(763, 313);
             panelContenido.TabIndex = 4;
+            // 
+            // btnNuevaPregunta
+            // 
+            btnNuevaPregunta.BackgroundImage = (Image)resources.GetObject("btnNuevaPregunta.BackgroundImage");
+            btnNuevaPregunta.BackgroundImageLayout = ImageLayout.Stretch;
+            btnNuevaPregunta.FlatAppearance.BorderSize = 0;
+            btnNuevaPregunta.FlatStyle = FlatStyle.Flat;
+            btnNuevaPregunta.Font = new Font("Courier New", 12F);
+            btnNuevaPregunta.ForeColor = Color.White;
+            btnNuevaPregunta.Location = new Point(33, 264);
+            btnNuevaPregunta.Name = "btnNuevaPregunta";
+            btnNuevaPregunta.Size = new Size(210, 33);
+            btnNuevaPregunta.TabIndex = 12;
+            btnNuevaPregunta.Text = "Nueva pregunta";
+            btnNuevaPregunta.UseVisualStyleBackColor = true;
             // 
             // listBoxMaterias
             // 
@@ -84,11 +99,11 @@ namespace PlataformaEducativa.Formularios
             listBoxMaterias.ForeColor = Color.White;
             listBoxMaterias.FormattingEnabled = true;
             listBoxMaterias.Items.AddRange(new object[] { "Antropología filosófica", "Arquitectura y estructura del computador ", "Cálculo", "Deporte", "" });
-            listBoxMaterias.Location = new Point(150, 35);
+            listBoxMaterias.Location = new Point(131, 26);
+            listBoxMaterias.Margin = new Padding(3, 2, 3, 2);
             listBoxMaterias.Name = "listBoxMaterias";
-            listBoxMaterias.Size = new Size(678, 27);
+            listBoxMaterias.Size = new Size(594, 22);
             listBoxMaterias.TabIndex = 11;
-            listBoxMaterias.SelectedIndexChanged += listBoxMaterias_SelectedIndexChanged;
             // 
             // btnEditar
             // 
@@ -98,23 +113,21 @@ namespace PlataformaEducativa.Formularios
             btnEditar.FlatStyle = FlatStyle.Flat;
             btnEditar.Font = new Font("Courier New", 12F);
             btnEditar.ForeColor = Color.White;
-            btnEditar.Location = new Point(38, 352);
-            btnEditar.Margin = new Padding(3, 4, 3, 4);
+            btnEditar.Location = new Point(249, 264);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(139, 44);
+            btnEditar.Size = new Size(122, 33);
             btnEditar.TabIndex = 8;
             btnEditar.Text = "Editar ";
             btnEditar.UseVisualStyleBackColor = true;
-            btnEditar.Click += btnEditar_Click;
             // 
             // lblFiltrar
             // 
             lblFiltrar.AutoSize = true;
             lblFiltrar.Font = new Font("Courier New", 12F, FontStyle.Bold);
             lblFiltrar.ForeColor = SystemColors.ButtonHighlight;
-            lblFiltrar.Location = new Point(38, 39);
+            lblFiltrar.Location = new Point(33, 29);
             lblFiltrar.Name = "lblFiltrar";
-            lblFiltrar.Size = new Size(106, 23);
+            lblFiltrar.Size = new Size(88, 18);
             lblFiltrar.TabIndex = 10;
             lblFiltrar.Text = "Filtrar:";
             // 
@@ -127,22 +140,21 @@ namespace PlataformaEducativa.Formularios
             dgvGestionDePreguntas.BackgroundColor = Color.FromArgb(55, 55, 55);
             dgvGestionDePreguntas.BorderStyle = BorderStyle.None;
             dgvGestionDePreguntas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Courier New", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(80, 80, 80);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvGestionDePreguntas.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Courier New", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(80, 80, 80);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dgvGestionDePreguntas.DefaultCellStyle = dataGridViewCellStyle1;
             dgvGestionDePreguntas.EnableHeadersVisualStyles = false;
             dgvGestionDePreguntas.GridColor = Color.Gainsboro;
-            dgvGestionDePreguntas.Location = new Point(38, 78);
-            dgvGestionDePreguntas.Margin = new Padding(3, 4, 3, 4);
+            dgvGestionDePreguntas.Location = new Point(33, 58);
             dgvGestionDePreguntas.Name = "dgvGestionDePreguntas";
             dgvGestionDePreguntas.RowHeadersWidth = 51;
             dgvGestionDePreguntas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvGestionDePreguntas.Size = new Size(790, 257);
+            dgvGestionDePreguntas.Size = new Size(691, 193);
             dgvGestionDePreguntas.TabIndex = 7;
             // 
             // btnVolverMenu
@@ -153,10 +165,9 @@ namespace PlataformaEducativa.Formularios
             btnVolverMenu.FlatStyle = FlatStyle.Flat;
             btnVolverMenu.Font = new Font("Courier New", 12F);
             btnVolverMenu.ForeColor = Color.White;
-            btnVolverMenu.Location = new Point(604, 352);
-            btnVolverMenu.Margin = new Padding(3, 4, 3, 4);
+            btnVolverMenu.Location = new Point(528, 264);
             btnVolverMenu.Name = "btnVolverMenu";
-            btnVolverMenu.Size = new Size(224, 44);
+            btnVolverMenu.Size = new Size(196, 33);
             btnVolverMenu.TabIndex = 9;
             btnVolverMenu.Text = "Volver al menú";
             btnVolverMenu.UseVisualStyleBackColor = true;
@@ -170,14 +181,12 @@ namespace PlataformaEducativa.Formularios
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Courier New", 12F);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(183, 352);
-            btnEliminar.Margin = new Padding(3, 4, 3, 4);
+            btnEliminar.Location = new Point(376, 264);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(169, 44);
+            btnEliminar.Size = new Size(148, 33);
             btnEliminar.TabIndex = 8;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += btnEliminar_Click;
             // 
             // panel1
             // 
@@ -187,10 +196,9 @@ namespace PlataformaEducativa.Formularios
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.Controls.Add(pictureBoxCat1);
             panel1.Controls.Add(lblGestionPreguntas);
-            panel1.Location = new Point(-10, 9);
-            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Location = new Point(-9, 7);
             panel1.Name = "panel1";
-            panel1.Size = new Size(916, 115);
+            panel1.Size = new Size(802, 86);
             panel1.TabIndex = 5;
             // 
             // lblGestionPreguntas
@@ -198,43 +206,26 @@ namespace PlataformaEducativa.Formularios
             lblGestionPreguntas.AutoSize = true;
             lblGestionPreguntas.Font = new Font("Courier New", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblGestionPreguntas.ForeColor = Color.White;
-            lblGestionPreguntas.Location = new Point(235, 42);
+            lblGestionPreguntas.Location = new Point(206, 32);
             lblGestionPreguntas.Name = "lblGestionPreguntas";
-            lblGestionPreguntas.Size = new Size(417, 37);
+            lblGestionPreguntas.Size = new Size(334, 31);
             lblGestionPreguntas.TabIndex = 0;
             lblGestionPreguntas.Text = "Gestión de preguntas";
             // 
-            // btnNuevaPregunta
-            // 
-            btnNuevaPregunta.BackgroundImage = (Image)resources.GetObject("btnNuevaPregunta.BackgroundImage");
-            btnNuevaPregunta.BackgroundImageLayout = ImageLayout.Stretch;
-            btnNuevaPregunta.FlatAppearance.BorderSize = 0;
-            btnNuevaPregunta.FlatStyle = FlatStyle.Flat;
-            btnNuevaPregunta.Font = new Font("Courier New", 12F);
-            btnNuevaPregunta.ForeColor = Color.White;
-            btnNuevaPregunta.Location = new Point(358, 353);
-            btnNuevaPregunta.Margin = new Padding(3, 4, 3, 4);
-            btnNuevaPregunta.Name = "btnNuevaPregunta";
-            btnNuevaPregunta.Size = new Size(240, 44);
-            btnNuevaPregunta.TabIndex = 12;
-            btnNuevaPregunta.Text = "Nueva pregunta";
-            btnNuevaPregunta.UseVisualStyleBackColor = true;
-            btnNuevaPregunta.Click += btnNuevaPregunta_Click;
-            // 
             // GestiónPreguntas
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             BackgroundImage = Properties.Resources.FondoRocasLimpio;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(896, 548);
+            ClientSize = new Size(784, 411);
             Controls.Add(panelContenido);
             Controls.Add(panel1);
             DoubleBuffered = true;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "GestiónPreguntas";
             Text = "Gestión de preguntas";
-            Load += GestiónPreguntas_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxCat1).EndInit();
             panelContenido.ResumeLayout(false);
             panelContenido.PerformLayout();

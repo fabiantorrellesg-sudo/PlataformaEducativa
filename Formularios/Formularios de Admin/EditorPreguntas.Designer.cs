@@ -68,7 +68,7 @@ namespace PlataformaEducativa.Formularios
             // panelContenido
             // 
             panelContenido.BackColor = Color.Transparent;
-            panelContenido.BackgroundImage = Properties.Resources.FondoMaderaLimpio;
+            panelContenido.BackgroundImage = Properties.Resources.fondoMaderaLimpio;
             panelContenido.BackgroundImageLayout = ImageLayout.Stretch;
             panelContenido.Controls.Add(lblEnunciado);
             panelContenido.Controls.Add(txtEnunciado);
@@ -236,7 +236,7 @@ namespace PlataformaEducativa.Formularios
             // 
             // btnGuardar
             // 
-            btnGuardar.BackgroundImage = Properties.Resources.MaderaPequena;
+            btnGuardar.BackgroundImage = Properties.Resources.tramoDeMadera;
             btnGuardar.BackgroundImageLayout = ImageLayout.Stretch;
             btnGuardar.FlatAppearance.BorderSize = 0;
             btnGuardar.FlatStyle = FlatStyle.Flat;
@@ -252,7 +252,7 @@ namespace PlataformaEducativa.Formularios
             // 
             // btnCancelar
             // 
-            btnCancelar.BackgroundImage = Properties.Resources.MaderaPequena;
+            btnCancelar.BackgroundImage = Properties.Resources.tramoDeMadera;
             btnCancelar.BackgroundImageLayout = ImageLayout.Stretch;
             btnCancelar.FlatAppearance.BorderSize = 0;
             btnCancelar.FlatStyle = FlatStyle.Flat;
