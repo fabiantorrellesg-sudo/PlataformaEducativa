@@ -129,7 +129,6 @@ namespace PlataformaEducativa.Formularios
             btnVolverMenu.ForeColor = Color.White;
             btnVolverMenu.Name = "btnVolverMenu";
             btnVolverMenu.UseVisualStyleBackColor = true;
-            btnVolverMenu.Click += btnVolverMenu_Click;
             // 
             // btnEliminar
             // 

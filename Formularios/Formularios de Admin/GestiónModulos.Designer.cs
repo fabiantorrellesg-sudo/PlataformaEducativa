@@ -30,17 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestiónModulos));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panelContenido = new Panel();
             gbModulos = new GroupBox();
+            txtNombreES = new TextBox();
+            dgvDatosGestionModulos = new DataGridView();
             button1 = new Button();
             btnVolverMenu = new Button();
             btnEliminar = new Button();
             btnCargarEditar = new Button();
-            dgvDatosGestionModulos = new DataGridView();
             btnLimpiar = new Button();
             btnGuardar = new Button();
             txtNombreEN = new TextBox();
-            txtNombreES = new TextBox();
             lblNombreEN = new Label();
             lblNombreES = new Label();
             panel1 = new Panel();
@@ -62,20 +64,62 @@
             // 
             // gbModulos
             // 
+            gbModulos.Controls.Add(txtNombreES);
+            gbModulos.Controls.Add(dgvDatosGestionModulos);
             gbModulos.Controls.Add(button1);
             gbModulos.Controls.Add(btnVolverMenu);
             gbModulos.Controls.Add(btnEliminar);
             gbModulos.Controls.Add(btnCargarEditar);
-            gbModulos.Controls.Add(dgvDatosGestionModulos);
             gbModulos.Controls.Add(btnLimpiar);
             gbModulos.Controls.Add(btnGuardar);
             gbModulos.Controls.Add(txtNombreEN);
-            gbModulos.Controls.Add(txtNombreES);
             gbModulos.Controls.Add(lblNombreEN);
             gbModulos.Controls.Add(lblNombreES);
             resources.ApplyResources(gbModulos, "gbModulos");
             gbModulos.Name = "gbModulos";
             gbModulos.TabStop = false;
+            // 
+            // txtNombreES
+            // 
+            txtNombreES.BackColor = Color.FromArgb(55, 55, 55);
+            resources.ApplyResources(txtNombreES, "txtNombreES");
+            txtNombreES.ForeColor = Color.White;
+            txtNombreES.Name = "txtNombreES";
+            // 
+            // dgvDatosGestionModulos
+            // 
+            dgvDatosGestionModulos.AllowUserToAddRows = false;
+            dgvDatosGestionModulos.AllowUserToResizeColumns = false;
+            dgvDatosGestionModulos.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(48, 43, 39);
+            dgvDatosGestionModulos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvDatosGestionModulos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvDatosGestionModulos.BackgroundColor = Color.FromArgb(43, 34, 28);
+            dgvDatosGestionModulos.BorderStyle = BorderStyle.None;
+            dgvDatosGestionModulos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(33, 26, 22);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ScrollBar;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvDatosGestionModulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvDatosGestionModulos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(56, 50, 45);
+            dataGridViewCellStyle3.Font = new Font("Courier New", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(238, 223, 190);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(120, 40, 35);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvDatosGestionModulos.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvDatosGestionModulos.EnableHeadersVisualStyles = false;
+            dgvDatosGestionModulos.GridColor = Color.FromArgb(75, 63, 54);
+            resources.ApplyResources(dgvDatosGestionModulos, "dgvDatosGestionModulos");
+            dgvDatosGestionModulos.Name = "dgvDatosGestionModulos";
+            dgvDatosGestionModulos.RowHeadersVisible = false;
+            dgvDatosGestionModulos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             // 
             // button1
             // 
@@ -110,29 +154,6 @@
             btnCargarEditar.Name = "btnCargarEditar";
             btnCargarEditar.UseVisualStyleBackColor = true;
             // 
-            // dgvDatosGestionModulos
-            // 
-            dgvDatosGestionModulos.AllowUserToAddRows = false;
-            dgvDatosGestionModulos.AllowUserToResizeColumns = false;
-            dgvDatosGestionModulos.AllowUserToResizeRows = false;
-            dgvDatosGestionModulos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvDatosGestionModulos.BackgroundColor = Color.FromArgb(55, 55, 55);
-            dgvDatosGestionModulos.BorderStyle = BorderStyle.None;
-            dgvDatosGestionModulos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Courier New", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(80, 80, 80);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dgvDatosGestionModulos.DefaultCellStyle = dataGridViewCellStyle1;
-            dgvDatosGestionModulos.EnableHeadersVisualStyles = false;
-            dgvDatosGestionModulos.GridColor = Color.Gainsboro;
-            resources.ApplyResources(dgvDatosGestionModulos, "dgvDatosGestionModulos");
-            dgvDatosGestionModulos.Name = "dgvDatosGestionModulos";
-            dgvDatosGestionModulos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            // 
             // btnLimpiar
             // 
             resources.ApplyResources(btnLimpiar, "btnLimpiar");
@@ -155,13 +176,6 @@
             resources.ApplyResources(txtNombreEN, "txtNombreEN");
             txtNombreEN.ForeColor = Color.White;
             txtNombreEN.Name = "txtNombreEN";
-            // 
-            // txtNombreES
-            // 
-            txtNombreES.BackColor = Color.FromArgb(55, 55, 55);
-            resources.ApplyResources(txtNombreES, "txtNombreES");
-            txtNombreES.ForeColor = Color.White;
-            txtNombreES.Name = "txtNombreES";
             // 
             // lblNombreEN
             // 
@@ -223,14 +237,14 @@
         private Label lblNombreEN;
         private Label lblNombreES;
         private TextBox txtNombreEN;
-        private TextBox txtNombreES;
         private Button button2;
         private Button btnGuardar;
         private Button btnLimpiar;
-        private DataGridView dgvDatosGestionModulos;
         private Button btnVolverMenu;
         private Button btnEliminar;
         private Button btnCargarEditar;
         private Button button1;
+        private TextBox txtNombreES;
+        private DataGridView dgvDatosGestionModulos;
     }
 }
