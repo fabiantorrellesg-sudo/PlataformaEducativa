@@ -32,6 +32,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panelContenido = new Panel();
             gbModulos = new GroupBox();
+            button1 = new Button();
             btnVolverMenu = new Button();
             btnEliminar = new Button();
             btnCargarEditar = new Button();
@@ -45,7 +46,6 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             lblGestionModulos = new Label();
-            button1 = new Button();
             panelContenido.SuspendLayout();
             gbModulos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDatosGestionModulos).BeginInit();
@@ -84,6 +84,21 @@
             gbModulos.TabIndex = 0;
             gbModulos.TabStop = false;
             // 
+            // button1
+            // 
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(176, 227);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 10;
+            button1.Text = "Editar";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // btnVolverMenu
             // 
             btnVolverMenu.BackgroundImage = (Image)resources.GetObject("btnVolverMenu.BackgroundImage");
@@ -98,6 +113,7 @@
             btnVolverMenu.TabIndex = 9;
             btnVolverMenu.Text = "Volver al Menú";
             btnVolverMenu.UseVisualStyleBackColor = true;
+            btnVolverMenu.Click += btnVolverMenu_Click;
             // 
             // btnEliminar
             // 
@@ -259,21 +275,6 @@
             lblGestionModulos.Size = new Size(302, 31);
             lblGestionModulos.TabIndex = 0;
             lblGestionModulos.Text = "Gestión de Modulos";
-            // 
-            // button1
-            // 
-            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
-            button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(176, 227);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 10;
-            button1.Text = "Editar";
-            button1.UseVisualStyleBackColor = true;
             // 
             // GestiónModulos
             // 

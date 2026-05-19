@@ -62,6 +62,7 @@ namespace PlataformaEducativa
             buttonCerrar.ForeColor = SystemColors.ControlLightLight;
             buttonCerrar.Name = "buttonCerrar";
             buttonCerrar.UseVisualStyleBackColor = false;
+            buttonCerrar.Click += buttonCerrar_Click;
             // 
             // buttonReportes
             // 
@@ -83,6 +84,7 @@ namespace PlataformaEducativa
             buttonEditarMaterias.ForeColor = SystemColors.ControlLightLight;
             buttonEditarMaterias.Name = "buttonEditarMaterias";
             buttonEditarMaterias.UseVisualStyleBackColor = false;
+            buttonEditarMaterias.Click += buttonEditarMaterias_Click;
             // 
             // buttonGestionarUsuarios
             // 
@@ -93,6 +95,7 @@ namespace PlataformaEducativa
             buttonGestionarUsuarios.ForeColor = SystemColors.ControlLightLight;
             buttonGestionarUsuarios.Name = "buttonGestionarUsuarios";
             buttonGestionarUsuarios.UseVisualStyleBackColor = false;
+            buttonGestionarUsuarios.Click += buttonGestionarUsuarios_Click;
             // 
             // labelTitulo
             // 
@@ -133,6 +136,7 @@ namespace PlataformaEducativa
             Controls.Add(panel1);
             DoubleBuffered = true;
             Name = "AdminMenuForm";
+            Load += Form2_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
