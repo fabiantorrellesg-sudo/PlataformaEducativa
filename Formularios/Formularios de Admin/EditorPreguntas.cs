@@ -20,20 +20,17 @@ namespace PlataformaEducativa.Formularios
         {
             if (idPregunta == -1)
             {
-                // modo nueva pregunta
                 lblTitulo.Text = "Nueva pregunta";
                 this.Text = "Nueva pregunta";
             }
             else
             {
-                // modo edicion: cargo los datos existentes
                 lblTitulo.Text = "Editar pregunta";
                 this.Text = "Editar pregunta";
                 CargarDatosPregunta();
             }
         }
 
-        // trae los datos de la pregunta desde la bd
         private void CargarDatosPregunta()
         {
             try
@@ -65,10 +62,8 @@ namespace PlataformaEducativa.Formularios
             }
         }
 
-        // guarda la pregunta (insert o update segun si es nueva o edicion)
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            // validaciones basicas
             if (string.IsNullOrWhiteSpace(txtEnunciado.Text) ||
                 string.IsNullOrWhiteSpace(txtOpcionA.Text) ||
                 string.IsNullOrWhiteSpace(txtOpcionB.Text) ||

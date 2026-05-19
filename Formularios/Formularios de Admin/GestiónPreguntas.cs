@@ -17,12 +17,10 @@ namespace PlataformaEducativa.Formularios
 
         private void GestiónPreguntas_Load(object sender, EventArgs e)
         {
-            // arranca sin filtro, carga todo
             CargarPreguntas("Todas");
             listBoxMaterias.SelectedIndex = -1;
         }
 
-        // trae las preguntas de la bd segun la materia seleccionada
         private void CargarPreguntas(string materia)
         {
             try
@@ -45,8 +43,6 @@ namespace PlataformaEducativa.Formularios
                     adapter.Fill(tabla);
 
                     dgvGestionDePreguntas.DataSource = tabla;
-
-                    // nombres mas legibles en las columnas
                     dgvGestionDePreguntas.Columns["id"].HeaderText = "ID";
                     dgvGestionDePreguntas.Columns["enunciado"].HeaderText = "Pregunta";
                     dgvGestionDePreguntas.Columns["opcion_a"].HeaderText = "Opción A";
@@ -64,14 +60,12 @@ namespace PlataformaEducativa.Formularios
             }
         }
 
-        // cuando seleccionan una materia del listbox filtra
         private void listBoxMaterias_SelectedIndexChanged(object sender, EventArgs e)
         {
             string materiaSeleccionada = listBoxMaterias.SelectedItem?.ToString() ?? "Todas";
             CargarPreguntas(materiaSeleccionada);
         }
 
-        // boton editar: abre el editor con la pregunta elegida
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (dgvGestionDePreguntas.SelectedRows.Count == 0)
@@ -85,11 +79,9 @@ namespace PlataformaEducativa.Formularios
 
             EditorPreguntas editor = new EditorPreguntas(idPregunta);
             editor.ShowDialog();
-            // recarga despues de editar
             CargarPreguntas(listBoxMaterias.SelectedItem?.ToString() ?? "Todas");
         }
 
-        // boton eliminar con confirmacion
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (dgvGestionDePreguntas.SelectedRows.Count == 0)
@@ -130,7 +122,6 @@ namespace PlataformaEducativa.Formularios
             }
         }
 
-        // boton nueva pregunta: abre el editor vacio (id = -1 significa nuevo)
         private void btnNuevaPregunta_Click(object sender, EventArgs e)
         {
             EditorPreguntas editor = new EditorPreguntas(-1);
@@ -138,7 +129,6 @@ namespace PlataformaEducativa.Formularios
             CargarPreguntas(listBoxMaterias.SelectedItem?.ToString() ?? "Todas");
         }
 
-        // volver al menu del admin
         private void btnVolverMenu_Click(object sender, EventArgs e)
         {
             this.Close();
