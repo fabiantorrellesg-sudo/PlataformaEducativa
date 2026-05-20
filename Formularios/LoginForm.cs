@@ -21,6 +21,7 @@ namespace PlataformaEducativa
         private PictureBox pbIdiomaEN;
         private PictureBox pbIdiomaES;
         private Button btnIngresar;
+        private Button btnVerClave;
 
         private void InitializeComponent()
         {
@@ -34,6 +35,7 @@ namespace PlataformaEducativa
             pictureBoxMichiLogin = new PictureBox();
             pbIdiomaEN = new PictureBox();
             pbIdiomaES = new PictureBox();
+            btnVerClave = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCandado).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUsuarioLogin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMichiLogin).BeginInit();
@@ -111,6 +113,16 @@ namespace PlataformaEducativa
             pbIdiomaES.Name = "pbIdiomaES";
             pbIdiomaES.TabStop = false;
             // 
+            // btnVerClave
+            // 
+            btnVerClave.BackColor = Color.FromArgb(227, 214, 179);
+            btnVerClave.FlatStyle = FlatStyle.Flat;
+            btnVerClave.FlatAppearance.BorderSize = 0;
+            btnVerClave.Text = "👁";
+            btnVerClave.Cursor = Cursors.Hand;
+            btnVerClave.Click += btnVerClave_Click;
+            btnVerClave.Name = "btnVerClave";
+            // 
             // LoginForm
             // 
             resources.ApplyResources(this, "$this");
@@ -120,11 +132,13 @@ namespace PlataformaEducativa
             Controls.Add(pictureBoxUsuarioLogin);
             Controls.Add(pictureBoxCandado);
             Controls.Add(btnIngresar);
+            Controls.Add(btnVerClave);
             Controls.Add(textBoxClave);
             Controls.Add(textBoxUsuario);
             Controls.Add(txtLogin);
             DoubleBuffered = true;
             Name = "LoginForm";
+            Load += LoginForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxCandado).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUsuarioLogin).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMichiLogin).EndInit();
@@ -133,6 +147,19 @@ namespace PlataformaEducativa
             ResumeLayout(false);
             PerformLayout();
 
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            btnVerClave.Size = new Size(30, textBoxClave.Height);
+            btnVerClave.Location = new Point(textBoxClave.Right - 30, textBoxClave.Top);
+            btnVerClave.BringToFront();
+        }
+
+        private void btnVerClave_Click(object sender, EventArgs e)
+        {
+            textBoxClave.UseSystemPasswordChar = !textBoxClave.UseSystemPasswordChar;
+            btnVerClave.Text = textBoxClave.UseSystemPasswordChar ? "👁" : "🙈";
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)

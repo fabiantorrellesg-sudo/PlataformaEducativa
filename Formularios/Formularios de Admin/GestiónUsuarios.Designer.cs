@@ -63,6 +63,7 @@ namespace PlataformaEducativa.Formularios
             panelContenido.Controls.Add(pictureBoxCat1);
             panelContenido.Controls.Add(pictureBoxUsuarioLogin);
             panelContenido.Controls.Add(pictureBoxCandado);
+            panelContenido.Controls.Add(btnVerClave);
             panelContenido.Controls.Add(textBoxClave);
             panelContenido.Controls.Add(textBoxUsuario);
             panelContenido.Controls.Add(listBoxRol);
@@ -138,6 +139,17 @@ namespace PlataformaEducativa.Formularios
             textBoxUsuario.PlaceholderText = "USUARIO";
             textBoxUsuario.Size = new Size(182, 26);
             textBoxUsuario.TabIndex = 12;
+            // 
+            // btnVerClave
+            // 
+            btnVerClave = new Button();
+            btnVerClave.BackColor = Color.FromArgb(227, 214, 179);
+            btnVerClave.FlatStyle = FlatStyle.Flat;
+            btnVerClave.FlatAppearance.BorderSize = 0;
+            btnVerClave.Text = "👁";
+            btnVerClave.Cursor = Cursors.Hand;
+            btnVerClave.Click += btnVerClave_Click;
+            btnVerClave.Name = "btnVerClave";
             // 
             // listBoxRol
             // 
@@ -300,6 +312,7 @@ namespace PlataformaEducativa.Formularios
             DoubleBuffered = true;
             Margin = new Padding(3, 2, 3, 2);
             Name = "GestionUsuarios";
+            Load += GestionUsuarios_Load;
             SizeGripStyle = SizeGripStyle.Show;
             StartPosition = FormStartPosition.CenterScreen;
             resources.ApplyResources(this, "$this");
@@ -331,6 +344,7 @@ namespace PlataformaEducativa.Formularios
         private PictureBox pictureBoxUsuarioLogin;
         private PictureBox pictureBoxCandado;
         private TextBox textBoxClave;
+        private Button btnVerClave;
         private TextBox textBoxUsuario;
         private PictureBox pictureBoxCat1;
     }
