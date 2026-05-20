@@ -1,5 +1,6 @@
-using PlataformaEducativa.Clases;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
+using PlataformaEducativa.Clases;
 using System;
 using System.Data;
 
@@ -18,8 +19,8 @@ namespace PlataformaEducativa
         private PictureBox pictureBoxCandado;
         private PictureBox pictureBoxUsuarioLogin;
         private PictureBox pictureBoxMichiLogin;
-        private PictureBox pbIdiomaEN;
-        private PictureBox pbIdiomaES;
+        private Button btnEN;
+        private Button btnES;
         private Button btnIngresar;
 
         private void InitializeComponent()
@@ -32,13 +33,11 @@ namespace PlataformaEducativa
             pictureBoxCandado = new PictureBox();
             pictureBoxUsuarioLogin = new PictureBox();
             pictureBoxMichiLogin = new PictureBox();
-            pbIdiomaEN = new PictureBox();
-            pbIdiomaES = new PictureBox();
+            btnEN = new Button();
+            btnES = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCandado).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUsuarioLogin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMichiLogin).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbIdiomaEN).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbIdiomaES).BeginInit();
             SuspendLayout();
             // 
             // txtLogin
@@ -95,27 +94,26 @@ namespace PlataformaEducativa
             pictureBoxMichiLogin.Name = "pictureBoxMichiLogin";
             pictureBoxMichiLogin.TabStop = false;
             // 
-            // pbIdiomaEN
+            // btnEN
             // 
-            pbIdiomaEN.BackColor = Color.Transparent;
-            resources.ApplyResources(pbIdiomaEN, "pbIdiomaEN");
-            pbIdiomaEN.Cursor = Cursors.Hand;
-            pbIdiomaEN.Name = "pbIdiomaEN";
-            pbIdiomaEN.TabStop = false;
+            resources.ApplyResources(btnEN, "btnEN");
+            btnEN.Name = "btnEN";
+            btnEN.UseVisualStyleBackColor = true;
+            btnEN.Click += btnEN_Click;
             // 
-            // pbIdiomaES
+            // btnES
             // 
-            pbIdiomaES.BackColor = Color.Transparent;
-            resources.ApplyResources(pbIdiomaES, "pbIdiomaES");
-            pbIdiomaES.Cursor = Cursors.Hand;
-            pbIdiomaES.Name = "pbIdiomaES";
-            pbIdiomaES.TabStop = false;
+            btnES.BackgroundImage = Properties.Resources.spain2;
+            resources.ApplyResources(btnES, "btnES");
+            btnES.Name = "btnES";
+            btnES.UseVisualStyleBackColor = true;
+            btnES.Click += btnES_Click;
             // 
             // LoginForm
             // 
             resources.ApplyResources(this, "$this");
-            Controls.Add(pbIdiomaES);
-            Controls.Add(pbIdiomaEN);
+            Controls.Add(btnES);
+            Controls.Add(btnEN);
             Controls.Add(pictureBoxMichiLogin);
             Controls.Add(pictureBoxUsuarioLogin);
             Controls.Add(pictureBoxCandado);
@@ -128,8 +126,6 @@ namespace PlataformaEducativa
             ((System.ComponentModel.ISupportInitialize)pictureBoxCandado).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUsuarioLogin).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMichiLogin).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbIdiomaEN).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbIdiomaES).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
@@ -137,10 +133,9 @@ namespace PlataformaEducativa
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            string cadenaConexion = "Server=localhost; Database=peducativa; Uid = root; Pwd=;";
             string consulta = "SELECT id, nombre, rol FROM usuario WHERE nombre = @usuario AND clave = @clave";
 
-            if(string.IsNullOrWhiteSpace(textBoxUsuario.Text) || string.IsNullOrWhiteSpace(textBoxClave.Text))
+            if (string.IsNullOrWhiteSpace(textBoxUsuario.Text) || string.IsNullOrWhiteSpace(textBoxClave.Text))
             {
                 MessageBox.Show("Ingrese el nombre de usuario y la contraseña para iniciar sesión", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -151,51 +146,82 @@ namespace PlataformaEducativa
             }
             try
             {
-           
-            using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
-            using (MySqlCommand comando = new MySqlCommand(consulta,conexion))
-            {
-                comando.Parameters.AddWithValue("@usuario", textBoxUsuario.Text.ToLower());
-                comando.Parameters.AddWithValue("@clave", textBoxClave.Text);
-
-                    conexion.Open();
-
-              MySqlDataReader lector = comando.ExecuteReader();
-              
-                    if(lector.Read())
+                using (MySqlConnection conexion = ConexionBD.ObtenerConexion())
+                {
+                    using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                     {
-                        int rol = Convert.ToInt32(lector["rol"]);
+                        comando.Parameters.AddWithValue("@usuario", textBoxUsuario.Text.ToLower());
+                        comando.Parameters.AddWithValue("@clave", textBoxClave.Text);
 
-                        if(rol==0)
+                        using (MySqlDataReader lector = comando.ExecuteReader())
                         {
-                            AdminMenuForm ventanaAdmin = new AdminMenuForm();
-                            ventanaAdmin.Show();
+                            if (lector.Read())
+                            {
+                                int rol = Convert.ToInt32(lector["rol"]);
 
-                        }
-                        else if(rol==1)
-                        {
-                            int idBD = Convert.ToInt32(lector["id"]);
-                            string nombreBD = lector["nombre"].ToString();
-                            string descripcion = "Usuario tipo jugador";
+                                if (rol == 0)
+                                {
+                                    AdminMenuForm ventanaAdmin = new AdminMenuForm();
+                                    ventanaAdmin.Show();
+                                }
+                                else if (rol == 1)
+                                {
+                                    int idBD = Convert.ToInt32(lector["id"]);
+                                    string nombreBD = lector["nombre"].ToString()!;
+                                    string descripcion = "Usuario tipo jugador";
 
-                            Jugador nuevoJugador = new Jugador(idBD, nombreBD, descripcion);
-                            JugadorMenuForm ventanaJugador = new JugadorMenuForm(nuevoJugador);
-                            MessageBox.Show($"¡Bienvenido al juego, {nuevoJugador.Nombre}!", "Ingreso al juego");
-                            ventanaJugador.Show();
-                        }
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Usuario o contraseña incorrectos", "Error de inició de sesión",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                    }
-                    conexion.Close();
+                                    Jugador nuevoJugador = new Jugador(idBD, nombreBD, descripcion);
+                                    JugadorMenuForm ventanaJugador = new JugadorMenuForm(idBD, nombreBD);
+                                    if (ConfigIdiomas.IdiomaActual == "EN")
+                                    {
+                                        MessageBox.Show($"Welcome to the game, {nuevoJugador.Nombre}!", "Enter the game");
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show($"¡Bienvenido al juego, {nuevoJugador.Nombre}!", "Ingreso al juego");
+                                    }
+                                    ventanaJugador.Show();
+                                }
+                                this.Hide();
+                            }
+                            else
+                            {
+                                if (ConfigIdiomas.IdiomaActual == "EN")
+                                {
+                                    MessageBox.Show("Incorrect username or password", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Usuario o contraseña incorrectos", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                        } 
+                    } 
+                }
             }
-            }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error: {0}", ex.Message,MessageBoxButtons.OK,MessageBoxIcon.Error);
+                if (ConfigIdiomas.IdiomaActual == "EN")
+                {
+                    MessageBox.Show($"Error: {ex.Message}", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show($"Error: {ex.Message}", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+        }
+
+        private void btnEN_Click(object sender, EventArgs e)
+        {
+            ConfigIdiomas.IdiomaActual = "EN";
+            MessageBox.Show("Language changed to English", "Language", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnES_Click(object sender, EventArgs e)
+        {
+            ConfigIdiomas.IdiomaActual = "ES";
+            MessageBox.Show("Idioma cambiado a Español", "Idioma", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
