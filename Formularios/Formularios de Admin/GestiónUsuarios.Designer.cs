@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionUsuarios));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panelContenido = new Panel();
             button1 = new Button();
             pictureBoxUsuarioLogin = new PictureBox();
@@ -88,38 +88,38 @@
             // 
             // pictureBoxUsuarioLogin
             // 
-            resources.ApplyResources(pictureBoxUsuarioLogin, "pictureBoxUsuarioLogin");
             pictureBoxUsuarioLogin.BackColor = Color.Transparent;
+            resources.ApplyResources(pictureBoxUsuarioLogin, "pictureBoxUsuarioLogin");
             pictureBoxUsuarioLogin.Name = "pictureBoxUsuarioLogin";
             pictureBoxUsuarioLogin.TabStop = false;
             // 
             // pictureBoxCandado
             // 
-            resources.ApplyResources(pictureBoxCandado, "pictureBoxCandado");
             pictureBoxCandado.BackColor = Color.Transparent;
+            resources.ApplyResources(pictureBoxCandado, "pictureBoxCandado");
             pictureBoxCandado.Name = "pictureBoxCandado";
             pictureBoxCandado.TabStop = false;
             // 
             // textBoxClave
             // 
-            resources.ApplyResources(textBoxClave, "textBoxClave");
             textBoxClave.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(textBoxClave, "textBoxClave");
             textBoxClave.ForeColor = Color.IndianRed;
             textBoxClave.Name = "textBoxClave";
             textBoxClave.UseSystemPasswordChar = true;
             // 
             // textBoxUsuario
             // 
-            resources.ApplyResources(textBoxUsuario, "textBoxUsuario");
             textBoxUsuario.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(textBoxUsuario, "textBoxUsuario");
             textBoxUsuario.ForeColor = Color.IndianRed;
             textBoxUsuario.Name = "textBoxUsuario";
             // 
             // listBoxRol
             // 
-            resources.ApplyResources(listBoxRol, "listBoxRol");
             listBoxRol.AccessibleRole = AccessibleRole.MenuBar;
             listBoxRol.BackColor = Color.FromArgb(55, 55, 55);
+            resources.ApplyResources(listBoxRol, "listBoxRol");
             listBoxRol.ForeColor = Color.White;
             listBoxRol.FormattingEnabled = true;
             listBoxRol.Items.AddRange(new object[] { resources.GetString("listBoxRol.Items"), resources.GetString("listBoxRol.Items1") });
@@ -142,35 +142,35 @@
             // 
             // dgvGestionDeUsuarios
             // 
-            resources.ApplyResources(dgvGestionDeUsuarios, "dgvGestionDeUsuarios");
             dgvGestionDeUsuarios.AllowUserToAddRows = false;
             dgvGestionDeUsuarios.AllowUserToResizeColumns = false;
             dgvGestionDeUsuarios.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(48, 43, 39);
-            dgvGestionDeUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(48, 43, 39);
+            dgvGestionDeUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvGestionDeUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvGestionDeUsuarios.BackgroundColor = Color.FromArgb(43, 34, 28);
             dgvGestionDeUsuarios.BorderStyle = BorderStyle.None;
             dgvGestionDeUsuarios.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(33, 26, 22);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = SystemColors.ScrollBar;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvGestionDeUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(33, 26, 22);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ScrollBar;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvGestionDeUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvGestionDeUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(56, 50, 45);
-            dataGridViewCellStyle6.Font = new Font("Courier New", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(238, 223, 190);
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(120, 40, 35);
-            dataGridViewCellStyle6.SelectionForeColor = Color.White;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgvGestionDeUsuarios.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(56, 50, 45);
+            dataGridViewCellStyle3.Font = new Font("Courier New", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(238, 223, 190);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(120, 40, 35);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvGestionDeUsuarios.DefaultCellStyle = dataGridViewCellStyle3;
             dgvGestionDeUsuarios.EnableHeadersVisualStyles = false;
             dgvGestionDeUsuarios.GridColor = Color.FromArgb(75, 63, 54);
+            resources.ApplyResources(dgvGestionDeUsuarios, "dgvGestionDeUsuarios");
             dgvGestionDeUsuarios.Name = "dgvGestionDeUsuarios";
             dgvGestionDeUsuarios.RowHeadersVisible = false;
             dgvGestionDeUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -222,8 +222,8 @@
             // 
             // pictureBoxCat1
             // 
-            resources.ApplyResources(pictureBoxCat1, "pictureBoxCat1");
             pictureBoxCat1.Image = Properties.Resources.michiIcon;
+            resources.ApplyResources(pictureBoxCat1, "pictureBoxCat1");
             pictureBoxCat1.Name = "pictureBoxCat1";
             pictureBoxCat1.TabStop = false;
             // 

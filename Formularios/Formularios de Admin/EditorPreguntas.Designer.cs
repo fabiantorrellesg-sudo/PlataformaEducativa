@@ -25,18 +25,28 @@ namespace PlataformaEducativa.Formularios
             panelTitulo = new Panel();
             lblTitulo = new Label();
             panelContenido = new Panel();
+            label1 = new Label();
+            txtEnunciadoEN = new TextBox();
+            label2 = new Label();
+            txtOpcionAEN = new TextBox();
+            label3 = new Label();
+            txtOpcionBEN = new TextBox();
+            label4 = new Label();
+            txtOpcionCEN = new TextBox();
+            label5 = new Label();
+            txtOpcionDEN = new TextBox();
             lblEnunciado = new Label();
-            txtEnunciado = new TextBox();
+            txtEnunciadoES = new TextBox();
             lblOpcionA = new Label();
-            txtOpcionA = new TextBox();
+            txtOpcionAES = new TextBox();
             lblOpcionB = new Label();
-            txtOpcionB = new TextBox();
+            txtOpcionBES = new TextBox();
             lblOpcionC = new Label();
-            txtOpcionC = new TextBox();
+            txtOpcionCES = new TextBox();
             lblOpcionD = new Label();
-            txtOpcionD = new TextBox();
+            txtOpcionDES = new TextBox();
             lblRespuesta = new Label();
-            cmbRespuesta = new ComboBox();
+            cmbCorrecta = new ComboBox();
             lblMateria = new Label();
             cmbMateria = new ComboBox();
             btnGuardar = new Button();
@@ -63,23 +73,98 @@ namespace PlataformaEducativa.Formularios
             panelContenido.BackColor = Color.Transparent;
             panelContenido.BackgroundImage = Properties.Resources.fondoMaderaLimpio;
             resources.ApplyResources(panelContenido, "panelContenido");
+            panelContenido.Controls.Add(label1);
+            panelContenido.Controls.Add(txtEnunciadoEN);
+            panelContenido.Controls.Add(label2);
+            panelContenido.Controls.Add(txtOpcionAEN);
+            panelContenido.Controls.Add(label3);
+            panelContenido.Controls.Add(txtOpcionBEN);
+            panelContenido.Controls.Add(label4);
+            panelContenido.Controls.Add(txtOpcionCEN);
+            panelContenido.Controls.Add(label5);
+            panelContenido.Controls.Add(txtOpcionDEN);
             panelContenido.Controls.Add(lblEnunciado);
-            panelContenido.Controls.Add(txtEnunciado);
+            panelContenido.Controls.Add(txtEnunciadoES);
             panelContenido.Controls.Add(lblOpcionA);
-            panelContenido.Controls.Add(txtOpcionA);
+            panelContenido.Controls.Add(txtOpcionAES);
             panelContenido.Controls.Add(lblOpcionB);
-            panelContenido.Controls.Add(txtOpcionB);
+            panelContenido.Controls.Add(txtOpcionBES);
             panelContenido.Controls.Add(lblOpcionC);
-            panelContenido.Controls.Add(txtOpcionC);
+            panelContenido.Controls.Add(txtOpcionCES);
             panelContenido.Controls.Add(lblOpcionD);
-            panelContenido.Controls.Add(txtOpcionD);
+            panelContenido.Controls.Add(txtOpcionDES);
             panelContenido.Controls.Add(lblRespuesta);
-            panelContenido.Controls.Add(cmbRespuesta);
+            panelContenido.Controls.Add(cmbCorrecta);
             panelContenido.Controls.Add(lblMateria);
             panelContenido.Controls.Add(cmbMateria);
             panelContenido.Controls.Add(btnGuardar);
             panelContenido.Controls.Add(btnCancelar);
             panelContenido.Name = "panelContenido";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(label1, "label1");
+            label1.ForeColor = Color.White;
+            label1.Name = "label1";
+            // 
+            // txtEnunciadoEN
+            // 
+            txtEnunciadoEN.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(txtEnunciadoEN, "txtEnunciadoEN");
+            txtEnunciadoEN.ForeColor = Color.FromArgb(60, 40, 20);
+            txtEnunciadoEN.Name = "txtEnunciadoEN";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(label2, "label2");
+            label2.ForeColor = Color.White;
+            label2.Name = "label2";
+            // 
+            // txtOpcionAEN
+            // 
+            txtOpcionAEN.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(txtOpcionAEN, "txtOpcionAEN");
+            txtOpcionAEN.ForeColor = Color.FromArgb(60, 40, 20);
+            txtOpcionAEN.Name = "txtOpcionAEN";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(label3, "label3");
+            label3.ForeColor = Color.White;
+            label3.Name = "label3";
+            // 
+            // txtOpcionBEN
+            // 
+            txtOpcionBEN.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(txtOpcionBEN, "txtOpcionBEN");
+            txtOpcionBEN.ForeColor = Color.FromArgb(60, 40, 20);
+            txtOpcionBEN.Name = "txtOpcionBEN";
+            // 
+            // label4
+            // 
+            resources.ApplyResources(label4, "label4");
+            label4.ForeColor = Color.White;
+            label4.Name = "label4";
+            // 
+            // txtOpcionCEN
+            // 
+            txtOpcionCEN.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(txtOpcionCEN, "txtOpcionCEN");
+            txtOpcionCEN.ForeColor = Color.FromArgb(60, 40, 20);
+            txtOpcionCEN.Name = "txtOpcionCEN";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(label5, "label5");
+            label5.ForeColor = Color.White;
+            label5.Name = "label5";
+            // 
+            // txtOpcionDEN
+            // 
+            txtOpcionDEN.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(txtOpcionDEN, "txtOpcionDEN");
+            txtOpcionDEN.ForeColor = Color.FromArgb(60, 40, 20);
+            txtOpcionDEN.Name = "txtOpcionDEN";
             // 
             // lblEnunciado
             // 
@@ -87,12 +172,12 @@ namespace PlataformaEducativa.Formularios
             lblEnunciado.ForeColor = Color.White;
             lblEnunciado.Name = "lblEnunciado";
             // 
-            // txtEnunciado
+            // txtEnunciadoES
             // 
-            txtEnunciado.BackColor = Color.FromArgb(227, 214, 179);
-            resources.ApplyResources(txtEnunciado, "txtEnunciado");
-            txtEnunciado.ForeColor = Color.FromArgb(60, 40, 20);
-            txtEnunciado.Name = "txtEnunciado";
+            txtEnunciadoES.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(txtEnunciadoES, "txtEnunciadoES");
+            txtEnunciadoES.ForeColor = Color.FromArgb(60, 40, 20);
+            txtEnunciadoES.Name = "txtEnunciadoES";
             // 
             // lblOpcionA
             // 
@@ -100,12 +185,12 @@ namespace PlataformaEducativa.Formularios
             lblOpcionA.ForeColor = Color.White;
             lblOpcionA.Name = "lblOpcionA";
             // 
-            // txtOpcionA
+            // txtOpcionAES
             // 
-            txtOpcionA.BackColor = Color.FromArgb(227, 214, 179);
-            resources.ApplyResources(txtOpcionA, "txtOpcionA");
-            txtOpcionA.ForeColor = Color.FromArgb(60, 40, 20);
-            txtOpcionA.Name = "txtOpcionA";
+            txtOpcionAES.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(txtOpcionAES, "txtOpcionAES");
+            txtOpcionAES.ForeColor = Color.FromArgb(60, 40, 20);
+            txtOpcionAES.Name = "txtOpcionAES";
             // 
             // lblOpcionB
             // 
@@ -113,12 +198,12 @@ namespace PlataformaEducativa.Formularios
             lblOpcionB.ForeColor = Color.White;
             lblOpcionB.Name = "lblOpcionB";
             // 
-            // txtOpcionB
+            // txtOpcionBES
             // 
-            txtOpcionB.BackColor = Color.FromArgb(227, 214, 179);
-            resources.ApplyResources(txtOpcionB, "txtOpcionB");
-            txtOpcionB.ForeColor = Color.FromArgb(60, 40, 20);
-            txtOpcionB.Name = "txtOpcionB";
+            txtOpcionBES.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(txtOpcionBES, "txtOpcionBES");
+            txtOpcionBES.ForeColor = Color.FromArgb(60, 40, 20);
+            txtOpcionBES.Name = "txtOpcionBES";
             // 
             // lblOpcionC
             // 
@@ -126,12 +211,12 @@ namespace PlataformaEducativa.Formularios
             lblOpcionC.ForeColor = Color.White;
             lblOpcionC.Name = "lblOpcionC";
             // 
-            // txtOpcionC
+            // txtOpcionCES
             // 
-            txtOpcionC.BackColor = Color.FromArgb(227, 214, 179);
-            resources.ApplyResources(txtOpcionC, "txtOpcionC");
-            txtOpcionC.ForeColor = Color.FromArgb(60, 40, 20);
-            txtOpcionC.Name = "txtOpcionC";
+            txtOpcionCES.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(txtOpcionCES, "txtOpcionCES");
+            txtOpcionCES.ForeColor = Color.FromArgb(60, 40, 20);
+            txtOpcionCES.Name = "txtOpcionCES";
             // 
             // lblOpcionD
             // 
@@ -139,12 +224,12 @@ namespace PlataformaEducativa.Formularios
             lblOpcionD.ForeColor = Color.White;
             lblOpcionD.Name = "lblOpcionD";
             // 
-            // txtOpcionD
+            // txtOpcionDES
             // 
-            txtOpcionD.BackColor = Color.FromArgb(227, 214, 179);
-            resources.ApplyResources(txtOpcionD, "txtOpcionD");
-            txtOpcionD.ForeColor = Color.FromArgb(60, 40, 20);
-            txtOpcionD.Name = "txtOpcionD";
+            txtOpcionDES.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(txtOpcionDES, "txtOpcionDES");
+            txtOpcionDES.ForeColor = Color.FromArgb(60, 40, 20);
+            txtOpcionDES.Name = "txtOpcionDES";
             // 
             // lblRespuesta
             // 
@@ -152,14 +237,14 @@ namespace PlataformaEducativa.Formularios
             lblRespuesta.ForeColor = Color.White;
             lblRespuesta.Name = "lblRespuesta";
             // 
-            // cmbRespuesta
+            // cmbCorrecta
             // 
-            cmbRespuesta.BackColor = Color.FromArgb(227, 214, 179);
-            cmbRespuesta.DropDownStyle = ComboBoxStyle.DropDownList;
-            resources.ApplyResources(cmbRespuesta, "cmbRespuesta");
-            cmbRespuesta.ForeColor = Color.FromArgb(60, 40, 20);
-            cmbRespuesta.Items.AddRange(new object[] { resources.GetString("cmbRespuesta.Items"), resources.GetString("cmbRespuesta.Items1"), resources.GetString("cmbRespuesta.Items2"), resources.GetString("cmbRespuesta.Items3") });
-            cmbRespuesta.Name = "cmbRespuesta";
+            cmbCorrecta.BackColor = Color.FromArgb(227, 214, 179);
+            cmbCorrecta.DropDownStyle = ComboBoxStyle.DropDownList;
+            resources.ApplyResources(cmbCorrecta, "cmbCorrecta");
+            cmbCorrecta.ForeColor = Color.FromArgb(60, 40, 20);
+            cmbCorrecta.Items.AddRange(new object[] { resources.GetString("cmbCorrecta.Items"), resources.GetString("cmbCorrecta.Items1"), resources.GetString("cmbCorrecta.Items2"), resources.GetString("cmbCorrecta.Items3") });
+            cmbCorrecta.Name = "cmbCorrecta";
             // 
             // lblMateria
             // 
@@ -173,7 +258,7 @@ namespace PlataformaEducativa.Formularios
             cmbMateria.DropDownStyle = ComboBoxStyle.DropDownList;
             resources.ApplyResources(cmbMateria, "cmbMateria");
             cmbMateria.ForeColor = Color.FromArgb(60, 40, 20);
-            cmbMateria.Items.AddRange(new object[] { resources.GetString("cmbMateria.Items"), resources.GetString("cmbMateria.Items1"), resources.GetString("cmbMateria.Items2"), resources.GetString("cmbMateria.Items3") });
+            cmbMateria.Items.AddRange(new object[] { resources.GetString("cmbMateria.Items"), resources.GetString("cmbMateria.Items1"), resources.GetString("cmbMateria.Items2"), resources.GetString("cmbMateria.Items3"), resources.GetString("cmbMateria.Items4"), resources.GetString("cmbMateria.Items5"), resources.GetString("cmbMateria.Items6"), resources.GetString("cmbMateria.Items7"), resources.GetString("cmbMateria.Items8"), resources.GetString("cmbMateria.Items9") });
             cmbMateria.Name = "cmbMateria";
             // 
             // btnGuardar
@@ -223,20 +308,30 @@ namespace PlataformaEducativa.Formularios
         private Label lblTitulo;
         private Panel panelContenido;
         private Label lblEnunciado;
-        private TextBox txtEnunciado;
+        private TextBox txtEnunciadoES;
         private Label lblOpcionA;
-        private TextBox txtOpcionA;
+        private TextBox txtOpcionAES;
         private Label lblOpcionB;
-        private TextBox txtOpcionB;
+        private TextBox txtOpcionBES;
         private Label lblOpcionC;
-        private TextBox txtOpcionC;
+        private TextBox txtOpcionCES;
         private Label lblOpcionD;
-        private TextBox txtOpcionD;
+        private TextBox txtOpcionDES;
         private Label lblRespuesta;
-        private ComboBox cmbRespuesta;
+        private ComboBox cmbCorrecta;
         private Label lblMateria;
         private ComboBox cmbMateria;
         private Button btnGuardar;
         private Button btnCancelar;
+        private Label label1;
+        private TextBox txtEnunciadoEN;
+        private Label label2;
+        private TextBox txtOpcionAEN;
+        private Label label3;
+        private TextBox txtOpcionBEN;
+        private Label label4;
+        private TextBox txtOpcionCEN;
+        private Label label5;
+        private TextBox txtOpcionDEN;
     }
 }

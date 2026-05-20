@@ -98,10 +98,10 @@ namespace PlataformaEducativa
                 labelDeporte.Text = "Sports";
 
                 // Botones de las tarjetas
-                buttonComenzarArquitectura.Text = "Start"; buttonProgresoArquitectura.Text = "Progress";
-                buttonComenzarAntropologia.Text = "Start"; buttonProgresoAntropologia.Text = "Progress";
-                buttonComenzarCalculo.Text = "Start"; buttonProgresoCalculo.Text = "Progress";
-                buttonComenzarDeporte.Text = "Start"; buttonProgresoDeporte.Text = "Progress";
+                buttonComenzarArquitectura.Text = "Start";
+                buttonComenzarAntropologia.Text = "Start";
+                buttonComenzarCalculo.Text = "Start";
+                buttonComenzarDeporte.Text = "Start";
             }
             else
             {
@@ -114,10 +114,10 @@ namespace PlataformaEducativa
                 labelCalculo.Text = "Calculo";
                 labelDeporte.Text = "Deporte";
 
-                buttonComenzarArquitectura.Text = "Comenzar"; buttonProgresoArquitectura.Text = "Ver Progreso";
-                buttonComenzarAntropologia.Text = "Comenzar"; buttonProgresoAntropologia.Text = "Ver Progreso";
-                buttonComenzarCalculo.Text = "Comenzar"; buttonProgresoCalculo.Text = "Ver Progreso";
-                buttonComenzarDeporte.Text = "Comenzar"; buttonProgresoDeporte.Text = "Ver Progreso";
+                buttonComenzarArquitectura.Text = "Comenzar";
+                buttonComenzarAntropologia.Text = "Comenzar";
+                buttonComenzarCalculo.Text = "Comenzar";
+                buttonComenzarDeporte.Text = "Comenzar";
             }
         }
 

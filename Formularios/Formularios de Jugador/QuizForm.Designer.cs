@@ -29,41 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuizForm));
-            pbMateriaIcon = new PictureBox();
-            lblMateria = new Label();
             lblPreguntaEnunciado = new Label();
-            label1 = new Label();
+            lblPreguntaActual = new Label();
             lblContadorPreguntas = new Label();
             lblPuntaje = new Label();
             btnAnterior = new Button();
             btnSiguiente = new Button();
             pbImagenPregunta = new PictureBox();
             pictureBoxMichiLogin = new PictureBox();
-            rbOpciónA = new RadioButton();
             rbOpciónB = new RadioButton();
             rbOpciónC = new RadioButton();
             rbOpciónD = new RadioButton();
             lblPorcentaje = new Label();
             pBar = new ProgressBar();
             lblProgreso = new Label();
-            ((System.ComponentModel.ISupportInitialize)pbMateriaIcon).BeginInit();
+            lblQuiz = new Label();
+            rbOpciónA = new RadioButton();
             ((System.ComponentModel.ISupportInitialize)pbImagenPregunta).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMichiLogin).BeginInit();
             SuspendLayout();
-            // 
-            // pbMateriaIcon
-            // 
-            pbMateriaIcon.BackColor = Color.Transparent;
-            resources.ApplyResources(pbMateriaIcon, "pbMateriaIcon");
-            pbMateriaIcon.Name = "pbMateriaIcon";
-            pbMateriaIcon.TabStop = false;
-            // 
-            // lblMateria
-            // 
-            lblMateria.BackColor = Color.Transparent;
-            resources.ApplyResources(lblMateria, "lblMateria");
-            lblMateria.ForeColor = Color.White;
-            lblMateria.Name = "lblMateria";
             // 
             // lblPreguntaEnunciado
             // 
@@ -73,12 +57,12 @@
             lblPreguntaEnunciado.Name = "lblPreguntaEnunciado";
             lblPreguntaEnunciado.Click += lblPreguntaEnunciado_Click;
             // 
-            // label1
+            // lblPreguntaActual
             // 
-            resources.ApplyResources(label1, "label1");
-            label1.BackColor = Color.Transparent;
-            label1.ForeColor = Color.White;
-            label1.Name = "label1";
+            resources.ApplyResources(lblPreguntaActual, "lblPreguntaActual");
+            lblPreguntaActual.BackColor = Color.Transparent;
+            lblPreguntaActual.ForeColor = Color.White;
+            lblPreguntaActual.Name = "lblPreguntaActual";
             // 
             // lblContadorPreguntas
             // 
@@ -124,16 +108,6 @@
             resources.ApplyResources(pictureBoxMichiLogin, "pictureBoxMichiLogin");
             pictureBoxMichiLogin.Name = "pictureBoxMichiLogin";
             pictureBoxMichiLogin.TabStop = false;
-            // 
-            // rbOpciónA
-            // 
-            resources.ApplyResources(rbOpciónA, "rbOpciónA");
-            rbOpciónA.BackColor = Color.Transparent;
-            rbOpciónA.FlatAppearance.BorderSize = 0;
-            rbOpciónA.ForeColor = Color.White;
-            rbOpciónA.Name = "rbOpciónA";
-            rbOpciónA.TabStop = true;
-            rbOpciónA.UseVisualStyleBackColor = false;
             // 
             // rbOpciónB
             // 
@@ -185,11 +159,29 @@
             lblProgreso.ForeColor = Color.White;
             lblProgreso.Name = "lblProgreso";
             // 
+            // lblQuiz
+            // 
+            resources.ApplyResources(lblQuiz, "lblQuiz");
+            lblQuiz.BackColor = Color.Transparent;
+            lblQuiz.ForeColor = SystemColors.ButtonHighlight;
+            lblQuiz.Name = "lblQuiz";
+            // 
+            // rbOpciónA
+            // 
+            resources.ApplyResources(rbOpciónA, "rbOpciónA");
+            rbOpciónA.BackColor = Color.Transparent;
+            rbOpciónA.FlatAppearance.BorderSize = 0;
+            rbOpciónA.ForeColor = Color.White;
+            rbOpciónA.Name = "rbOpciónA";
+            rbOpciónA.TabStop = true;
+            rbOpciónA.UseVisualStyleBackColor = false;
+            // 
             // QuizForm
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(45, 47, 51);
+            Controls.Add(lblQuiz);
             Controls.Add(rbOpciónD);
             Controls.Add(rbOpciónC);
             Controls.Add(rbOpciónB);
@@ -203,12 +195,10 @@
             Controls.Add(btnAnterior);
             Controls.Add(lblPuntaje);
             Controls.Add(lblContadorPreguntas);
-            Controls.Add(label1);
+            Controls.Add(lblPreguntaActual);
             Controls.Add(lblPreguntaEnunciado);
-            Controls.Add(lblMateria);
-            Controls.Add(pbMateriaIcon);
             Name = "QuizForm";
-            ((System.ComponentModel.ISupportInitialize)pbMateriaIcon).EndInit();
+            Load += QuizForm_Load;
             ((System.ComponentModel.ISupportInitialize)pbImagenPregunta).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMichiLogin).EndInit();
             ResumeLayout(false);
@@ -216,23 +206,21 @@
         }
 
         #endregion
-
-        private PictureBox pbMateriaIcon;
-        private Label lblMateria;
         private Label lblPreguntaEnunciado;
-        private Label label1;
+        private Label lblPreguntaActual;
         private Label lblContadorPreguntas;
         private Label lblPuntaje;
         private Button btnAnterior;
         private Button btnSiguiente;
         private PictureBox pbImagenPregunta;
         private PictureBox pictureBoxMichiLogin;
-        private RadioButton rbOpciónA;
         private RadioButton rbOpciónB;
         private RadioButton rbOpciónC;
         private RadioButton rbOpciónD;
         private Label lblPorcentaje;
         private ProgressBar pBar;
         private Label lblProgreso;
+        private Label lblQuiz;
+        private RadioButton rbOpciónA;
     }
 }

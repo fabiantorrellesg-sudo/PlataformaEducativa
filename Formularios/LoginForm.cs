@@ -130,20 +130,6 @@ namespace PlataformaEducativa
             ResumeLayout(false);
             PerformLayout();
 
-            if (ConfigIdiomas.IdiomaActual == "EN")
-            {
-                txtLogin.Text = "Login";
-                textBoxUsuario.Text = "User";
-                textBoxClave.Text = "Password";
-                btnIngresar.Text = "Log In";
-            }
-            else
-            {
-                txtLogin.Text = "Iniciar Sesión";
-                textBoxUsuario.Text = "Usuario";
-                textBoxClave.Text = "Contraseña";
-                btnIngresar.Text = "Ingresar";
-            }
 
         }
 

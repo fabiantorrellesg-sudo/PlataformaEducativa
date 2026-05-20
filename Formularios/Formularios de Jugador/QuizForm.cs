@@ -52,6 +52,7 @@ namespace PlataformaEducativa.Formularios
                 // Evaluamos el idioma global del juego
                 if (ConfigIdiomas.IdiomaActual == "EN")
                 {
+                    lblPreguntaActual.Text = "Current Question:";
                     lblPreguntaEnunciado.Text = preguntaActual.PreguntaEn;
                     rbOpciónA.Text = "A) " + preguntaActual.OpcionAEn;
                     rbOpciónB.Text = "B) " + preguntaActual.OpcionBEn;
@@ -67,6 +68,7 @@ namespace PlataformaEducativa.Formularios
                 }
                 else
                 {
+                    lblPreguntaActual.Text = "Pregunta Actual:";
                     lblPreguntaEnunciado.Text = preguntaActual.PreguntaEs;
                     rbOpciónA.Text = "A) " + preguntaActual.OpcionAEs;
                     rbOpciónB.Text = "B) " + preguntaActual.OpcionBEs;
@@ -78,7 +80,7 @@ namespace PlataformaEducativa.Formularios
                     // Actualiza el contador de progreso (Ej: "Pregunta 1 de 10")
                     lblContadorPreguntas.Text = $"Pregunta {_indiceActual + 1} de {_preguntas.Count}";
                     lblPuntaje.Text = $"Puntaje: {_puntosAcumulados}";
-                    lblProgreso.Text = "Progreso:";
+                    lblProgreso.Text = "Progress:";
                 }
 
 
@@ -244,6 +246,11 @@ namespace PlataformaEducativa.Formularios
         }
 
         private void lblPreguntaEnunciado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void QuizForm_Load(object sender, EventArgs e)
         {
 
         }
