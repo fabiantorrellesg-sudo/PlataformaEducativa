@@ -25,6 +25,7 @@ namespace PlataformaEducativa
 
         private void InitializeComponent()
         {
+
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             txtLogin = new Label();
             textBoxUsuario = new TextBox();
@@ -129,6 +130,21 @@ namespace PlataformaEducativa
             ResumeLayout(false);
             PerformLayout();
 
+            if (ConfigIdiomas.IdiomaActual == "EN")
+            {
+                txtLogin.Text = "Login";
+                textBoxUsuario.Text = "User";
+                textBoxClave.Text = "Password";
+                btnIngresar.Text = "Log In";
+            }
+            else
+            {
+                txtLogin.Text = "Iniciar Sesión";
+                textBoxUsuario.Text = "Usuario";
+                textBoxClave.Text = "Contraseña";
+                btnIngresar.Text = "Ingresar";
+            }
+
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -137,12 +153,28 @@ namespace PlataformaEducativa
 
             if (string.IsNullOrWhiteSpace(textBoxUsuario.Text) || string.IsNullOrWhiteSpace(textBoxClave.Text))
             {
-                MessageBox.Show("Ingrese el nombre de usuario y la contraseña para iniciar sesión", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (ConfigIdiomas.IdiomaActual == "EN")
+                {
+                    MessageBox.Show("Enter your username and password to log in", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese el nombre de usuario y la contraseña para iniciar sesión", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
             }
 
             if (textBoxClave.Text.Trim().Length < 8)
             {
-                MessageBox.Show("La contraseña debe tener mínimo 8 carácteres", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (ConfigIdiomas.IdiomaActual == "EN")
+                {
+                    MessageBox.Show("The password must be at least 8 characters long.", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("La contraseña debe tener mínimo 8 carácteres", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
             }
             try
             {

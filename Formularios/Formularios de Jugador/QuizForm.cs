@@ -57,6 +57,7 @@ namespace PlataformaEducativa.Formularios
                     rbOpciónB.Text = "B) " + preguntaActual.OpcionBEn;
                     rbOpciónC.Text = "C) " + preguntaActual.OpcionCEn;
                     rbOpciónD.Text = "D) " + preguntaActual.OpcionDEn;
+                    btnAnterior.Text = "Former";
                     btnSiguiente.Text = "Next";
 
                     // Actualiza el contador de progreso (Ej: "Question 1 of 10")
@@ -70,6 +71,7 @@ namespace PlataformaEducativa.Formularios
                     rbOpciónB.Text = "B) " + preguntaActual.OpcionBEs;
                     rbOpciónC.Text = "C) " + preguntaActual.OpcionCEs;
                     rbOpciónD.Text = "D) " + preguntaActual.OpcionDEs;
+                    btnAnterior.Text = "Anterior";
                     btnSiguiente.Text = "Siguiente";
 
                     // Actualiza el contador de progreso (Ej: "Pregunta 1 de 10")
