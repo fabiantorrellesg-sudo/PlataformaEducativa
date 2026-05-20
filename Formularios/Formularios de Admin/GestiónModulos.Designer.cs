@@ -128,6 +128,7 @@
             button1.ForeColor = Color.White;
             button1.Name = "button1";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // btnVolverMenu
             // 
@@ -145,6 +146,7 @@
             btnEliminar.ForeColor = Color.White;
             btnEliminar.Name = "btnEliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnCargarEditar
             // 
@@ -153,6 +155,7 @@
             btnCargarEditar.ForeColor = Color.White;
             btnCargarEditar.Name = "btnCargarEditar";
             btnCargarEditar.UseVisualStyleBackColor = true;
+            btnCargarEditar.Click += btnCargarEditar_Click;
             // 
             // btnLimpiar
             // 
@@ -161,6 +164,7 @@
             btnLimpiar.ForeColor = Color.White;
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // btnGuardar
             // 
@@ -169,6 +173,7 @@
             btnGuardar.ForeColor = Color.White;
             btnGuardar.Name = "btnGuardar";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // txtNombreEN
             // 
