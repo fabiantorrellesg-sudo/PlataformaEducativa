@@ -271,6 +271,7 @@ namespace PlataformaEducativa.Formularios
             BackgroundImage = Properties.Resources.FondoRocasLimpio;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(620, 500);
+            resources.ApplyResources(this, "$this");
             Controls.Add(panelContenido);
             Controls.Add(panelTitulo);
             DoubleBuffered = true;

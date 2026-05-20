@@ -104,7 +104,7 @@ namespace PlataformaEducativa.Formularios
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(139, 44);
             btnEditar.TabIndex = 8;
-            btnEditar.Text = "Editar ";
+            resources.ApplyResources(btnEditar, "btnEditar");
             btnEditar.UseVisualStyleBackColor = true;
             btnEditar.Click += btnEditar_Click;
             // 
@@ -117,7 +117,7 @@ namespace PlataformaEducativa.Formularios
             lblFiltrar.Name = "lblFiltrar";
             lblFiltrar.Size = new Size(106, 23);
             lblFiltrar.TabIndex = 10;
-            lblFiltrar.Text = "Filtrar:";
+            resources.ApplyResources(lblFiltrar, "lblFiltrar");
             // 
             // dgvGestionDePreguntas
             // 
@@ -159,7 +159,7 @@ namespace PlataformaEducativa.Formularios
             btnVolverMenu.Name = "btnVolverMenu";
             btnVolverMenu.Size = new Size(224, 44);
             btnVolverMenu.TabIndex = 9;
-            btnVolverMenu.Text = "Volver al menú";
+            resources.ApplyResources(btnVolverMenu, "btnVolverMenu");
             btnVolverMenu.UseVisualStyleBackColor = true;
             btnVolverMenu.Click += btnVolverMenu_Click;
             // 
@@ -176,7 +176,7 @@ namespace PlataformaEducativa.Formularios
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(169, 44);
             btnEliminar.TabIndex = 8;
-            btnEliminar.Text = "Eliminar";
+            resources.ApplyResources(btnEliminar, "btnEliminar");
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
@@ -203,7 +203,7 @@ namespace PlataformaEducativa.Formularios
             lblGestionPreguntas.Name = "lblGestionPreguntas";
             lblGestionPreguntas.Size = new Size(417, 37);
             lblGestionPreguntas.TabIndex = 0;
-            lblGestionPreguntas.Text = "Gestión de preguntas";
+            resources.ApplyResources(lblGestionPreguntas, "lblGestionPreguntas");
             // 
             // btnNuevaPregunta
             // 
@@ -218,7 +218,7 @@ namespace PlataformaEducativa.Formularios
             btnNuevaPregunta.Name = "btnNuevaPregunta";
             btnNuevaPregunta.Size = new Size(240, 44);
             btnNuevaPregunta.TabIndex = 12;
-            btnNuevaPregunta.Text = "Nueva pregunta";
+            resources.ApplyResources(btnNuevaPregunta, "btnNuevaPregunta");
             btnNuevaPregunta.UseVisualStyleBackColor = true;
             btnNuevaPregunta.Click += btnNuevaPregunta_Click;
             // 
@@ -234,7 +234,7 @@ namespace PlataformaEducativa.Formularios
             Controls.Add(panel1);
             DoubleBuffered = true;
             Name = "GestiónPreguntas";
-            Text = "Gestión de preguntas";
+            resources.ApplyResources(this, "$this");
             Load += GestiónPreguntas_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxCat1).EndInit();
             panelContenido.ResumeLayout(false);

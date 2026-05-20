@@ -1,4 +1,4 @@
-﻿namespace PlataformaEducativa.Formularios
+namespace PlataformaEducativa.Formularios
 {
     partial class GestionUsuarios
     {
@@ -165,7 +165,7 @@
             btnCargar.Name = "btnCargar";
             btnCargar.Size = new Size(98, 33);
             btnCargar.TabIndex = 8;
-            btnCargar.Text = "Cargar";
+            resources.ApplyResources(btnCargar, "btnCargar");
             btnCargar.UseVisualStyleBackColor = true;
             // 
             // lblRol
@@ -177,7 +177,7 @@
             lblRol.Name = "lblRol";
             lblRol.Size = new Size(58, 18);
             lblRol.TabIndex = 10;
-            lblRol.Text = "Rol: ";
+            resources.ApplyResources(lblRol, "lblRol");
             // 
             // dgvGestionDeUsuarios
             // 
@@ -217,7 +217,7 @@
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(102, 33);
             btnLimpiar.TabIndex = 5;
-            btnLimpiar.Text = "Limpiar";
+            resources.ApplyResources(btnLimpiar, "btnLimpiar");
             btnLimpiar.UseVisualStyleBackColor = true;
             // 
             // btnVolverMenu
@@ -232,7 +232,7 @@
             btnVolverMenu.Name = "btnVolverMenu";
             btnVolverMenu.Size = new Size(175, 33);
             btnVolverMenu.TabIndex = 9;
-            btnVolverMenu.Text = "Volver al menú";
+            resources.ApplyResources(btnVolverMenu, "btnVolverMenu");
             btnVolverMenu.UseVisualStyleBackColor = true;
             // 
             // btnGuardar
@@ -247,7 +247,7 @@
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(102, 33);
             btnGuardar.TabIndex = 4;
-            btnGuardar.Text = "Guardar";
+            resources.ApplyResources(btnGuardar, "btnGuardar");
             btnGuardar.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
@@ -262,7 +262,7 @@
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(125, 33);
             btnEliminar.TabIndex = 8;
-            btnEliminar.Text = "Eliminar";
+            resources.ApplyResources(btnEliminar, "btnEliminar");
             btnEliminar.UseVisualStyleBackColor = true;
             // 
             // panel1
@@ -286,7 +286,7 @@
             lblGestionUsuarios.Name = "lblGestionUsuarios";
             lblGestionUsuarios.Size = new Size(318, 31);
             lblGestionUsuarios.TabIndex = 0;
-            lblGestionUsuarios.Text = "Gestión de usuarios";
+            resources.ApplyResources(lblGestionUsuarios, "lblGestionUsuarios");
             // 
             // GestionUsuarios
             // 
@@ -302,7 +302,7 @@
             Name = "GestionUsuarios";
             SizeGripStyle = SizeGripStyle.Show;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Gestión de usuarios";
+            resources.ApplyResources(this, "$this");
             panelContenido.ResumeLayout(false);
             panelContenido.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCat1).EndInit();
