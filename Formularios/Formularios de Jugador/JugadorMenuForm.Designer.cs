@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JugadorMenuForm));
             panel1 = new Panel();
-            button1 = new Button();
+            btnCerrarSesion = new Button();
             pictureBoxUsuario = new PictureBox();
             labelNivel = new Label();
             labelJugador = new Label();
-            progressBar1 = new ProgressBar();
+            progressBar = new ProgressBar();
             panel2 = new Panel();
             pictureBoxArquitectura = new PictureBox();
             buttonProgresoArquitectura = new Button();
@@ -69,30 +69,30 @@
             // 
             // panel1
             // 
-            resources.ApplyResources(panel1, "panel1");
             panel1.BackColor = Color.Transparent;
+            resources.ApplyResources(panel1, "panel1");
             panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(btnCerrarSesion);
             panel1.Controls.Add(pictureBoxUsuario);
             panel1.Controls.Add(labelNivel);
             panel1.Controls.Add(labelJugador);
-            panel1.Controls.Add(progressBar1);
+            panel1.Controls.Add(progressBar);
             panel1.Name = "panel1";
             // 
-            // button1
+            // btnCerrarSesion
             // 
-            resources.ApplyResources(button1, "button1");
-            button1.Cursor = Cursors.Hand;
-            button1.ForeColor = Color.White;
-            button1.Image = Properties.Resources.tramoDeMadera;
-            button1.Name = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnCerrarSesion.Cursor = Cursors.Hand;
+            btnCerrarSesion.ForeColor = Color.White;
+            btnCerrarSesion.Image = Properties.Resources.tramoDeMadera;
+            resources.ApplyResources(btnCerrarSesion, "btnCerrarSesion");
+            btnCerrarSesion.Name = "btnCerrarSesion";
+            btnCerrarSesion.UseVisualStyleBackColor = true;
+            btnCerrarSesion.Click += button1_Click;
             // 
             // pictureBoxUsuario
             // 
-            resources.ApplyResources(pictureBoxUsuario, "pictureBoxUsuario");
             pictureBoxUsuario.BackColor = Color.Transparent;
+            resources.ApplyResources(pictureBoxUsuario, "pictureBoxUsuario");
             pictureBoxUsuario.Image = Properties.Resources.usuario;
             pictureBoxUsuario.Name = "pictureBoxUsuario";
             pictureBoxUsuario.TabStop = false;
@@ -109,15 +109,15 @@
             labelJugador.ForeColor = SystemColors.ControlLightLight;
             labelJugador.Name = "labelJugador";
             // 
-            // progressBar1
+            // progressBar
             // 
-            resources.ApplyResources(progressBar1, "progressBar1");
-            progressBar1.Name = "progressBar1";
+            resources.ApplyResources(progressBar, "progressBar");
+            progressBar.Name = "progressBar";
             // 
             // panel2
             // 
-            resources.ApplyResources(panel2, "panel2");
             panel2.BackColor = Color.Transparent;
+            resources.ApplyResources(panel2, "panel2");
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(pictureBoxArquitectura);
             panel2.Controls.Add(buttonProgresoArquitectura);
@@ -127,8 +127,8 @@
             // 
             // pictureBoxArquitectura
             // 
-            resources.ApplyResources(pictureBoxArquitectura, "pictureBoxArquitectura");
             pictureBoxArquitectura.Image = Properties.Resources.cpu;
+            resources.ApplyResources(pictureBoxArquitectura, "pictureBoxArquitectura");
             pictureBoxArquitectura.Name = "pictureBoxArquitectura";
             pictureBoxArquitectura.TabStop = false;
             // 
@@ -147,6 +147,7 @@
             buttonComenzarArquitectura.ForeColor = Color.White;
             buttonComenzarArquitectura.Name = "buttonComenzarArquitectura";
             buttonComenzarArquitectura.UseVisualStyleBackColor = false;
+            buttonComenzarArquitectura.Click += buttonComenzarArquitectura_Click_1;
             // 
             // labelArquitectura
             // 
@@ -157,8 +158,8 @@
             // 
             // panel3
             // 
-            resources.ApplyResources(panel3, "panel3");
             panel3.BackColor = Color.Transparent;
+            resources.ApplyResources(panel3, "panel3");
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(pictureBoxAntropologia);
             panel3.Controls.Add(buttonProgresoAntropologia);
@@ -174,19 +175,20 @@
             // 
             // buttonProgresoAntropologia
             // 
-            resources.ApplyResources(buttonProgresoAntropologia, "buttonProgresoAntropologia");
             buttonProgresoAntropologia.Cursor = Cursors.Hand;
             buttonProgresoAntropologia.ForeColor = Color.White;
+            resources.ApplyResources(buttonProgresoAntropologia, "buttonProgresoAntropologia");
             buttonProgresoAntropologia.Name = "buttonProgresoAntropologia";
             buttonProgresoAntropologia.UseVisualStyleBackColor = true;
             // 
             // buttonComenzarAntropologia
             // 
-            resources.ApplyResources(buttonComenzarAntropologia, "buttonComenzarAntropologia");
             buttonComenzarAntropologia.Cursor = Cursors.Hand;
             buttonComenzarAntropologia.ForeColor = Color.White;
+            resources.ApplyResources(buttonComenzarAntropologia, "buttonComenzarAntropologia");
             buttonComenzarAntropologia.Name = "buttonComenzarAntropologia";
             buttonComenzarAntropologia.UseVisualStyleBackColor = true;
+            buttonComenzarAntropologia.Click += buttonComenzarAntropologia_Click_1;
             // 
             // labelAntropologia
             // 
@@ -197,8 +199,8 @@
             // 
             // panel4
             // 
-            resources.ApplyResources(panel4, "panel4");
             panel4.BackColor = Color.Transparent;
+            resources.ApplyResources(panel4, "panel4");
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(pictureBoxDeporte);
             panel4.Controls.Add(buttonProgresoDeporte);
@@ -214,19 +216,20 @@
             // 
             // buttonProgresoDeporte
             // 
-            resources.ApplyResources(buttonProgresoDeporte, "buttonProgresoDeporte");
             buttonProgresoDeporte.Cursor = Cursors.Hand;
             buttonProgresoDeporte.ForeColor = Color.White;
+            resources.ApplyResources(buttonProgresoDeporte, "buttonProgresoDeporte");
             buttonProgresoDeporte.Name = "buttonProgresoDeporte";
             buttonProgresoDeporte.UseVisualStyleBackColor = true;
             // 
             // buttonComenzarDeporte
             // 
-            resources.ApplyResources(buttonComenzarDeporte, "buttonComenzarDeporte");
             buttonComenzarDeporte.Cursor = Cursors.Hand;
             buttonComenzarDeporte.ForeColor = Color.White;
+            resources.ApplyResources(buttonComenzarDeporte, "buttonComenzarDeporte");
             buttonComenzarDeporte.Name = "buttonComenzarDeporte";
             buttonComenzarDeporte.UseVisualStyleBackColor = true;
+            buttonComenzarDeporte.Click += buttonComenzarDeporte_Click_1;
             // 
             // labelDeporte
             // 
@@ -242,8 +245,8 @@
             // 
             // panel5
             // 
-            resources.ApplyResources(panel5, "panel5");
             panel5.BackColor = Color.Transparent;
+            resources.ApplyResources(panel5, "panel5");
             panel5.BorderStyle = BorderStyle.FixedSingle;
             panel5.Controls.Add(pictureBoxCalculo);
             panel5.Controls.Add(buttonProgresoCalculo);
@@ -259,19 +262,20 @@
             // 
             // buttonProgresoCalculo
             // 
-            resources.ApplyResources(buttonProgresoCalculo, "buttonProgresoCalculo");
             buttonProgresoCalculo.Cursor = Cursors.Hand;
             buttonProgresoCalculo.ForeColor = Color.White;
+            resources.ApplyResources(buttonProgresoCalculo, "buttonProgresoCalculo");
             buttonProgresoCalculo.Name = "buttonProgresoCalculo";
             buttonProgresoCalculo.UseVisualStyleBackColor = true;
             // 
             // buttonComenzarCalculo
             // 
-            resources.ApplyResources(buttonComenzarCalculo, "buttonComenzarCalculo");
             buttonComenzarCalculo.Cursor = Cursors.Hand;
             buttonComenzarCalculo.ForeColor = Color.White;
+            resources.ApplyResources(buttonComenzarCalculo, "buttonComenzarCalculo");
             buttonComenzarCalculo.Name = "buttonComenzarCalculo";
             buttonComenzarCalculo.UseVisualStyleBackColor = true;
+            buttonComenzarCalculo.Click += buttonComenzarCalculo_Click_1;
             // 
             // JugadorMenuForm
             // 
@@ -309,7 +313,7 @@
         #endregion
 
         private Panel panel1;
-        private ProgressBar progressBar1;
+        private ProgressBar progressBar;
         private Label labelJugador;
         private Label labelNivel;
         private Panel panel2;
@@ -333,7 +337,7 @@
         private PictureBox pictureBoxDeporte;
         private PictureBox pictureBoxCalculo;
         private PictureBox pictureBoxUsuario;
-        private Button button1;
+        private Button btnCerrarSesion;
         private PictureBox pictureBoxArquitectura;
     }
 }
