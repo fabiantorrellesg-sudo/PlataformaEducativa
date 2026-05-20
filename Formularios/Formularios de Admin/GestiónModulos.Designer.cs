@@ -1,4 +1,4 @@
-﻿namespace PlataformaEducativa.Formularios
+namespace PlataformaEducativa.Formularios
 {
     partial class GestiónModulos
     {
@@ -94,7 +94,7 @@
             btnVolverMenu.Name = "btnVolverMenu";
             btnVolverMenu.Size = new Size(113, 23);
             btnVolverMenu.TabIndex = 9;
-            btnVolverMenu.Text = "Volver al Menú";
+            resources.ApplyResources(btnVolverMenu, "btnVolverMenu");
             btnVolverMenu.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
@@ -109,7 +109,7 @@
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(75, 23);
             btnEliminar.TabIndex = 8;
-            btnEliminar.Text = "Eliminar";
+            resources.ApplyResources(btnEliminar, "btnEliminar");
             btnEliminar.UseVisualStyleBackColor = true;
             // 
             // btnCargarEditar
@@ -124,7 +124,7 @@
             btnCargarEditar.Name = "btnCargarEditar";
             btnCargarEditar.Size = new Size(141, 23);
             btnCargarEditar.TabIndex = 7;
-            btnCargarEditar.Text = "Cargar para Editar";
+            resources.ApplyResources(btnCargarEditar, "btnCargarEditar");
             btnCargarEditar.UseVisualStyleBackColor = true;
             // 
             // dgvDatosGestionModulos
@@ -164,7 +164,7 @@
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(75, 23);
             btnLimpiar.TabIndex = 5;
-            btnLimpiar.Text = "Limpiar";
+            resources.ApplyResources(btnLimpiar, "btnLimpiar");
             btnLimpiar.UseVisualStyleBackColor = true;
             // 
             // btnGuardar
@@ -179,7 +179,7 @@
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(75, 23);
             btnGuardar.TabIndex = 4;
-            btnGuardar.Text = "Guardar";
+            resources.ApplyResources(btnGuardar, "btnGuardar");
             btnGuardar.UseVisualStyleBackColor = true;
             // 
             // txtNombreEN
@@ -211,7 +211,7 @@
             lblNombreEN.Name = "lblNombreEN";
             lblNombreEN.Size = new Size(91, 15);
             lblNombreEN.TabIndex = 1;
-            lblNombreEN.Text = "Nombre (EN):";
+            resources.ApplyResources(lblNombreEN, "lblNombreEN");
             // 
             // lblNombreES
             // 
@@ -222,7 +222,7 @@
             lblNombreES.Name = "lblNombreES";
             lblNombreES.Size = new Size(91, 15);
             lblNombreES.TabIndex = 0;
-            lblNombreES.Text = "Nombre (ES):";
+            resources.ApplyResources(lblNombreES, "lblNombreES");
             // 
             // panel1
             // 
@@ -256,7 +256,7 @@
             lblGestionModulos.Name = "lblGestionModulos";
             lblGestionModulos.Size = new Size(302, 31);
             lblGestionModulos.TabIndex = 0;
-            lblGestionModulos.Text = "Gestión de Modulos";
+            resources.ApplyResources(lblGestionModulos, "lblGestionModulos");
             // 
             // GestiónModulos
             // 
@@ -271,7 +271,7 @@
             Name = "GestiónModulos";
             Padding = new Padding(10, 40, 10, 10);
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "GestionModulos";
+            resources.ApplyResources(this, "$this");
             panelContenido.ResumeLayout(false);
             gbModulos.ResumeLayout(false);
             gbModulos.PerformLayout();

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
+using System;
 using System.Windows.Forms;
+using PlataformaEducativa.Formularios;
 
 namespace PlataformaEducativa
 {
@@ -18,6 +14,23 @@ namespace PlataformaEducativa
         private void Form2_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonEditarMaterias_Click(object sender, EventArgs e)
+        {
+            GestiónPreguntas ventanaPreguntas = new GestiónPreguntas();
+            ventanaPreguntas.ShowDialog();
+        }
+
+        private void buttonGestionarUsuarios_Click(object sender, EventArgs e)
+        {
+            GestionUsuarios ventanaUsuarios = new GestionUsuarios();
+            ventanaUsuarios.ShowDialog();
+        }
+
+        private void buttonCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

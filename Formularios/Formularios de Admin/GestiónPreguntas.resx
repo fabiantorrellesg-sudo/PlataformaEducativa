@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- ARCHIVO DE RECURSOS EN ESPAÑOL (ES) - GestiónPreguntas -->
 <root>
   <!--
     Microsoft ResX Schema
@@ -30217,5 +30218,26 @@
         H/lHZWNm32jqD2k9I6+nQ7LJkA4N3ziKIjDW6ceP+AaR6XtJBpIa2Efa3PoIn2C0uwh9eP0j8D0k/XtD
         9A0k/RtG+jeC8K0efCeIoG/3oIx6y7JKn0Wg8j8A9sfJpbAv8F0AAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="lblFiltrar.Text" xml:space="preserve">
+    <value>Filtrar:</value>
+  </data>
+  <data name="btnEditar.Text" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="btnVolverMenu.Text" xml:space="preserve">
+    <value>Volver al menú</value>
+  </data>
+  <data name="btnEliminar.Text" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="lblGestionPreguntas.Text" xml:space="preserve">
+    <value>Gestión de preguntas</value>
+  </data>
+  <data name="btnNuevaPregunta.Text" xml:space="preserve">
+    <value>Nueva pregunta</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Gestión de preguntas</value>
   </data>
 </root>

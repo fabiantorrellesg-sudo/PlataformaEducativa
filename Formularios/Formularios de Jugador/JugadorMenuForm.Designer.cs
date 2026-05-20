@@ -53,6 +53,7 @@ namespace PlataformaEducativa
             pictureBox2 = new PictureBox();
             buttonProgresoCalculo = new Button();
             buttonComenzarCalculo = new Button();
+            button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUsuario).BeginInit();
             panel2.SuspendLayout();
@@ -69,6 +70,7 @@ namespace PlataformaEducativa
             panel1.BackColor = Color.Transparent;
             resources.ApplyResources(panel1, "panel1");
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(pictureBoxUsuario);
             panel1.Controls.Add(labelNivel);
             panel1.Controls.Add(labelJugador);
@@ -259,6 +261,15 @@ namespace PlataformaEducativa
             buttonComenzarCalculo.UseVisualStyleBackColor = true;
             buttonComenzarCalculo.Click += buttonComenzarCalculo_Click;
             // 
+            // button1
+            // 
+            button1.Cursor = Cursors.Hand;
+            button1.ForeColor = Color.White;
+            button1.Image = Properties.Resources.MaderaPequena;
+            resources.ApplyResources(button1, "button1");
+            button1.Name = "button1";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // JugadorMenuForm
             // 
             resources.ApplyResources(this, "$this");
@@ -318,5 +329,6 @@ namespace PlataformaEducativa
         private PictureBox pictureBoxDeporte;
         private PictureBox pictureBox2;
         private PictureBox pictureBoxUsuario;
+        private Button button1;
     }
 }

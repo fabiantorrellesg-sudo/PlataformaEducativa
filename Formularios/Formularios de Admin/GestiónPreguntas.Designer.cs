@@ -1,4 +1,4 @@
-﻿namespace PlataformaEducativa.Formularios
+namespace PlataformaEducativa.Formularios
 {
     partial class GestiónPreguntas
     {
@@ -32,7 +32,7 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             pictureBoxCat1 = new PictureBox();
             panelContenido = new Panel();
-            listBoxMaterias = new ListBox();
+            listBoxMaterias = new ComboBox();
             btnEditar = new Button();
             lblFiltrar = new Label();
             dgvGestionDePreguntas = new DataGridView();
@@ -80,14 +80,16 @@
             // 
             listBoxMaterias.AccessibleRole = AccessibleRole.MenuBar;
             listBoxMaterias.BackColor = Color.FromArgb(55, 55, 55);
+            listBoxMaterias.DropDownStyle = ComboBoxStyle.DropDownList;
             listBoxMaterias.Font = new Font("Courier New", 12F, FontStyle.Bold);
             listBoxMaterias.ForeColor = Color.White;
             listBoxMaterias.FormattingEnabled = true;
-            listBoxMaterias.Items.AddRange(new object[] { "Antropología filosófica", "Arquitectura y estructura del computador ", "Cálculo", "Deporte", "" });
+            listBoxMaterias.Items.AddRange(new object[] { "Todas", "Antropología filosófica", "Arquitectura y estructura del computador ", "Cálculo", "Deporte" });
             listBoxMaterias.Location = new Point(150, 35);
             listBoxMaterias.Name = "listBoxMaterias";
             listBoxMaterias.Size = new Size(678, 27);
             listBoxMaterias.TabIndex = 11;
+            listBoxMaterias.SelectedIndexChanged += listBoxMaterias_SelectedIndexChanged;
             // 
             // btnEditar
             // 
@@ -102,8 +104,9 @@
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(139, 44);
             btnEditar.TabIndex = 8;
-            btnEditar.Text = "Editar ";
+            resources.ApplyResources(btnEditar, "btnEditar");
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // lblFiltrar
             // 
@@ -114,7 +117,7 @@
             lblFiltrar.Name = "lblFiltrar";
             lblFiltrar.Size = new Size(106, 23);
             lblFiltrar.TabIndex = 10;
-            lblFiltrar.Text = "Filtrar:";
+            resources.ApplyResources(lblFiltrar, "lblFiltrar");
             // 
             // dgvGestionDePreguntas
             // 
@@ -126,7 +129,7 @@
             dgvGestionDePreguntas.BorderStyle = BorderStyle.None;
             dgvGestionDePreguntas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(55, 55, 55);
             dataGridViewCellStyle2.Font = new Font("Courier New", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(80, 80, 80);
@@ -156,8 +159,9 @@
             btnVolverMenu.Name = "btnVolverMenu";
             btnVolverMenu.Size = new Size(224, 44);
             btnVolverMenu.TabIndex = 9;
-            btnVolverMenu.Text = "Volver al menú";
+            resources.ApplyResources(btnVolverMenu, "btnVolverMenu");
             btnVolverMenu.UseVisualStyleBackColor = true;
+            btnVolverMenu.Click += btnVolverMenu_Click;
             // 
             // btnEliminar
             // 
@@ -172,8 +176,9 @@
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(169, 44);
             btnEliminar.TabIndex = 8;
-            btnEliminar.Text = "Eliminar";
+            resources.ApplyResources(btnEliminar, "btnEliminar");
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // panel1
             // 
@@ -198,7 +203,7 @@
             lblGestionPreguntas.Name = "lblGestionPreguntas";
             lblGestionPreguntas.Size = new Size(417, 37);
             lblGestionPreguntas.TabIndex = 0;
-            lblGestionPreguntas.Text = "Gestión de preguntas";
+            resources.ApplyResources(lblGestionPreguntas, "lblGestionPreguntas");
             // 
             // btnNuevaPregunta
             // 
@@ -213,8 +218,9 @@
             btnNuevaPregunta.Name = "btnNuevaPregunta";
             btnNuevaPregunta.Size = new Size(240, 44);
             btnNuevaPregunta.TabIndex = 12;
-            btnNuevaPregunta.Text = "Nueva pregunta";
+            resources.ApplyResources(btnNuevaPregunta, "btnNuevaPregunta");
             btnNuevaPregunta.UseVisualStyleBackColor = true;
+            btnNuevaPregunta.Click += btnNuevaPregunta_Click;
             // 
             // GestiónPreguntas
             // 
@@ -228,7 +234,8 @@
             Controls.Add(panel1);
             DoubleBuffered = true;
             Name = "GestiónPreguntas";
-            Text = "Gestión de preguntas";
+            resources.ApplyResources(this, "$this");
+            Load += GestiónPreguntas_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxCat1).EndInit();
             panelContenido.ResumeLayout(false);
             panelContenido.PerformLayout();
@@ -246,7 +253,7 @@
         private PictureBox pictureBoxCandado;
         private TextBox textBoxClave;
         private TextBox textBoxUsuario;
-        private ListBox listBoxMaterias;
+        private ComboBox listBoxMaterias;
         private Button btnEditar;
         private Label lblFiltrar;
         private DataGridView dgvGestionDePreguntas;
