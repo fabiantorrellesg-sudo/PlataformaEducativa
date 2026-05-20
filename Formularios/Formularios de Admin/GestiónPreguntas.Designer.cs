@@ -103,12 +103,12 @@ namespace PlataformaEducativa.Formularios
             // 
             // btnVolverMenu
             // 
-            resources.ApplyResources(btnVolverMenu, "btnVolverMenu");
-            btnVolverMenu.FlatAppearance.BorderSize = 0;
-            btnVolverMenu.ForeColor = Color.White;
-            btnVolverMenu.Name = "btnVolverMenu";
-            btnVolverMenu.UseVisualStyleBackColor = true;
-            btnVolverMenu.Click += btnVolverMenu_Click;
+            //resources.ApplyResources(btnVolverMenu, "btnVolverMenu");
+            //btnVolverMenu.FlatAppearance.BorderSize = 0;
+            //btnVolverMenu.ForeColor = Color.White;
+            //btnVolverMenu.Name = "btnVolverMenu";
+            //btnVolverMenu.UseVisualStyleBackColor = true;
+            //btnVolverMenu.Click += btnVolverMenu_Click;
             // 
             // btnEliminar
             // 
