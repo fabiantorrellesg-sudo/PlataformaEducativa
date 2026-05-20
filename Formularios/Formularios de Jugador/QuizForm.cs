@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace PlataformaEducativa.Formularios
@@ -60,6 +61,7 @@ namespace PlataformaEducativa.Formularios
 
                     // Actualiza el contador de progreso (Ej: "Question 1 of 10")
                     lblContadorPreguntas.Text = $"Question {_indiceActual + 1} of {_preguntas.Count}";
+                    lblPuntaje.Text = $"Score: {_puntosAcumulados}";
                 }
                 else
                 {
@@ -72,7 +74,16 @@ namespace PlataformaEducativa.Formularios
 
                     // Actualiza el contador de progreso (Ej: "Pregunta 1 de 10")
                     lblContadorPreguntas.Text = $"Pregunta {_indiceActual + 1} de {_preguntas.Count}";
+                    lblPuntaje.Text = $"Puntaje: {_puntosAcumulados}";
                 }
+
+
+                pBar.Minimum = 0;
+                pBar.Maximum = _preguntas.Count;
+
+                pBar.Value = _indiceActual;
+                int porcentaje = (int)(((double)_indiceActual / _preguntas.Count) * 100);
+                lblPorcentaje.Text = $"{porcentaje}%";
 
                 try
                 {
@@ -136,6 +147,12 @@ namespace PlataformaEducativa.Formularios
             {
                 // Cada respuesta incorrecta le restará 5 puntos
                 _puntosAcumulados -= 5;
+
+                // Si el puntaje bajó de cero, lo nivelamos en 0
+                if (_puntosAcumulados < 0)
+                {
+                    _puntosAcumulados = 0;
+                }
             }
 
             _indiceActual++;

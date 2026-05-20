@@ -37,15 +37,15 @@
             lblPuntaje = new Label();
             btnAnterior = new Button();
             btnSiguiente = new Button();
-            pBar = new ProgressBar();
-            lblProgreso = new Label();
-            lblPorcentaje = new Label();
             pbImagenPregunta = new PictureBox();
             pictureBoxMichiLogin = new PictureBox();
             rbOpciónA = new RadioButton();
             rbOpciónB = new RadioButton();
             rbOpciónC = new RadioButton();
             rbOpciónD = new RadioButton();
+            lblPorcentaje = new Label();
+            pBar = new ProgressBar();
+            lblProgreso = new Label();
             ((System.ComponentModel.ISupportInitialize)pbMateriaIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbImagenPregunta).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMichiLogin).BeginInit();
@@ -111,26 +111,6 @@
             btnSiguiente.UseVisualStyleBackColor = true;
             btnSiguiente.Click += btnSiguiente_Click_1;
             // 
-            // pBar
-            // 
-            resources.ApplyResources(pBar, "pBar");
-            pBar.Name = "pBar";
-            pBar.Style = ProgressBarStyle.Continuous;
-            // 
-            // lblProgreso
-            // 
-            resources.ApplyResources(lblProgreso, "lblProgreso");
-            lblProgreso.BackColor = Color.Transparent;
-            lblProgreso.ForeColor = Color.White;
-            lblProgreso.Name = "lblProgreso";
-            // 
-            // lblPorcentaje
-            // 
-            resources.ApplyResources(lblPorcentaje, "lblPorcentaje");
-            lblPorcentaje.BackColor = Color.Transparent;
-            lblPorcentaje.ForeColor = Color.White;
-            lblPorcentaje.Name = "lblPorcentaje";
-            // 
             // pbImagenPregunta
             // 
             pbImagenPregunta.BorderStyle = BorderStyle.FixedSingle;
@@ -185,6 +165,26 @@
             rbOpciónD.TabStop = true;
             rbOpciónD.UseVisualStyleBackColor = false;
             // 
+            // lblPorcentaje
+            // 
+            resources.ApplyResources(lblPorcentaje, "lblPorcentaje");
+            lblPorcentaje.BackColor = Color.Transparent;
+            lblPorcentaje.ForeColor = Color.White;
+            lblPorcentaje.Name = "lblPorcentaje";
+            // 
+            // pBar
+            // 
+            resources.ApplyResources(pBar, "pBar");
+            pBar.Name = "pBar";
+            pBar.Style = ProgressBarStyle.Continuous;
+            // 
+            // lblProgreso
+            // 
+            resources.ApplyResources(lblProgreso, "lblProgreso");
+            lblProgreso.BackColor = Color.Transparent;
+            lblProgreso.ForeColor = Color.White;
+            lblProgreso.Name = "lblProgreso";
+            // 
             // QuizForm
             // 
             resources.ApplyResources(this, "$this");
@@ -225,14 +225,14 @@
         private Label lblPuntaje;
         private Button btnAnterior;
         private Button btnSiguiente;
-        private ProgressBar pBar;
-        private Label lblProgreso;
-        private Label lblPorcentaje;
         private PictureBox pbImagenPregunta;
         private PictureBox pictureBoxMichiLogin;
         private RadioButton rbOpciónA;
         private RadioButton rbOpciónB;
         private RadioButton rbOpciónC;
         private RadioButton rbOpciónD;
+        private Label lblPorcentaje;
+        private ProgressBar pBar;
+        private Label lblProgreso;
     }
 }

@@ -360,93 +360,6 @@
   <data name="&gt;&gt;btnSiguiente.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="pBar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="pBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>472, 167</value>
-  </data>
-  <data name="pBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 10</value>
-  </data>
-  <data name="pBar.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;pBar.Name" xml:space="preserve">
-    <value>pBar</value>
-  </data>
-  <data name="&gt;&gt;pBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pBar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pBar.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="lblProgreso.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblProgreso.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 9pt</value>
-  </data>
-  <data name="lblProgreso.Location" type="System.Drawing.Point, System.Drawing">
-    <value>469, 144</value>
-  </data>
-  <data name="lblProgreso.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 15</value>
-  </data>
-  <data name="lblProgreso.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="lblProgreso.Text" xml:space="preserve">
-    <value>Progreso:</value>
-  </data>
-  <data name="&gt;&gt;lblProgreso.Name" xml:space="preserve">
-    <value>lblProgreso</value>
-  </data>
-  <data name="&gt;&gt;lblProgreso.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblProgreso.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblProgreso.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="lblPorcentaje.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblPorcentaje.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Courier New, 9pt</value>
-  </data>
-  <data name="lblPorcentaje.Location" type="System.Drawing.Point, System.Drawing">
-    <value>620, 185</value>
-  </data>
-  <data name="lblPorcentaje.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 15</value>
-  </data>
-  <data name="lblPorcentaje.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="lblPorcentaje.Text" xml:space="preserve">
-    <value>0%</value>
-  </data>
-  <data name="lblPorcentaje.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;lblPorcentaje.Name" xml:space="preserve">
-    <value>lblPorcentaje</value>
-  </data>
-  <data name="&gt;&gt;lblPorcentaje.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblPorcentaje.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblPorcentaje.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="pbImagenPregunta.Location" type="System.Drawing.Point, System.Drawing">
     <value>483, 240</value>
   </data>
@@ -6911,6 +6824,102 @@
   </data>
   <data name="&gt;&gt;rbOpciónD.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="lblPorcentaje.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPorcentaje.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 9pt</value>
+  </data>
+  <data name="lblPorcentaje.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblPorcentaje.Location" type="System.Drawing.Point, System.Drawing">
+    <value>620, 185</value>
+  </data>
+  <data name="lblPorcentaje.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 15</value>
+  </data>
+  <data name="lblPorcentaje.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="lblPorcentaje.Text" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="lblPorcentaje.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblPorcentaje.Name" xml:space="preserve">
+    <value>lblPorcentaje</value>
+  </data>
+  <data name="&gt;&gt;lblPorcentaje.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPorcentaje.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblPorcentaje.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="pBar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="pBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>472, 167</value>
+  </data>
+  <data name="pBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 10</value>
+  </data>
+  <data name="pBar.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;pBar.Name" xml:space="preserve">
+    <value>pBar</value>
+  </data>
+  <data name="&gt;&gt;pBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pBar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pBar.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lblProgreso.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblProgreso.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 9pt</value>
+  </data>
+  <data name="lblProgreso.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblProgreso.Location" type="System.Drawing.Point, System.Drawing">
+    <value>469, 144</value>
+  </data>
+  <data name="lblProgreso.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 15</value>
+  </data>
+  <data name="lblProgreso.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="lblProgreso.Text" xml:space="preserve">
+    <value>Progreso:</value>
+  </data>
+  <data name="&gt;&gt;lblProgreso.Name" xml:space="preserve">
+    <value>lblProgreso</value>
+  </data>
+  <data name="&gt;&gt;lblProgreso.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblProgreso.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblProgreso.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
