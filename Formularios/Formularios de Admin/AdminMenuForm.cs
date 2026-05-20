@@ -41,6 +41,8 @@ namespace PlataformaEducativa
 
         private void buttonReportes_Click(object sender, EventArgs e)
         {
+
+            this.Close();
             GestiónPreguntas ventanaPreguntas = new GestiónPreguntas();
             ventanaPreguntas.Show();
         }
