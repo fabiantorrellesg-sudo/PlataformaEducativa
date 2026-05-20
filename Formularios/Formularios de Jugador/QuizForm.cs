@@ -63,6 +63,7 @@ namespace PlataformaEducativa.Formularios
                     // Actualiza el contador de progreso (Ej: "Question 1 of 10")
                     lblContadorPreguntas.Text = $"Question {_indiceActual + 1} of {_preguntas.Count}";
                     lblPuntaje.Text = $"Score: {_puntosAcumulados}";
+                    lblProgreso.Text = "Progress:";
                 }
                 else
                 {
@@ -77,6 +78,7 @@ namespace PlataformaEducativa.Formularios
                     // Actualiza el contador de progreso (Ej: "Pregunta 1 de 10")
                     lblContadorPreguntas.Text = $"Pregunta {_indiceActual + 1} de {_preguntas.Count}";
                     lblPuntaje.Text = $"Puntaje: {_puntosAcumulados}";
+                    lblProgreso.Text = "Progreso:";
                 }
 
 

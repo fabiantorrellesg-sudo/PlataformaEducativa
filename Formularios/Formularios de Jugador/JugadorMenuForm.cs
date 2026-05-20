@@ -54,6 +54,11 @@ namespace PlataformaEducativa
                     }
                 }
 
+                if (puntosTotales < 0)
+                {
+                    puntosTotales = 0;
+                }
+
                 if (puntosTotales >= 300)
                 {
                     nivel = 5;

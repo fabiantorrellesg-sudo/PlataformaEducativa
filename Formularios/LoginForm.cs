@@ -248,12 +248,20 @@ namespace PlataformaEducativa
         {
             ConfigIdiomas.IdiomaActual = "EN";
             MessageBox.Show("Language changed to English", "Language", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            txtLogin.Text = "Login";
+            textBoxUsuario.Text = "User";
+            textBoxClave.Text = "Password";
+            btnIngresar.Text = "Log In";
         }
 
         private void btnES_Click(object sender, EventArgs e)
         {
             ConfigIdiomas.IdiomaActual = "ES";
             MessageBox.Show("Idioma cambiado a Español", "Idioma", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            txtLogin.Text = "Iniciar Sesión";
+            textBoxUsuario.Text = "Usuario";
+            textBoxClave.Text = "Contraseña";
+            btnIngresar.Text = "Ingresar";
         }
     }
 }
