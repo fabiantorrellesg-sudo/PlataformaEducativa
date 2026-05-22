@@ -41,7 +41,7 @@ namespace PlataformaEducativa.Formularios
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error: {ex.Message}", "Error de carga", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

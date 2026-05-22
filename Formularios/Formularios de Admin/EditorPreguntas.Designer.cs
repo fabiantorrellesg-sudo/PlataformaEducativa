@@ -21,21 +21,32 @@ namespace PlataformaEducativa.Formularios
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditorPreguntas));
             panelTitulo = new Panel();
             lblTitulo = new Label();
             panelContenido = new Panel();
+            label1 = new Label();
+            txtEnunciadoEN = new TextBox();
+            label2 = new Label();
+            txtOpcionAEN = new TextBox();
+            label3 = new Label();
+            txtOpcionBEN = new TextBox();
+            label4 = new Label();
+            txtOpcionCEN = new TextBox();
+            label5 = new Label();
+            txtOpcionDEN = new TextBox();
             lblEnunciado = new Label();
-            txtEnunciado = new TextBox();
+            txtEnunciadoES = new TextBox();
             lblOpcionA = new Label();
-            txtOpcionA = new TextBox();
+            txtOpcionAES = new TextBox();
             lblOpcionB = new Label();
-            txtOpcionB = new TextBox();
+            txtOpcionBES = new TextBox();
             lblOpcionC = new Label();
-            txtOpcionC = new TextBox();
+            txtOpcionCES = new TextBox();
             lblOpcionD = new Label();
-            txtOpcionD = new TextBox();
+            txtOpcionDES = new TextBox();
             lblRespuesta = new Label();
-            cmbRespuesta = new ComboBox();
+            cmbCorrecta = new ComboBox();
             lblMateria = new Label();
             cmbMateria = new ComboBox();
             btnGuardar = new Button();
@@ -48,232 +59,234 @@ namespace PlataformaEducativa.Formularios
             // 
             panelTitulo.BackColor = Color.FromArgb(45, 45, 48);
             panelTitulo.Controls.Add(lblTitulo);
-            panelTitulo.Dock = DockStyle.Top;
-            panelTitulo.Location = new Point(0, 0);
+            resources.ApplyResources(panelTitulo, "panelTitulo");
             panelTitulo.Name = "panelTitulo";
-            panelTitulo.Size = new Size(620, 70);
-            panelTitulo.TabIndex = 0;
             // 
             // lblTitulo
             // 
-            lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Courier New", 18F, FontStyle.Bold);
+            resources.ApplyResources(lblTitulo, "lblTitulo");
             lblTitulo.ForeColor = Color.White;
-            lblTitulo.Location = new Point(140, 18);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(340, 34);
-            lblTitulo.TabIndex = 0;
-            lblTitulo.Text = "Editor de preguntas";
             // 
             // panelContenido
             // 
             panelContenido.BackColor = Color.Transparent;
             panelContenido.BackgroundImage = Properties.Resources.fondoMaderaLimpio;
-            panelContenido.BackgroundImageLayout = ImageLayout.Stretch;
+            resources.ApplyResources(panelContenido, "panelContenido");
+            panelContenido.Controls.Add(label1);
+            panelContenido.Controls.Add(txtEnunciadoEN);
+            panelContenido.Controls.Add(label2);
+            panelContenido.Controls.Add(txtOpcionAEN);
+            panelContenido.Controls.Add(label3);
+            panelContenido.Controls.Add(txtOpcionBEN);
+            panelContenido.Controls.Add(label4);
+            panelContenido.Controls.Add(txtOpcionCEN);
+            panelContenido.Controls.Add(label5);
+            panelContenido.Controls.Add(txtOpcionDEN);
             panelContenido.Controls.Add(lblEnunciado);
-            panelContenido.Controls.Add(txtEnunciado);
+            panelContenido.Controls.Add(txtEnunciadoES);
             panelContenido.Controls.Add(lblOpcionA);
-            panelContenido.Controls.Add(txtOpcionA);
+            panelContenido.Controls.Add(txtOpcionAES);
             panelContenido.Controls.Add(lblOpcionB);
-            panelContenido.Controls.Add(txtOpcionB);
+            panelContenido.Controls.Add(txtOpcionBES);
             panelContenido.Controls.Add(lblOpcionC);
-            panelContenido.Controls.Add(txtOpcionC);
+            panelContenido.Controls.Add(txtOpcionCES);
             panelContenido.Controls.Add(lblOpcionD);
-            panelContenido.Controls.Add(txtOpcionD);
+            panelContenido.Controls.Add(txtOpcionDES);
             panelContenido.Controls.Add(lblRespuesta);
-            panelContenido.Controls.Add(cmbRespuesta);
+            panelContenido.Controls.Add(cmbCorrecta);
             panelContenido.Controls.Add(lblMateria);
             panelContenido.Controls.Add(cmbMateria);
             panelContenido.Controls.Add(btnGuardar);
             panelContenido.Controls.Add(btnCancelar);
-            panelContenido.Location = new Point(0, 70);
             panelContenido.Name = "panelContenido";
-            panelContenido.Size = new Size(620, 430);
-            panelContenido.TabIndex = 1;
+            // 
+            // label1
+            // 
+            resources.ApplyResources(label1, "label1");
+            label1.ForeColor = Color.White;
+            label1.Name = "label1";
+            // 
+            // txtEnunciadoEN
+            // 
+            txtEnunciadoEN.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(txtEnunciadoEN, "txtEnunciadoEN");
+            txtEnunciadoEN.ForeColor = Color.FromArgb(60, 40, 20);
+            txtEnunciadoEN.Name = "txtEnunciadoEN";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(label2, "label2");
+            label2.ForeColor = Color.White;
+            label2.Name = "label2";
+            // 
+            // txtOpcionAEN
+            // 
+            txtOpcionAEN.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(txtOpcionAEN, "txtOpcionAEN");
+            txtOpcionAEN.ForeColor = Color.FromArgb(60, 40, 20);
+            txtOpcionAEN.Name = "txtOpcionAEN";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(label3, "label3");
+            label3.ForeColor = Color.White;
+            label3.Name = "label3";
+            // 
+            // txtOpcionBEN
+            // 
+            txtOpcionBEN.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(txtOpcionBEN, "txtOpcionBEN");
+            txtOpcionBEN.ForeColor = Color.FromArgb(60, 40, 20);
+            txtOpcionBEN.Name = "txtOpcionBEN";
+            // 
+            // label4
+            // 
+            resources.ApplyResources(label4, "label4");
+            label4.ForeColor = Color.White;
+            label4.Name = "label4";
+            // 
+            // txtOpcionCEN
+            // 
+            txtOpcionCEN.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(txtOpcionCEN, "txtOpcionCEN");
+            txtOpcionCEN.ForeColor = Color.FromArgb(60, 40, 20);
+            txtOpcionCEN.Name = "txtOpcionCEN";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(label5, "label5");
+            label5.ForeColor = Color.White;
+            label5.Name = "label5";
+            // 
+            // txtOpcionDEN
+            // 
+            txtOpcionDEN.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(txtOpcionDEN, "txtOpcionDEN");
+            txtOpcionDEN.ForeColor = Color.FromArgb(60, 40, 20);
+            txtOpcionDEN.Name = "txtOpcionDEN";
             // 
             // lblEnunciado
             // 
-            lblEnunciado.AutoSize = true;
-            lblEnunciado.Font = new Font("Courier New", 11F, FontStyle.Bold);
+            resources.ApplyResources(lblEnunciado, "lblEnunciado");
             lblEnunciado.ForeColor = Color.White;
-            lblEnunciado.Location = new Point(20, 20);
             lblEnunciado.Name = "lblEnunciado";
-            lblEnunciado.Text = "Enunciado:";
             // 
-            // txtEnunciado
+            // txtEnunciadoES
             // 
-            txtEnunciado.BackColor = Color.FromArgb(227, 214, 179);
-            txtEnunciado.Font = new Font("Courier New", 11F);
-            txtEnunciado.ForeColor = Color.FromArgb(60, 40, 20);
-            txtEnunciado.Location = new Point(20, 45);
-            txtEnunciado.Multiline = true;
-            txtEnunciado.Name = "txtEnunciado";
-            txtEnunciado.Size = new Size(575, 60);
-            txtEnunciado.TabIndex = 0;
+            txtEnunciadoES.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(txtEnunciadoES, "txtEnunciadoES");
+            txtEnunciadoES.ForeColor = Color.FromArgb(60, 40, 20);
+            txtEnunciadoES.Name = "txtEnunciadoES";
             // 
             // lblOpcionA
             // 
-            lblOpcionA.AutoSize = true;
-            lblOpcionA.Font = new Font("Courier New", 11F, FontStyle.Bold);
+            resources.ApplyResources(lblOpcionA, "lblOpcionA");
             lblOpcionA.ForeColor = Color.White;
-            lblOpcionA.Location = new Point(20, 120);
             lblOpcionA.Name = "lblOpcionA";
-            lblOpcionA.Text = "Opci\u00f3n A:";
             // 
-            // txtOpcionA
+            // txtOpcionAES
             // 
-            txtOpcionA.BackColor = Color.FromArgb(227, 214, 179);
-            txtOpcionA.Font = new Font("Courier New", 11F);
-            txtOpcionA.ForeColor = Color.FromArgb(60, 40, 20);
-            txtOpcionA.Location = new Point(130, 117);
-            txtOpcionA.Name = "txtOpcionA";
-            txtOpcionA.Size = new Size(465, 26);
-            txtOpcionA.TabIndex = 1;
+            txtOpcionAES.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(txtOpcionAES, "txtOpcionAES");
+            txtOpcionAES.ForeColor = Color.FromArgb(60, 40, 20);
+            txtOpcionAES.Name = "txtOpcionAES";
             // 
             // lblOpcionB
             // 
-            lblOpcionB.AutoSize = true;
-            lblOpcionB.Font = new Font("Courier New", 11F, FontStyle.Bold);
+            resources.ApplyResources(lblOpcionB, "lblOpcionB");
             lblOpcionB.ForeColor = Color.White;
-            lblOpcionB.Location = new Point(20, 155);
             lblOpcionB.Name = "lblOpcionB";
-            lblOpcionB.Text = "Opci\u00f3n B:";
             // 
-            // txtOpcionB
+            // txtOpcionBES
             // 
-            txtOpcionB.BackColor = Color.FromArgb(227, 214, 179);
-            txtOpcionB.Font = new Font("Courier New", 11F);
-            txtOpcionB.ForeColor = Color.FromArgb(60, 40, 20);
-            txtOpcionB.Location = new Point(130, 152);
-            txtOpcionB.Name = "txtOpcionB";
-            txtOpcionB.Size = new Size(465, 26);
-            txtOpcionB.TabIndex = 2;
+            txtOpcionBES.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(txtOpcionBES, "txtOpcionBES");
+            txtOpcionBES.ForeColor = Color.FromArgb(60, 40, 20);
+            txtOpcionBES.Name = "txtOpcionBES";
             // 
             // lblOpcionC
             // 
-            lblOpcionC.AutoSize = true;
-            lblOpcionC.Font = new Font("Courier New", 11F, FontStyle.Bold);
+            resources.ApplyResources(lblOpcionC, "lblOpcionC");
             lblOpcionC.ForeColor = Color.White;
-            lblOpcionC.Location = new Point(20, 190);
             lblOpcionC.Name = "lblOpcionC";
-            lblOpcionC.Text = "Opci\u00f3n C:";
             // 
-            // txtOpcionC
+            // txtOpcionCES
             // 
-            txtOpcionC.BackColor = Color.FromArgb(227, 214, 179);
-            txtOpcionC.Font = new Font("Courier New", 11F);
-            txtOpcionC.ForeColor = Color.FromArgb(60, 40, 20);
-            txtOpcionC.Location = new Point(130, 187);
-            txtOpcionC.Name = "txtOpcionC";
-            txtOpcionC.Size = new Size(465, 26);
-            txtOpcionC.TabIndex = 3;
+            txtOpcionCES.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(txtOpcionCES, "txtOpcionCES");
+            txtOpcionCES.ForeColor = Color.FromArgb(60, 40, 20);
+            txtOpcionCES.Name = "txtOpcionCES";
             // 
             // lblOpcionD
             // 
-            lblOpcionD.AutoSize = true;
-            lblOpcionD.Font = new Font("Courier New", 11F, FontStyle.Bold);
+            resources.ApplyResources(lblOpcionD, "lblOpcionD");
             lblOpcionD.ForeColor = Color.White;
-            lblOpcionD.Location = new Point(20, 225);
             lblOpcionD.Name = "lblOpcionD";
-            lblOpcionD.Text = "Opci\u00f3n D:";
             // 
-            // txtOpcionD
+            // txtOpcionDES
             // 
-            txtOpcionD.BackColor = Color.FromArgb(227, 214, 179);
-            txtOpcionD.Font = new Font("Courier New", 11F);
-            txtOpcionD.ForeColor = Color.FromArgb(60, 40, 20);
-            txtOpcionD.Location = new Point(130, 222);
-            txtOpcionD.Name = "txtOpcionD";
-            txtOpcionD.Size = new Size(465, 26);
-            txtOpcionD.TabIndex = 4;
+            txtOpcionDES.BackColor = Color.FromArgb(227, 214, 179);
+            resources.ApplyResources(txtOpcionDES, "txtOpcionDES");
+            txtOpcionDES.ForeColor = Color.FromArgb(60, 40, 20);
+            txtOpcionDES.Name = "txtOpcionDES";
             // 
             // lblRespuesta
             // 
-            lblRespuesta.AutoSize = true;
-            lblRespuesta.Font = new Font("Courier New", 11F, FontStyle.Bold);
+            resources.ApplyResources(lblRespuesta, "lblRespuesta");
             lblRespuesta.ForeColor = Color.White;
-            lblRespuesta.Location = new Point(20, 265);
             lblRespuesta.Name = "lblRespuesta";
-            lblRespuesta.Text = "Respuesta correcta:";
             // 
-            // cmbRespuesta
+            // cmbCorrecta
             // 
-            cmbRespuesta.BackColor = Color.FromArgb(227, 214, 179);
-            cmbRespuesta.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbRespuesta.Font = new Font("Courier New", 11F);
-            cmbRespuesta.ForeColor = Color.FromArgb(60, 40, 20);
-            cmbRespuesta.Items.AddRange(new object[] { "A", "B", "C", "D" });
-            cmbRespuesta.Location = new Point(240, 262);
-            cmbRespuesta.Name = "cmbRespuesta";
-            cmbRespuesta.Size = new Size(80, 27);
-            cmbRespuesta.TabIndex = 5;
+            cmbCorrecta.BackColor = Color.FromArgb(227, 214, 179);
+            cmbCorrecta.DropDownStyle = ComboBoxStyle.DropDownList;
+            resources.ApplyResources(cmbCorrecta, "cmbCorrecta");
+            cmbCorrecta.ForeColor = Color.FromArgb(60, 40, 20);
+            cmbCorrecta.Items.AddRange(new object[] { resources.GetString("cmbCorrecta.Items"), resources.GetString("cmbCorrecta.Items1"), resources.GetString("cmbCorrecta.Items2"), resources.GetString("cmbCorrecta.Items3") });
+            cmbCorrecta.Name = "cmbCorrecta";
             // 
             // lblMateria
             // 
-            lblMateria.AutoSize = true;
-            lblMateria.Font = new Font("Courier New", 11F, FontStyle.Bold);
+            resources.ApplyResources(lblMateria, "lblMateria");
             lblMateria.ForeColor = Color.White;
-            lblMateria.Location = new Point(20, 305);
             lblMateria.Name = "lblMateria";
-            lblMateria.Text = "Materia:";
             // 
             // cmbMateria
             // 
             cmbMateria.BackColor = Color.FromArgb(227, 214, 179);
             cmbMateria.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbMateria.Font = new Font("Courier New", 11F);
+            resources.ApplyResources(cmbMateria, "cmbMateria");
             cmbMateria.ForeColor = Color.FromArgb(60, 40, 20);
-            cmbMateria.Items.AddRange(new object[] {
-                "Antropolog\u00eda filos\u00f3fica",
-                "Arquitectura y estructura del computador",
-                "C\u00e1lculo",
-                "Deporte"
-            });
-            cmbMateria.Location = new Point(130, 302);
+            cmbMateria.Items.AddRange(new object[] { resources.GetString("cmbMateria.Items"), resources.GetString("cmbMateria.Items1"), resources.GetString("cmbMateria.Items2"), resources.GetString("cmbMateria.Items3"), resources.GetString("cmbMateria.Items4"), resources.GetString("cmbMateria.Items5"), resources.GetString("cmbMateria.Items6"), resources.GetString("cmbMateria.Items7"), resources.GetString("cmbMateria.Items8"), resources.GetString("cmbMateria.Items9") });
             cmbMateria.Name = "cmbMateria";
-            cmbMateria.Size = new Size(350, 27);
-            cmbMateria.TabIndex = 6;
             // 
             // btnGuardar
             // 
             btnGuardar.BackgroundImage = Properties.Resources.tramoDeMadera;
-            btnGuardar.BackgroundImageLayout = ImageLayout.Stretch;
+            resources.ApplyResources(btnGuardar, "btnGuardar");
             btnGuardar.FlatAppearance.BorderSize = 0;
-            btnGuardar.FlatStyle = FlatStyle.Flat;
-            btnGuardar.Font = new Font("Courier New", 12F, FontStyle.Bold);
             btnGuardar.ForeColor = Color.White;
-            btnGuardar.Location = new Point(100, 370);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(160, 44);
-            btnGuardar.TabIndex = 7;
-            btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
             // 
             // btnCancelar
             // 
             btnCancelar.BackgroundImage = Properties.Resources.tramoDeMadera;
-            btnCancelar.BackgroundImageLayout = ImageLayout.Stretch;
+            resources.ApplyResources(btnCancelar, "btnCancelar");
             btnCancelar.FlatAppearance.BorderSize = 0;
-            btnCancelar.FlatStyle = FlatStyle.Flat;
-            btnCancelar.Font = new Font("Courier New", 12F, FontStyle.Bold);
             btnCancelar.ForeColor = Color.White;
-            btnCancelar.Location = new Point(340, 370);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(160, 44);
-            btnCancelar.TabIndex = 8;
-            btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
             // EditorPreguntas
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(45, 47, 51);
             BackgroundImage = Properties.Resources.FondoRocasLimpio;
-            BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(620, 500);
             Controls.Add(panelContenido);
             Controls.Add(panelTitulo);
             DoubleBuffered = true;
@@ -281,8 +294,6 @@ namespace PlataformaEducativa.Formularios
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "EditorPreguntas";
-            StartPosition = FormStartPosition.CenterParent;
-            Text = "Editor de preguntas";
             Load += EditorPreguntas_Load;
             panelTitulo.ResumeLayout(false);
             panelTitulo.PerformLayout();
@@ -297,20 +308,30 @@ namespace PlataformaEducativa.Formularios
         private Label lblTitulo;
         private Panel panelContenido;
         private Label lblEnunciado;
-        private TextBox txtEnunciado;
+        private TextBox txtEnunciadoES;
         private Label lblOpcionA;
-        private TextBox txtOpcionA;
+        private TextBox txtOpcionAES;
         private Label lblOpcionB;
-        private TextBox txtOpcionB;
+        private TextBox txtOpcionBES;
         private Label lblOpcionC;
-        private TextBox txtOpcionC;
+        private TextBox txtOpcionCES;
         private Label lblOpcionD;
-        private TextBox txtOpcionD;
+        private TextBox txtOpcionDES;
         private Label lblRespuesta;
-        private ComboBox cmbRespuesta;
+        private ComboBox cmbCorrecta;
         private Label lblMateria;
         private ComboBox cmbMateria;
         private Button btnGuardar;
         private Button btnCancelar;
+        private Label label1;
+        private TextBox txtEnunciadoEN;
+        private Label label2;
+        private TextBox txtOpcionAEN;
+        private Label label3;
+        private TextBox txtOpcionBEN;
+        private Label label4;
+        private TextBox txtOpcionCEN;
+        private Label label5;
+        private TextBox txtOpcionDEN;
     }
 }
