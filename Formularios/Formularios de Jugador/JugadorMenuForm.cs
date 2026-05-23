@@ -32,7 +32,13 @@ namespace PlataformaEducativa
 
         private void JugadorMenuForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginForm regreso = new LoginForm();
+            regreso.Show();
         }
 
         private void buttonComenzarArquitectura_Click(object sender, EventArgs e)

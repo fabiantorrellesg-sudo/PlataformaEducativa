@@ -270,6 +270,16 @@ namespace PlataformaEducativa
             button1.Name = "button1";
             button1.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            button1.Cursor = Cursors.Hand;
+            button1.ForeColor = Color.White;
+            button1.Image = Properties.Resources.tramoDeMadera;
+            resources.ApplyResources(button1, "button1");
+            button1.Name = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // JugadorMenuForm
             // 
             resources.ApplyResources(this, "$this");

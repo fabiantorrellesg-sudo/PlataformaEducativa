@@ -32,6 +32,7 @@ namespace PlataformaEducativa.Formularios
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panelContenido = new Panel();
             gbModulos = new GroupBox();
+            button1 = new Button();
             btnVolverMenu = new Button();
             btnEliminar = new Button();
             btnCargarEditar = new Button();
@@ -66,6 +67,7 @@ namespace PlataformaEducativa.Formularios
             // 
             // gbModulos
             // 
+            gbModulos.Controls.Add(button1);
             gbModulos.Controls.Add(btnVolverMenu);
             gbModulos.Controls.Add(btnEliminar);
             gbModulos.Controls.Add(btnCargarEditar);
@@ -82,6 +84,21 @@ namespace PlataformaEducativa.Formularios
             gbModulos.TabIndex = 0;
             gbModulos.TabStop = false;
             // 
+            // button1
+            // 
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(176, 227);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 10;
+            button1.Text = "Editar";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // btnVolverMenu
             // 
             btnVolverMenu.BackgroundImage = (Image)resources.GetObject("btnVolverMenu.BackgroundImage");
@@ -90,12 +107,13 @@ namespace PlataformaEducativa.Formularios
             btnVolverMenu.FlatStyle = FlatStyle.Flat;
             btnVolverMenu.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnVolverMenu.ForeColor = Color.White;
-            btnVolverMenu.Location = new Point(252, 228);
+            btnVolverMenu.Location = new Point(568, 228);
             btnVolverMenu.Name = "btnVolverMenu";
             btnVolverMenu.Size = new Size(113, 23);
             btnVolverMenu.TabIndex = 9;
             resources.ApplyResources(btnVolverMenu, "btnVolverMenu");
             btnVolverMenu.UseVisualStyleBackColor = true;
+            btnVolverMenu.Click += btnVolverMenu_Click;
             // 
             // btnEliminar
             // 
@@ -105,7 +123,7 @@ namespace PlataformaEducativa.Formularios
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(171, 228);
+            btnEliminar.Location = new Point(265, 228);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(75, 23);
             btnEliminar.TabIndex = 8;
@@ -175,9 +193,9 @@ namespace PlataformaEducativa.Formularios
             btnGuardar.FlatStyle = FlatStyle.Flat;
             btnGuardar.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnGuardar.ForeColor = Color.White;
-            btnGuardar.Location = new Point(525, 27);
+            btnGuardar.Location = new Point(517, 27);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(75, 23);
+            btnGuardar.Size = new Size(83, 23);
             btnGuardar.TabIndex = 4;
             resources.ApplyResources(btnGuardar, "btnGuardar");
             btnGuardar.UseVisualStyleBackColor = true;
@@ -300,5 +318,6 @@ namespace PlataformaEducativa.Formularios
         private Button btnVolverMenu;
         private Button btnEliminar;
         private Button btnCargarEditar;
+        private Button button1;
     }
 }

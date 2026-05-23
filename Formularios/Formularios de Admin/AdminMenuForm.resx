@@ -2522,7 +2522,7 @@
     <value>3</value>
   </data>
   <data name="buttonReportes.Text" xml:space="preserve">
-    <value>Gestionar Respuestas</value>
+    <value>Gestionar Preguntas</value>
   </data>
   <data name="&gt;&gt;buttonReportes.Name" xml:space="preserve">
     <value>buttonReportes</value>

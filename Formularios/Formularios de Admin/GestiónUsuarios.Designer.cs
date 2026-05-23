@@ -30,8 +30,10 @@ namespace PlataformaEducativa.Formularios
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionUsuarios));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panelContenido = new Panel();
-            pictureBoxCat1 = new PictureBox();
+            button1 = new Button();
             pictureBoxUsuarioLogin = new PictureBox();
             pictureBoxCandado = new PictureBox();
             textBoxClave = new TextBox();
@@ -46,12 +48,13 @@ namespace PlataformaEducativa.Formularios
             btnEliminar = new Button();
             panel1 = new Panel();
             lblGestionUsuarios = new Label();
+            pictureBoxCat1 = new PictureBox();
             panelContenido.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxCat1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUsuarioLogin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCandado).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvGestionDeUsuarios).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCat1).BeginInit();
             SuspendLayout();
             // 
             // panelContenido
@@ -60,7 +63,7 @@ namespace PlataformaEducativa.Formularios
             panelContenido.BackColor = Color.Transparent;
             panelContenido.BackgroundImage = (Image)resources.GetObject("panelContenido.BackgroundImage");
             panelContenido.BackgroundImageLayout = ImageLayout.Stretch;
-            panelContenido.Controls.Add(pictureBoxCat1);
+            panelContenido.Controls.Add(button1);
             panelContenido.Controls.Add(pictureBoxUsuarioLogin);
             panelContenido.Controls.Add(pictureBoxCandado);
             panelContenido.Controls.Add(btnVerClave);
@@ -78,24 +81,30 @@ namespace PlataformaEducativa.Formularios
             panelContenido.Name = "panelContenido";
             panelContenido.Size = new Size(763, 313);
             panelContenido.TabIndex = 2;
+            panelContenido.Paint += panelContenido_Paint;
             // 
-            // pictureBoxCat1
+            // button1
             // 
-            pictureBoxCat1.Image = Properties.Resources.michiLogin;
-            pictureBoxCat1.Location = new Point(29, 196);
-            pictureBoxCat1.Margin = new Padding(3, 2, 3, 2);
-            pictureBoxCat1.Name = "pictureBoxCat1";
-            pictureBoxCat1.Size = new Size(145, 109);
-            pictureBoxCat1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxCat1.TabIndex = 16;
-            pictureBoxCat1.TabStop = false;
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Courier New", 12F);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(37, 217);
+            button1.Name = "button1";
+            button1.Size = new Size(119, 33);
+            button1.TabIndex = 17;
+            button1.Text = "Actualizar";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // pictureBoxUsuarioLogin
             // 
             pictureBoxUsuarioLogin.BackColor = Color.Transparent;
             pictureBoxUsuarioLogin.Image = (Image)resources.GetObject("pictureBoxUsuarioLogin.Image");
             pictureBoxUsuarioLogin.ImeMode = ImeMode.NoControl;
-            pictureBoxUsuarioLogin.Location = new Point(44, 58);
+            pictureBoxUsuarioLogin.Location = new Point(43, 30);
             pictureBoxUsuarioLogin.Margin = new Padding(3, 2, 3, 2);
             pictureBoxUsuarioLogin.Name = "pictureBoxUsuarioLogin";
             pictureBoxUsuarioLogin.Size = new Size(29, 26);
@@ -108,7 +117,7 @@ namespace PlataformaEducativa.Formularios
             pictureBoxCandado.BackColor = Color.Transparent;
             pictureBoxCandado.Image = (Image)resources.GetObject("pictureBoxCandado.Image");
             pictureBoxCandado.ImeMode = ImeMode.NoControl;
-            pictureBoxCandado.Location = new Point(44, 95);
+            pictureBoxCandado.Location = new Point(43, 67);
             pictureBoxCandado.Margin = new Padding(3, 2, 3, 2);
             pictureBoxCandado.Name = "pictureBoxCandado";
             pictureBoxCandado.Size = new Size(29, 26);
@@ -120,20 +129,22 @@ namespace PlataformaEducativa.Formularios
             // 
             textBoxClave.BackColor = Color.FromArgb(227, 214, 179);
             textBoxClave.Font = new Font("Courier New", 12F, FontStyle.Bold);
-            textBoxClave.ForeColor = SystemColors.Info;
-            textBoxClave.Location = new Point(88, 98);
+            textBoxClave.ForeColor = Color.IndianRed;
+            textBoxClave.Location = new Point(87, 70);
             textBoxClave.Margin = new Padding(3, 2, 3, 2);
+            textBoxClave.MaxLength = 50;
             textBoxClave.Name = "textBoxClave";
             textBoxClave.PlaceholderText = "CLAVE";
             textBoxClave.Size = new Size(182, 26);
             textBoxClave.TabIndex = 13;
+            textBoxClave.UseSystemPasswordChar = true;
             // 
             // textBoxUsuario
             // 
             textBoxUsuario.BackColor = Color.FromArgb(227, 214, 179);
             textBoxUsuario.Font = new Font("Courier New", 12F, FontStyle.Bold);
             textBoxUsuario.ForeColor = Color.IndianRed;
-            textBoxUsuario.Location = new Point(88, 58);
+            textBoxUsuario.Location = new Point(87, 30);
             textBoxUsuario.Margin = new Padding(3, 2, 3, 2);
             textBoxUsuario.Name = "textBoxUsuario";
             textBoxUsuario.PlaceholderText = "USUARIO";
@@ -158,11 +169,11 @@ namespace PlataformaEducativa.Formularios
             listBoxRol.Font = new Font("Courier New", 12F, FontStyle.Bold);
             listBoxRol.ForeColor = Color.White;
             listBoxRol.FormattingEnabled = true;
-            listBoxRol.Items.AddRange(new object[] { "Jugador", "Administrador", "Todos" });
-            listBoxRol.Location = new Point(344, 23);
+            listBoxRol.Items.AddRange(new object[] { "Jugador", "Administrador" });
+            listBoxRol.Location = new Point(96, 118);
             listBoxRol.Margin = new Padding(3, 2, 3, 2);
             listBoxRol.Name = "listBoxRol";
-            listBoxRol.Size = new Size(116, 4);
+            listBoxRol.Size = new Size(166, 22);
             listBoxRol.TabIndex = 11;
             // 
             // btnCargar
@@ -173,19 +184,20 @@ namespace PlataformaEducativa.Formularios
             btnCargar.FlatStyle = FlatStyle.Flat;
             btnCargar.Font = new Font("Courier New", 12F);
             btnCargar.ForeColor = Color.White;
-            btnCargar.Location = new Point(295, 264);
+            btnCargar.Location = new Point(167, 167);
             btnCargar.Name = "btnCargar";
-            btnCargar.Size = new Size(98, 33);
+            btnCargar.Size = new Size(109, 33);
             btnCargar.TabIndex = 8;
             resources.ApplyResources(btnCargar, "btnCargar");
             btnCargar.UseVisualStyleBackColor = true;
+            btnCargar.Click += btnCargar_Click;
             // 
             // lblRol
             // 
             lblRol.AutoSize = true;
             lblRol.Font = new Font("Courier New", 12F, FontStyle.Bold);
             lblRol.ForeColor = SystemColors.ButtonHighlight;
-            lblRol.Location = new Point(295, 26);
+            lblRol.Location = new Point(48, 120);
             lblRol.Name = "lblRol";
             lblRol.Size = new Size(58, 18);
             lblRol.TabIndex = 10;
@@ -196,26 +208,39 @@ namespace PlataformaEducativa.Formularios
             dgvGestionDeUsuarios.AllowUserToAddRows = false;
             dgvGestionDeUsuarios.AllowUserToResizeColumns = false;
             dgvGestionDeUsuarios.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(48, 43, 39);
+            dgvGestionDeUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvGestionDeUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvGestionDeUsuarios.BackgroundColor = Color.FromArgb(55, 55, 55);
+            dgvGestionDeUsuarios.BackgroundColor = Color.FromArgb(43, 34, 28);
             dgvGestionDeUsuarios.BorderStyle = BorderStyle.None;
+            dgvGestionDeUsuarios.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(33, 26, 22);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ScrollBar;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvGestionDeUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvGestionDeUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Courier New", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(80, 80, 80);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dgvGestionDeUsuarios.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(56, 50, 45);
+            dataGridViewCellStyle3.Font = new Font("Courier New", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(238, 223, 190);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(120, 40, 35);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvGestionDeUsuarios.DefaultCellStyle = dataGridViewCellStyle3;
             dgvGestionDeUsuarios.EnableHeadersVisualStyles = false;
-            dgvGestionDeUsuarios.GridColor = Color.Gainsboro;
-            dgvGestionDeUsuarios.Location = new Point(295, 58);
+            dgvGestionDeUsuarios.GridColor = Color.FromArgb(75, 63, 54);
+            dgvGestionDeUsuarios.Location = new Point(296, 25);
             dgvGestionDeUsuarios.Name = "dgvGestionDeUsuarios";
+            dgvGestionDeUsuarios.RowHeadersVisible = false;
             dgvGestionDeUsuarios.RowHeadersWidth = 51;
             dgvGestionDeUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvGestionDeUsuarios.Size = new Size(431, 193);
+            dgvGestionDeUsuarios.Size = new Size(431, 225);
             dgvGestionDeUsuarios.TabIndex = 7;
+            dgvGestionDeUsuarios.CellFormatting += dgvGestionDeUsuarios_CellFormatting;
             // 
             // btnLimpiar
             // 
@@ -225,12 +250,13 @@ namespace PlataformaEducativa.Formularios
             btnLimpiar.FlatStyle = FlatStyle.Flat;
             btnLimpiar.Font = new Font("Courier New", 12F);
             btnLimpiar.ForeColor = Color.White;
-            btnLimpiar.Location = new Point(166, 140);
+            btnLimpiar.Location = new Point(96, 264);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(102, 33);
+            btnLimpiar.Size = new Size(120, 33);
             btnLimpiar.TabIndex = 5;
             resources.ApplyResources(btnLimpiar, "btnLimpiar");
             btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // btnVolverMenu
             // 
@@ -240,12 +266,13 @@ namespace PlataformaEducativa.Formularios
             btnVolverMenu.FlatStyle = FlatStyle.Flat;
             btnVolverMenu.Font = new Font("Courier New", 12F);
             btnVolverMenu.ForeColor = Color.White;
-            btnVolverMenu.Location = new Point(551, 264);
+            btnVolverMenu.Location = new Point(552, 264);
             btnVolverMenu.Name = "btnVolverMenu";
             btnVolverMenu.Size = new Size(175, 33);
             btnVolverMenu.TabIndex = 9;
             resources.ApplyResources(btnVolverMenu, "btnVolverMenu");
             btnVolverMenu.UseVisualStyleBackColor = true;
+            btnVolverMenu.Click += btnVolverMenu_Click;
             // 
             // btnGuardar
             // 
@@ -255,12 +282,13 @@ namespace PlataformaEducativa.Formularios
             btnGuardar.FlatStyle = FlatStyle.Flat;
             btnGuardar.Font = new Font("Courier New", 12F);
             btnGuardar.ForeColor = Color.White;
-            btnGuardar.Location = new Point(46, 140);
+            btnGuardar.Location = new Point(37, 167);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(102, 33);
+            btnGuardar.Size = new Size(119, 33);
             btnGuardar.TabIndex = 4;
             resources.ApplyResources(btnGuardar, "btnGuardar");
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnEliminar
             // 
@@ -270,12 +298,13 @@ namespace PlataformaEducativa.Formularios
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Courier New", 12F);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(409, 264);
+            btnEliminar.Location = new Point(167, 216);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(125, 33);
+            btnEliminar.Size = new Size(109, 33);
             btnEliminar.TabIndex = 8;
             resources.ApplyResources(btnEliminar, "btnEliminar");
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // panel1
             // 
@@ -283,6 +312,7 @@ namespace PlataformaEducativa.Formularios
             panel1.BackColor = Color.Transparent;
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel1.Controls.Add(pictureBoxCat1);
             panel1.Controls.Add(lblGestionUsuarios);
             panel1.Location = new Point(-6, 8);
             panel1.Name = "panel1";
@@ -299,6 +329,17 @@ namespace PlataformaEducativa.Formularios
             lblGestionUsuarios.Size = new Size(318, 31);
             lblGestionUsuarios.TabIndex = 0;
             resources.ApplyResources(lblGestionUsuarios, "lblGestionUsuarios");
+            // 
+            // pictureBoxCat1
+            // 
+            pictureBoxCat1.Image = Properties.Resources.michiIcon;
+            pictureBoxCat1.Location = new Point(672, -5);
+            pictureBoxCat1.Margin = new Padding(3, 2, 3, 2);
+            pictureBoxCat1.Name = "pictureBoxCat1";
+            pictureBoxCat1.Size = new Size(81, 69);
+            pictureBoxCat1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxCat1.TabIndex = 18;
+            pictureBoxCat1.TabStop = false;
             // 
             // GestionUsuarios
             // 
@@ -318,12 +359,12 @@ namespace PlataformaEducativa.Formularios
             resources.ApplyResources(this, "$this");
             panelContenido.ResumeLayout(false);
             panelContenido.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxCat1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUsuarioLogin).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCandado).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvGestionDeUsuarios).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCat1).EndInit();
             ResumeLayout(false);
         }
 
@@ -346,6 +387,7 @@ namespace PlataformaEducativa.Formularios
         private TextBox textBoxClave;
         private Button btnVerClave;
         private TextBox textBoxUsuario;
+        private Button button1;
         private PictureBox pictureBoxCat1;
     }
 }
