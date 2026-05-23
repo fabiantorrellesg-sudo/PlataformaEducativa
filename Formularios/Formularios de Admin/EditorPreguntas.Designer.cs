@@ -68,8 +68,7 @@ namespace PlataformaEducativa.Formularios
             // panelContenido
             // 
             panelContenido.BackColor = Color.Transparent;
-            panelContenido.BackgroundImage = Properties.Resources.fondoMaderaLimpio;
-            panelContenido.BackgroundImageLayout = ImageLayout.Stretch;
+            panelContenido.BackColor = Color.FromArgb(45, 47, 51);
             panelContenido.Controls.Add(lblEnunciado);
             panelContenido.Controls.Add(txtEnunciado);
             panelContenido.Controls.Add(lblOpcionA);
@@ -236,8 +235,7 @@ namespace PlataformaEducativa.Formularios
             // 
             // btnGuardar
             // 
-            btnGuardar.BackgroundImage = Properties.Resources.tramoDeMadera;
-            btnGuardar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnGuardar.BackColor = Color.FromArgb(95, 163, 126);
             btnGuardar.FlatAppearance.BorderSize = 0;
             btnGuardar.FlatStyle = FlatStyle.Flat;
             btnGuardar.Font = new Font("Courier New", 12F, FontStyle.Bold);
@@ -252,8 +250,7 @@ namespace PlataformaEducativa.Formularios
             // 
             // btnCancelar
             // 
-            btnCancelar.BackgroundImage = Properties.Resources.tramoDeMadera;
-            btnCancelar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnCancelar.BackColor = Color.IndianRed;
             btnCancelar.FlatAppearance.BorderSize = 0;
             btnCancelar.FlatStyle = FlatStyle.Flat;
             btnCancelar.Font = new Font("Courier New", 12F, FontStyle.Bold);
@@ -274,6 +271,7 @@ namespace PlataformaEducativa.Formularios
             BackgroundImage = Properties.Resources.FondoRocasLimpio;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(620, 500);
+            resources.ApplyResources(this, "$this");
             Controls.Add(panelContenido);
             Controls.Add(panelTitulo);
             DoubleBuffered = true;

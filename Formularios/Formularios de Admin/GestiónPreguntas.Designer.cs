@@ -32,8 +32,7 @@ namespace PlataformaEducativa.Formularios
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             pictureBoxCat1 = new PictureBox();
             panelContenido = new Panel();
-            btnNuevaPregunta = new Button();
-            listBoxMaterias = new ListBox();
+            listBoxMaterias = new ComboBox();
             btnEditar = new Button();
             lblFiltrar = new Label();
             dgvGestionDePreguntas = new DataGridView();
@@ -95,12 +94,12 @@ namespace PlataformaEducativa.Formularios
             // 
             listBoxMaterias.AccessibleRole = AccessibleRole.MenuBar;
             listBoxMaterias.BackColor = Color.FromArgb(55, 55, 55);
+            listBoxMaterias.DropDownStyle = ComboBoxStyle.DropDownList;
             listBoxMaterias.Font = new Font("Courier New", 12F, FontStyle.Bold);
             listBoxMaterias.ForeColor = Color.White;
             listBoxMaterias.FormattingEnabled = true;
-            listBoxMaterias.Items.AddRange(new object[] { "Antropología filosófica", "Arquitectura y estructura del computador ", "Cálculo", "Deporte", "" });
-            listBoxMaterias.Location = new Point(131, 26);
-            listBoxMaterias.Margin = new Padding(3, 2, 3, 2);
+            listBoxMaterias.Items.AddRange(new object[] { "Todas", "Antropología filosófica", "Arquitectura y estructura del computador ", "Cálculo", "Deporte" });
+            listBoxMaterias.Location = new Point(150, 35);
             listBoxMaterias.Name = "listBoxMaterias";
             listBoxMaterias.Size = new Size(594, 22);
             listBoxMaterias.TabIndex = 11;
@@ -117,7 +116,7 @@ namespace PlataformaEducativa.Formularios
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(122, 33);
             btnEditar.TabIndex = 8;
-            btnEditar.Text = "Editar ";
+            resources.ApplyResources(btnEditar, "btnEditar");
             btnEditar.UseVisualStyleBackColor = true;
             // 
             // lblFiltrar
@@ -129,7 +128,7 @@ namespace PlataformaEducativa.Formularios
             lblFiltrar.Name = "lblFiltrar";
             lblFiltrar.Size = new Size(88, 18);
             lblFiltrar.TabIndex = 10;
-            lblFiltrar.Text = "Filtrar:";
+            resources.ApplyResources(lblFiltrar, "lblFiltrar");
             // 
             // dgvGestionDePreguntas
             // 
@@ -140,14 +139,14 @@ namespace PlataformaEducativa.Formularios
             dgvGestionDePreguntas.BackgroundColor = Color.FromArgb(55, 55, 55);
             dgvGestionDePreguntas.BorderStyle = BorderStyle.None;
             dgvGestionDePreguntas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Courier New", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(80, 80, 80);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dgvGestionDePreguntas.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(55, 55, 55);
+            dataGridViewCellStyle2.Font = new Font("Courier New", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(80, 80, 80);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvGestionDePreguntas.DefaultCellStyle = dataGridViewCellStyle2;
             dgvGestionDePreguntas.EnableHeadersVisualStyles = false;
             dgvGestionDePreguntas.GridColor = Color.Gainsboro;
             dgvGestionDePreguntas.Location = new Point(33, 58);
@@ -169,7 +168,7 @@ namespace PlataformaEducativa.Formularios
             btnVolverMenu.Name = "btnVolverMenu";
             btnVolverMenu.Size = new Size(196, 33);
             btnVolverMenu.TabIndex = 9;
-            btnVolverMenu.Text = "Volver al menú";
+            resources.ApplyResources(btnVolverMenu, "btnVolverMenu");
             btnVolverMenu.UseVisualStyleBackColor = true;
             btnVolverMenu.Click += btnVolverMenu_Click;
             // 
@@ -185,7 +184,7 @@ namespace PlataformaEducativa.Formularios
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(148, 33);
             btnEliminar.TabIndex = 8;
-            btnEliminar.Text = "Eliminar";
+            resources.ApplyResources(btnEliminar, "btnEliminar");
             btnEliminar.UseVisualStyleBackColor = true;
             // 
             // panel1
@@ -210,7 +209,24 @@ namespace PlataformaEducativa.Formularios
             lblGestionPreguntas.Name = "lblGestionPreguntas";
             lblGestionPreguntas.Size = new Size(334, 31);
             lblGestionPreguntas.TabIndex = 0;
-            lblGestionPreguntas.Text = "Gestión de preguntas";
+            resources.ApplyResources(lblGestionPreguntas, "lblGestionPreguntas");
+            // 
+            // btnNuevaPregunta
+            // 
+            btnNuevaPregunta.BackgroundImage = (Image)resources.GetObject("btnNuevaPregunta.BackgroundImage");
+            btnNuevaPregunta.BackgroundImageLayout = ImageLayout.Stretch;
+            btnNuevaPregunta.FlatAppearance.BorderSize = 0;
+            btnNuevaPregunta.FlatStyle = FlatStyle.Flat;
+            btnNuevaPregunta.Font = new Font("Courier New", 12F);
+            btnNuevaPregunta.ForeColor = Color.White;
+            btnNuevaPregunta.Location = new Point(358, 353);
+            btnNuevaPregunta.Margin = new Padding(3, 4, 3, 4);
+            btnNuevaPregunta.Name = "btnNuevaPregunta";
+            btnNuevaPregunta.Size = new Size(240, 44);
+            btnNuevaPregunta.TabIndex = 12;
+            resources.ApplyResources(btnNuevaPregunta, "btnNuevaPregunta");
+            btnNuevaPregunta.UseVisualStyleBackColor = true;
+            btnNuevaPregunta.Click += btnNuevaPregunta_Click;
             // 
             // GestiónPreguntas
             // 
@@ -225,7 +241,8 @@ namespace PlataformaEducativa.Formularios
             DoubleBuffered = true;
             Margin = new Padding(3, 2, 3, 2);
             Name = "GestiónPreguntas";
-            Text = "Gestión de preguntas";
+            resources.ApplyResources(this, "$this");
+            Load += GestiónPreguntas_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxCat1).EndInit();
             panelContenido.ResumeLayout(false);
             panelContenido.PerformLayout();
@@ -243,7 +260,7 @@ namespace PlataformaEducativa.Formularios
         private PictureBox pictureBoxCandado;
         private TextBox textBoxClave;
         private TextBox textBoxUsuario;
-        private ListBox listBoxMaterias;
+        private ComboBox listBoxMaterias;
         private Button btnEditar;
         private Label lblFiltrar;
         private DataGridView dgvGestionDePreguntas;

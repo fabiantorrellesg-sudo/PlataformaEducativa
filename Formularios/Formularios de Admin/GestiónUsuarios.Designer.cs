@@ -1,4 +1,4 @@
-﻿namespace PlataformaEducativa.Formularios
+namespace PlataformaEducativa.Formularios
 {
     partial class GestionUsuarios
     {
@@ -66,6 +66,7 @@
             panelContenido.Controls.Add(button1);
             panelContenido.Controls.Add(pictureBoxUsuarioLogin);
             panelContenido.Controls.Add(pictureBoxCandado);
+            panelContenido.Controls.Add(btnVerClave);
             panelContenido.Controls.Add(textBoxClave);
             panelContenido.Controls.Add(textBoxUsuario);
             panelContenido.Controls.Add(listBoxRol);
@@ -150,6 +151,17 @@
             textBoxUsuario.Size = new Size(182, 26);
             textBoxUsuario.TabIndex = 12;
             // 
+            // btnVerClave
+            // 
+            btnVerClave = new Button();
+            btnVerClave.BackColor = Color.FromArgb(227, 214, 179);
+            btnVerClave.FlatStyle = FlatStyle.Flat;
+            btnVerClave.FlatAppearance.BorderSize = 0;
+            btnVerClave.Text = "👁";
+            btnVerClave.Cursor = Cursors.Hand;
+            btnVerClave.Click += btnVerClave_Click;
+            btnVerClave.Name = "btnVerClave";
+            // 
             // listBoxRol
             // 
             listBoxRol.AccessibleRole = AccessibleRole.MenuBar;
@@ -176,7 +188,7 @@
             btnCargar.Name = "btnCargar";
             btnCargar.Size = new Size(109, 33);
             btnCargar.TabIndex = 8;
-            btnCargar.Text = "Cargar";
+            resources.ApplyResources(btnCargar, "btnCargar");
             btnCargar.UseVisualStyleBackColor = true;
             btnCargar.Click += btnCargar_Click;
             // 
@@ -189,7 +201,7 @@
             lblRol.Name = "lblRol";
             lblRol.Size = new Size(58, 18);
             lblRol.TabIndex = 10;
-            lblRol.Text = "Rol: ";
+            resources.ApplyResources(lblRol, "lblRol");
             // 
             // dgvGestionDeUsuarios
             // 
@@ -242,7 +254,7 @@
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(120, 33);
             btnLimpiar.TabIndex = 5;
-            btnLimpiar.Text = "Limpiar";
+            resources.ApplyResources(btnLimpiar, "btnLimpiar");
             btnLimpiar.UseVisualStyleBackColor = true;
             btnLimpiar.Click += btnLimpiar_Click;
             // 
@@ -258,7 +270,7 @@
             btnVolverMenu.Name = "btnVolverMenu";
             btnVolverMenu.Size = new Size(175, 33);
             btnVolverMenu.TabIndex = 9;
-            btnVolverMenu.Text = "Volver al menú";
+            resources.ApplyResources(btnVolverMenu, "btnVolverMenu");
             btnVolverMenu.UseVisualStyleBackColor = true;
             btnVolverMenu.Click += btnVolverMenu_Click;
             // 
@@ -274,7 +286,7 @@
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(119, 33);
             btnGuardar.TabIndex = 4;
-            btnGuardar.Text = "Registrar";
+            resources.ApplyResources(btnGuardar, "btnGuardar");
             btnGuardar.UseVisualStyleBackColor = true;
             btnGuardar.Click += btnGuardar_Click;
             // 
@@ -290,7 +302,7 @@
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(109, 33);
             btnEliminar.TabIndex = 8;
-            btnEliminar.Text = "Eliminar";
+            resources.ApplyResources(btnEliminar, "btnEliminar");
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
@@ -316,7 +328,7 @@
             lblGestionUsuarios.Name = "lblGestionUsuarios";
             lblGestionUsuarios.Size = new Size(318, 31);
             lblGestionUsuarios.TabIndex = 0;
-            lblGestionUsuarios.Text = "Gestión de usuarios";
+            resources.ApplyResources(lblGestionUsuarios, "lblGestionUsuarios");
             // 
             // pictureBoxCat1
             // 
@@ -341,9 +353,10 @@
             DoubleBuffered = true;
             Margin = new Padding(3, 2, 3, 2);
             Name = "GestionUsuarios";
+            Load += GestionUsuarios_Load;
             SizeGripStyle = SizeGripStyle.Show;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Gestión de usuarios";
+            resources.ApplyResources(this, "$this");
             panelContenido.ResumeLayout(false);
             panelContenido.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUsuarioLogin).EndInit();
@@ -372,6 +385,7 @@
         private PictureBox pictureBoxUsuarioLogin;
         private PictureBox pictureBoxCandado;
         private TextBox textBoxClave;
+        private Button btnVerClave;
         private TextBox textBoxUsuario;
         private Button button1;
         private PictureBox pictureBoxCat1;

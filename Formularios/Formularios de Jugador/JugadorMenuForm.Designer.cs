@@ -1,4 +1,4 @@
-﻿namespace PlataformaEducativa
+namespace PlataformaEducativa
 {
     partial class JugadorMenuForm
     {
@@ -119,6 +119,7 @@
             buttonProgresoArquitectura.ForeColor = Color.White;
             buttonProgresoArquitectura.Name = "buttonProgresoArquitectura";
             buttonProgresoArquitectura.UseVisualStyleBackColor = true;
+            buttonProgresoArquitectura.Click += buttonProgresoArquitectura_Click;
             // 
             // buttonComenzarArquitectura
             // 
@@ -127,6 +128,7 @@
             buttonComenzarArquitectura.ForeColor = Color.White;
             buttonComenzarArquitectura.Name = "buttonComenzarArquitectura";
             buttonComenzarArquitectura.UseVisualStyleBackColor = false;
+            buttonComenzarArquitectura.Click += buttonComenzarArquitectura_Click;
             // 
             // labelArquitectura
             // 
@@ -159,6 +161,7 @@
             resources.ApplyResources(buttonProgresoAntropologia, "buttonProgresoAntropologia");
             buttonProgresoAntropologia.Name = "buttonProgresoAntropologia";
             buttonProgresoAntropologia.UseVisualStyleBackColor = true;
+            buttonProgresoAntropologia.Click += buttonProgresoAntropologia_Click;
             // 
             // buttonComenzarAntropologia
             // 
@@ -167,6 +170,7 @@
             resources.ApplyResources(buttonComenzarAntropologia, "buttonComenzarAntropologia");
             buttonComenzarAntropologia.Name = "buttonComenzarAntropologia";
             buttonComenzarAntropologia.UseVisualStyleBackColor = true;
+            buttonComenzarAntropologia.Click += buttonComenzarAntropologia_Click;
             // 
             // labelAntropologia
             // 
@@ -199,6 +203,7 @@
             resources.ApplyResources(buttonProgresoDeporte, "buttonProgresoDeporte");
             buttonProgresoDeporte.Name = "buttonProgresoDeporte";
             buttonProgresoDeporte.UseVisualStyleBackColor = true;
+            buttonProgresoDeporte.Click += buttonProgresoDeporte_Click;
             // 
             // buttonComenzarDeporte
             // 
@@ -207,6 +212,7 @@
             resources.ApplyResources(buttonComenzarDeporte, "buttonComenzarDeporte");
             buttonComenzarDeporte.Name = "buttonComenzarDeporte";
             buttonComenzarDeporte.UseVisualStyleBackColor = true;
+            buttonComenzarDeporte.Click += buttonComenzarDeporte_Click;
             // 
             // labelDeporte
             // 
@@ -244,6 +250,7 @@
             resources.ApplyResources(buttonProgresoCalculo, "buttonProgresoCalculo");
             buttonProgresoCalculo.Name = "buttonProgresoCalculo";
             buttonProgresoCalculo.UseVisualStyleBackColor = true;
+            buttonProgresoCalculo.Click += buttonProgresoCalculo_Click;
             // 
             // buttonComenzarCalculo
             // 
@@ -252,6 +259,16 @@
             resources.ApplyResources(buttonComenzarCalculo, "buttonComenzarCalculo");
             buttonComenzarCalculo.Name = "buttonComenzarCalculo";
             buttonComenzarCalculo.UseVisualStyleBackColor = true;
+            buttonComenzarCalculo.Click += buttonComenzarCalculo_Click;
+            // 
+            // button1
+            // 
+            button1.Cursor = Cursors.Hand;
+            button1.ForeColor = Color.White;
+            button1.Image = Properties.Resources.MaderaPequena;
+            resources.ApplyResources(button1, "button1");
+            button1.Name = "button1";
+            button1.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
