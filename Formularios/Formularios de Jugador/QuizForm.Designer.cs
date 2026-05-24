@@ -85,7 +85,6 @@ namespace PlataformaEducativa.Formularios
             btnAnterior.ForeColor = Color.White;
             btnAnterior.Name = "btnAnterior";
             btnAnterior.UseVisualStyleBackColor = true;
-            btnAnterior.Click += btnAnterior_Click;
             // 
             // btnSiguiente
             // 

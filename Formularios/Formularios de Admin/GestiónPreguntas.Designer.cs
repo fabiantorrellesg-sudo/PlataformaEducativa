@@ -37,7 +37,7 @@ namespace PlataformaEducativa.Formularios
             BtnVolver = new Button();
             dgvPreguntas = new DataGridView();
             btnNuevaPregunta = new Button();
-            cmbFiltro = new ListBox();
+            cmbFiltro = new ComboBox();
             btnEditar = new Button();
             lblFiltrar = new Label();
             btnEliminar = new Button();
@@ -126,6 +126,7 @@ namespace PlataformaEducativa.Formularios
             // 
             cmbFiltro.AccessibleRole = AccessibleRole.MenuBar;
             cmbFiltro.BackColor = Color.FromArgb(55, 55, 55);
+            cmbFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
             resources.ApplyResources(cmbFiltro, "cmbFiltro");
             cmbFiltro.ForeColor = Color.White;
             cmbFiltro.FormattingEnabled = true;
@@ -208,6 +209,6 @@ namespace PlataformaEducativa.Formularios
         private Button btnNuevaPregunta;
         private DataGridView dgvPreguntas;
         private Button BtnVolver;
-        private ListBox cmbFiltro;
+        private ComboBox cmbFiltro;
     }
 }

@@ -173,7 +173,6 @@ namespace PlataformaEducativa
             resources.ApplyResources(labelAntropologia, "labelAntropologia");
             labelAntropologia.ForeColor = SystemColors.ControlLightLight;
             labelAntropologia.Name = "labelAntropologia";
-            labelAntropologia.Click += label2_Click;
             // 
             // panel4
             // 
@@ -250,8 +249,6 @@ namespace PlataformaEducativa
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "JugadorMenuForm";
-            FormClosed += JugadorMenuForm_FormClosed;
-            Load += JugadorMenuForm_Load_1;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUsuario).EndInit();

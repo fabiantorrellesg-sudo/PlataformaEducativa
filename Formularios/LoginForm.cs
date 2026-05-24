@@ -37,6 +37,7 @@ namespace PlataformaEducativa
             pictureBoxMichiLogin = new PictureBox();
             btnEN = new Button();
             btnES = new Button();
+            btnVerClave = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCandado).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUsuarioLogin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMichiLogin).BeginInit();
@@ -116,7 +117,7 @@ namespace PlataformaEducativa
             btnVerClave.BackColor = Color.FromArgb(227, 214, 179);
             btnVerClave.FlatStyle = FlatStyle.Flat;
             btnVerClave.FlatAppearance.BorderSize = 0;
-            btnVerClave.Text = "👁";
+            btnVerClave.Text = "ðŸ‘";
             btnVerClave.Cursor = Cursors.Hand;
             btnVerClave.Click += btnVerClave_Click;
             btnVerClave.Name = "btnVerClave";
@@ -144,15 +145,16 @@ namespace PlataformaEducativa
             PerformLayout();
 
 
-        }        private void LoginForm_Load(object sender, EventArgs e)
+        }
+        private void LoginForm_Load(object sender, EventArgs e)
         {
-            btnVerClave.Size = new Size(30, textBoxClave.Height);
-            btnVerClave.Location = new Point(textBoxClave.Right - 30, textBoxClave.Top);
+            // Estilo profesional`r`n            btnVerClave.FlatStyle = FlatStyle.Flat;`r`n            btnVerClave.FlatAppearance.BorderSize = 0;`r`n            btnVerClave.BackColor = textBoxClave.BackColor;`r`n            btnVerClave.FlatAppearance.MouseOverBackColor = textBoxClave.BackColor;`r`n            btnVerClave.FlatAppearance.MouseDownBackColor = textBoxClave.BackColor;`r`n            btnVerClave.ForeColor = Color.DimGray;`r`n            btnVerClave.Font = new Font("Segoe UI", 10F, FontStyle.Regular);`r`n            btnVerClave.Cursor = Cursors.Hand;`r`n            btnVerClave.Size = new Size(25, textBoxClave.Height - 4);
+            btnVerClave.Location = new Point(textBoxClave.Right - btnVerClave.Width - 2, textBoxClave.Top + 2);
             btnVerClave.BringToFront();
             AplicarIdioma();
         }
 
-        // Centraliza todos los textos de la pantalla según el idioma actual
+        // Centraliza todos los textos de la pantalla segÃºn el idioma actual
         private void AplicarIdioma()
         {
             if (ConfigIdiomas.IdiomaActual == "EN")
@@ -164,9 +166,9 @@ namespace PlataformaEducativa
             }
             else
             {
-                txtLogin.Text = "Iniciar Sesión";
+                txtLogin.Text = "Iniciar SesiÃ³n";
                 textBoxUsuario.PlaceholderText = "Usuario";
-                textBoxClave.PlaceholderText = "Contraseña";
+                textBoxClave.PlaceholderText = "ContraseÃ±a";
                 btnIngresar.Text = "Ingresar";
             }
         }
@@ -174,7 +176,7 @@ namespace PlataformaEducativa
         private void btnVerClave_Click(object sender, EventArgs e)
         {
             textBoxClave.UseSystemPasswordChar = !textBoxClave.UseSystemPasswordChar;
-            btnVerClave.Text = textBoxClave.UseSystemPasswordChar ? "👁" : "🙈";
+            btnVerClave.Text = textBoxClave.UseSystemPasswordChar ? "👁" : "🔒";
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -186,7 +188,7 @@ namespace PlataformaEducativa
                 if (ConfigIdiomas.IdiomaActual == "EN")
                     MessageBox.Show("Enter your username and password to log in", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
-                    MessageBox.Show("Ingrese el nombre de usuario y la contraseña para iniciar sesión", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ingrese el nombre de usuario y la contraseÃ±a para iniciar sesiÃ³n", "Error de inicio de sesiÃ³n", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -195,7 +197,7 @@ namespace PlataformaEducativa
                 if (ConfigIdiomas.IdiomaActual == "EN")
                     MessageBox.Show("The password must be at least 8 characters long.", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
-                    MessageBox.Show("La contraseña debe tener mínimo 8 carácteres", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("La contraseÃ±a debe tener mÃ­nimo 8 carÃ¡cteres", "Error de inicio de sesiÃ³n", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -230,7 +232,7 @@ namespace PlataformaEducativa
                                 if (ConfigIdiomas.IdiomaActual == "EN")
                                     MessageBox.Show($"Welcome to the game, {nuevoJugador.Nombre}!", "Enter the game");
                                 else
-                                    MessageBox.Show($"¡Bienvenido al juego, {nuevoJugador.Nombre}!", "Ingreso al juego");
+                                    MessageBox.Show($"Â¡Bienvenido al juego, {nuevoJugador.Nombre}!", "Ingreso al juego");
 
                                 ventanaJugador.Show();
                             }
@@ -241,7 +243,7 @@ namespace PlataformaEducativa
                             if (ConfigIdiomas.IdiomaActual == "EN")
                                 MessageBox.Show("Incorrect username or password", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             else
-                                MessageBox.Show("Usuario o contraseña incorrectos", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Usuario o contraseÃ±a incorrectos", "Error de inicio de sesiÃ³n", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
@@ -251,7 +253,7 @@ namespace PlataformaEducativa
                 if (ConfigIdiomas.IdiomaActual == "EN")
                     MessageBox.Show($"Error: {ex.Message}", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
-                    MessageBox.Show($"Error: {ex.Message}", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Error: {ex.Message}", "Error de inicio de sesiÃ³n", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -268,3 +270,4 @@ namespace PlataformaEducativa
         }
     }
 }
+
