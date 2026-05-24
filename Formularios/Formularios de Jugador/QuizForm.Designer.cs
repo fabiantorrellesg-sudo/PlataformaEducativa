@@ -85,6 +85,7 @@ namespace PlataformaEducativa.Formularios
             btnAnterior.ForeColor = Color.White;
             btnAnterior.Name = "btnAnterior";
             btnAnterior.UseVisualStyleBackColor = true;
+            btnAnterior.Click += btnAnterior_Click;
             // 
             // btnSiguiente
             // 
@@ -93,7 +94,7 @@ namespace PlataformaEducativa.Formularios
             btnSiguiente.ForeColor = Color.White;
             btnSiguiente.Name = "btnSiguiente";
             btnSiguiente.UseVisualStyleBackColor = true;
-            btnSiguiente.Click += btnSiguiente_Click_1;
+            btnSiguiente.Click += btnSiguiente_Click;
             // 
             // pbImagenPregunta
             // 

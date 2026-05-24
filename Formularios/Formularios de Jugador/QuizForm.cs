@@ -19,6 +19,8 @@ namespace PlataformaEducativa.Formularios
         // Variables de control del juego
         private int _indiceActual = 0;
         private int _puntosAcumulados = 0;
+        // Guarda lo que respondió en cada pregunta para deshacer al volver
+        private Dictionary<int, string> _respuestasGuardadas = new Dictionary<int, string>();
         public QuizForm(List<Pregunta> preguntasDelModulo, int idMod, int idUsuario)
         {
             InitializeComponent();
@@ -130,7 +132,6 @@ namespace PlataformaEducativa.Formularios
             else if (rbOpciónC.Checked) seleccionUsuario = "C";
             else if (rbOpciónD.Checked) seleccionUsuario = "D";
 
-            // Si no marcó ninguna opción, le advertimos según el idioma
             if (string.IsNullOrEmpty(seleccionUsuario))
             {
                 string advertencia = ConfigIdiomas.IdiomaActual == "EN"
@@ -141,25 +142,49 @@ namespace PlataformaEducativa.Formularios
             }
 
             Pregunta preguntaActual = _preguntas[_indiceActual];
-            if (seleccionUsuario.Equals(preguntaActual.LetraCorrecta, StringComparison.OrdinalIgnoreCase))
+
+            // Si ya había respondido esta pregunta antes, deshago su puntaje anterior
+            if (_respuestasGuardadas.ContainsKey(_indiceActual))
             {
-                // Cada respuesta correcta le sumará 10 puntos
-                _puntosAcumulados += 10;
+                string respuestaAnterior = _respuestasGuardadas[_indiceActual];
+                if (respuestaAnterior.Equals(preguntaActual.LetraCorrecta, StringComparison.OrdinalIgnoreCase))
+                    _puntosAcumulados -= 10;
+                else
+                    _puntosAcumulados += 5;
             }
+
+            // Guardo la respuesta actual
+            _respuestasGuardadas[_indiceActual] = seleccionUsuario;
+
+            if (seleccionUsuario.Equals(preguntaActual.LetraCorrecta, StringComparison.OrdinalIgnoreCase))
+                _puntosAcumulados += 10;
             else
             {
-                // Cada respuesta incorrecta le restará 5 puntos
                 _puntosAcumulados -= 5;
-
-                // Si el puntaje bajó de cero, lo nivelamos en 0
-                if (_puntosAcumulados < 0)
-                {
-                    _puntosAcumulados = 0;
-                }
+                if (_puntosAcumulados < 0) _puntosAcumulados = 0;
             }
 
             _indiceActual++;
             MostrarPregunta();
+        }
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            if (_indiceActual > 0)
+            {
+                _indiceActual--;
+                MostrarPregunta();
+
+                // Restauro la selección que tenía el jugador en esta pregunta
+                if (_respuestasGuardadas.ContainsKey(_indiceActual))
+                {
+                    string previa = _respuestasGuardadas[_indiceActual];
+                    rbOpciónA.Checked = previa == "A";
+                    rbOpciónB.Checked = previa == "B";
+                    rbOpciónC.Checked = previa == "C";
+                    rbOpciónD.Checked = previa == "D";
+                }
+            }
         }
 
         private void FinalizarCuestionario()
