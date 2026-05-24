@@ -39,6 +39,24 @@ namespace PlataformaEducativa.Formularios
             rbOpciónB.BackColor = System.Drawing.Color.Transparent;
             rbOpciónC.BackColor = System.Drawing.Color.Transparent;
             rbOpciónD.BackColor = System.Drawing.Color.Transparent;
+
+            // Hacer la ventana más grande
+            this.Size = new System.Drawing.Size(900, 650);
+            this.MinimumSize = new System.Drawing.Size(700, 500);
+
+            // Anclajes para que se expanda bien
+            lblPreguntaEnunciado.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblPreguntaEnunciado.Width = this.ClientSize.Width - 100;
+            
+            rbOpciónA.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            rbOpciónB.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            rbOpciónC.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            rbOpciónD.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+
+            // Ajustar posición si es necesario, o dejar que el anclaje lo maneje
+            btnSiguiente.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnAnterior.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            pBar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         }
 
         private void MostrarPregunta()

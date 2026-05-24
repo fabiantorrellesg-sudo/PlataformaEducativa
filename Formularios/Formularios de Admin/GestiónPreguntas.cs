@@ -12,6 +12,7 @@ namespace PlataformaEducativa.Formularios
         public GestiónPreguntas()
         {
             InitializeComponent();
+            ConfigurarTamanioFormulario();
             CargarModulos();
             CargarPreguntas(0);
         }
@@ -19,8 +20,28 @@ namespace PlataformaEducativa.Formularios
         public GestiónPreguntas(int idModulo)
         {
             InitializeComponent();
+            ConfigurarTamanioFormulario();
             CargarModulos();
             CargarPreguntas(idModulo);
+        }
+
+        private void ConfigurarTamanioFormulario()
+        {
+            this.Size = new System.Drawing.Size(1000, 700);
+            this.MinimumSize = new System.Drawing.Size(800, 600);
+            
+            panelContenido.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelContenido.Width = 960;
+            panelContenido.Height = 550;
+            
+            dgvPreguntas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvPreguntas.Width = 920;
+            dgvPreguntas.Height = 400;
+
+            btnNuevaPregunta.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnEditar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnEliminar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            BtnVolver.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
         }
 
         private void CargarModulos()
