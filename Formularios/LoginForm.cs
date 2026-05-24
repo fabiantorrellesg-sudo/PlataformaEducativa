@@ -1,5 +1,6 @@
+﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
 using PlataformaEducativa.Clases;
-using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 
@@ -18,12 +19,14 @@ namespace PlataformaEducativa
         private PictureBox pictureBoxCandado;
         private PictureBox pictureBoxUsuarioLogin;
         private PictureBox pictureBoxMichiLogin;
-        private PictureBox pbIdiomaEN;
-        private PictureBox pbIdiomaES;
+        private Button btnEN;
+        private Button btnES;
         private Button btnIngresar;
+        private Button btnVerClave;
 
         private void InitializeComponent()
         {
+
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             txtLogin = new Label();
             textBoxUsuario = new TextBox();
@@ -32,13 +35,12 @@ namespace PlataformaEducativa
             pictureBoxCandado = new PictureBox();
             pictureBoxUsuarioLogin = new PictureBox();
             pictureBoxMichiLogin = new PictureBox();
-            pbIdiomaEN = new PictureBox();
-            pbIdiomaES = new PictureBox();
+            btnEN = new Button();
+            btnES = new Button();
+            btnVerClave = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCandado).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUsuarioLogin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMichiLogin).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbIdiomaEN).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbIdiomaES).BeginInit();
             SuspendLayout();
             // 
             // txtLogin
@@ -95,108 +97,185 @@ namespace PlataformaEducativa
             pictureBoxMichiLogin.Name = "pictureBoxMichiLogin";
             pictureBoxMichiLogin.TabStop = false;
             // 
-            // pbIdiomaEN
+            // btnEN
             // 
-            pbIdiomaEN.BackColor = Color.Transparent;
-            resources.ApplyResources(pbIdiomaEN, "pbIdiomaEN");
-            pbIdiomaEN.Cursor = Cursors.Hand;
-            pbIdiomaEN.Name = "pbIdiomaEN";
-            pbIdiomaEN.TabStop = false;
+            resources.ApplyResources(btnEN, "btnEN");
+            btnEN.Name = "btnEN";
+            btnEN.UseVisualStyleBackColor = true;
+            btnEN.Click += btnEN_Click;
             // 
-            // pbIdiomaES
+            // btnES
             // 
-            pbIdiomaES.BackColor = Color.Transparent;
-            resources.ApplyResources(pbIdiomaES, "pbIdiomaES");
-            pbIdiomaES.Cursor = Cursors.Hand;
-            pbIdiomaES.Name = "pbIdiomaES";
-            pbIdiomaES.TabStop = false;
+            btnES.BackgroundImage = Properties.Resources.spain2;
+            resources.ApplyResources(btnES, "btnES");
+            btnES.Name = "btnES";
+            btnES.UseVisualStyleBackColor = true;
+            btnES.Click += btnES_Click;
+            // 
+            // btnVerClave
+            // 
+            btnVerClave.BackColor = Color.FromArgb(227, 214, 179);
+            btnVerClave.FlatStyle = FlatStyle.Flat;
+            btnVerClave.FlatAppearance.BorderSize = 0;
+            btnVerClave.Text = "👁";
+            btnVerClave.Cursor = Cursors.Hand;
+            btnVerClave.Click += btnVerClave_Click;
+            btnVerClave.Name = "btnVerClave";
             // 
             // LoginForm
             // 
             resources.ApplyResources(this, "$this");
-            Controls.Add(pbIdiomaES);
-            Controls.Add(pbIdiomaEN);
+            Controls.Add(btnES);
+            Controls.Add(btnEN);
             Controls.Add(pictureBoxMichiLogin);
             Controls.Add(pictureBoxUsuarioLogin);
             Controls.Add(pictureBoxCandado);
             Controls.Add(btnIngresar);
+            Controls.Add(btnVerClave);
             Controls.Add(textBoxClave);
             Controls.Add(textBoxUsuario);
             Controls.Add(txtLogin);
             DoubleBuffered = true;
             Name = "LoginForm";
+            Load += LoginForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxCandado).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUsuarioLogin).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMichiLogin).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbIdiomaEN).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbIdiomaES).EndInit();
             ResumeLayout(false);
             PerformLayout();
+        }
 
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            
+            btnVerClave.FlatStyle = FlatStyle.Flat;
+            btnVerClave.FlatAppearance.BorderSize = 0;
+            btnVerClave.BackColor = textBoxClave.BackColor;
+            btnVerClave.FlatAppearance.MouseOverBackColor = textBoxClave.BackColor;
+            btnVerClave.FlatAppearance.MouseDownBackColor = textBoxClave.BackColor;
+            btnVerClave.ForeColor = Color.DimGray;
+            btnVerClave.Font = new Font("Segoe UI", 10F, FontStyle.Regular);
+            btnVerClave.Cursor = Cursors.Hand;
+            int offset = 2;
+            btnVerClave.Size = new Size(25, textBoxClave.Height - (offset * 2));
+            btnVerClave.Location = new Point(textBoxClave.Right - btnVerClave.Width - offset, textBoxClave.Top + offset);
+            btnVerClave.BringToFront();
+            AplicarIdioma();
+        }
+
+        // Aplica los textos de la interfaz según el idioma activo
+        private void AplicarIdioma()
+        {
+            if (ConfigIdiomas.IdiomaActual == "EN")
+            {
+                txtLogin.Text = "Login";
+                textBoxUsuario.PlaceholderText = "Username";
+                textBoxClave.PlaceholderText = "Password";
+                btnIngresar.Text = "Log In";
+            }
+            else
+            {
+                txtLogin.Text = "Iniciar Sesión";
+                textBoxUsuario.PlaceholderText = "Usuario";
+                textBoxClave.PlaceholderText = "Contraseña";
+                btnIngresar.Text = "Ingresar";
+            }
+        }
+
+        private void btnVerClave_Click(object sender, EventArgs e)
+        {
+            textBoxClave.UseSystemPasswordChar = !textBoxClave.UseSystemPasswordChar;
+            btnVerClave.Text = textBoxClave.UseSystemPasswordChar ? "👁" : "🔒";
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            string cadenaConexion = "Server=localhost; Database=peducativa; Uid = root; Pwd=;";
             string consulta = "SELECT id, nombre, rol FROM usuario WHERE nombre = @usuario AND clave = @clave";
 
-            if(string.IsNullOrWhiteSpace(textBoxUsuario.Text) || string.IsNullOrWhiteSpace(textBoxClave.Text))
+            if (string.IsNullOrWhiteSpace(textBoxUsuario.Text) || string.IsNullOrWhiteSpace(textBoxClave.Text))
             {
-                MessageBox.Show("Ingrese el nombre de usuario y la contraseña para iniciar sesión", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (ConfigIdiomas.IdiomaActual == "EN")
+                    MessageBox.Show("Enter your username and password to log in", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show("Ingrese el nombre de usuario y la contraseña para iniciar sesión", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             if (textBoxClave.Text.Trim().Length < 8)
             {
-                MessageBox.Show("La contraseña debe tener mínimo 8 carácteres", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (ConfigIdiomas.IdiomaActual == "EN")
+                    MessageBox.Show("The password must be at least 8 characters long.", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show("La contraseña debe tener mínimo 8 carácteres", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+
             try
             {
-           
-            using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
-            using (MySqlCommand comando = new MySqlCommand(consulta,conexion))
-            {
-                comando.Parameters.AddWithValue("@usuario", textBoxUsuario.Text.ToLower());
-                comando.Parameters.AddWithValue("@clave", textBoxClave.Text);
+                using (MySqlConnection conexion = ConexionBD.ObtenerConexion())
+                using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@usuario", textBoxUsuario.Text.ToLower());
+                    comando.Parameters.AddWithValue("@clave", textBoxClave.Text);
 
-                    conexion.Open();
-
-              MySqlDataReader lector = comando.ExecuteReader();
-              
-                    if(lector.Read())
+                    using (MySqlDataReader lector = comando.ExecuteReader())
                     {
-                        int rol = Convert.ToInt32(lector["rol"]);
-
-                        if(rol==0)
+                        if (lector.Read())
                         {
-                            AdminMenuForm ventanaAdmin = new AdminMenuForm();
-                            ventanaAdmin.Show();
+                            int rol = Convert.ToInt32(lector["rol"]);
 
+                            if (rol == 0)
+                            {
+                                AdminMenuForm ventanaAdmin = new AdminMenuForm();
+                                ventanaAdmin.Show();
+                            }
+                            else if (rol == 1)
+                            {
+                                int idBD = Convert.ToInt32(lector["id"]);
+                                string nombreBD = lector["nombre"].ToString()!;
+                                string descripcion = "Usuario tipo jugador";
+
+                                Jugador nuevoJugador = new Jugador(idBD, nombreBD, descripcion);
+                                JugadorMenuForm ventanaJugador = new JugadorMenuForm(idBD, nombreBD);
+
+                                if (ConfigIdiomas.IdiomaActual == "EN")
+                                    MessageBox.Show($"Welcome to the game, {nuevoJugador.Nombre}!", "Enter the game");
+                                else
+                                    MessageBox.Show($"¡Bienvenido al juego, {nuevoJugador.Nombre}!", "Ingreso al juego");
+
+                                ventanaJugador.Show();
+                            }
+                            this.Hide();
                         }
-                        else if(rol==1)
+                        else
                         {
-                            int idBD = Convert.ToInt32(lector["id"]);
-                            string nombreBD = lector["nombre"].ToString();
-                            string descripcion = "Usuario tipo jugador";
-
-                            Jugador nuevoJugador = new Jugador(idBD, nombreBD, descripcion);
-                            JugadorMenuForm ventanaJugador = new JugadorMenuForm(nuevoJugador);
-                            MessageBox.Show($"¡Bienvenido al juego, {nuevoJugador.Nombre}!", "Ingreso al juego");
-                            ventanaJugador.Show();
+                            if (ConfigIdiomas.IdiomaActual == "EN")
+                                MessageBox.Show("Incorrect username or password", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            else
+                                MessageBox.Show("Usuario o contraseña incorrectos", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                        this.Hide();
                     }
-                    else
-                    {
-                        MessageBox.Show("Usuario o contraseña incorrectos", "Error de inició de sesión",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                    }
-                    conexion.Close();
+                }
             }
-            }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error: {0}", ex.Message,MessageBoxButtons.OK,MessageBoxIcon.Error);
+                if (ConfigIdiomas.IdiomaActual == "EN")
+                    MessageBox.Show($"Error: {ex.Message}", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show($"Error: {ex.Message}", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnEN_Click(object sender, EventArgs e)
+        {
+            ConfigIdiomas.IdiomaActual = "EN";
+            AplicarIdioma();
+        }
+
+        private void btnES_Click(object sender, EventArgs e)
+        {
+            ConfigIdiomas.IdiomaActual = "ES";
+            AplicarIdioma();
         }
     }
 }
-

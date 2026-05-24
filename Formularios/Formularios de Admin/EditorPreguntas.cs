@@ -1,130 +1,155 @@
+using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace PlataformaEducativa.Formularios
 {
     public partial class EditorPreguntas : Form
     {
         private string cadenaConexion = "Server=localhost; Database=peducativa; Uid=root; Pwd=;";
-        private int idPregunta; // -1 si es nueva, numero real si se edita
+        private int idPregunta;
 
+        // Constructor: Recibe ID para editar, o -1 para crear nueva
         public EditorPreguntas(int id)
         {
             InitializeComponent();
             this.idPregunta = id;
+            if(idPregunta == 0)
+            {
+                LimpiarCampos();
+            }
+            CargarComboMaterias();
+            ConfigurarComboCorrecta();
         }
 
         private void EditorPreguntas_Load(object sender, EventArgs e)
         {
             if (idPregunta == -1)
             {
-                lblTitulo.Text = "Nueva pregunta";
-                this.Text = "Nueva pregunta";
+                this.Text = "Nueva Pregunta";
             }
             else
             {
-                lblTitulo.Text = "Editar pregunta";
-                this.Text = "Editar pregunta";
+                this.Text = "Editar Pregunta";
                 CargarDatosPregunta();
             }
+        }
+
+        private void CargarComboMaterias()
+        {
+            try
+            {
+                using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+                    string consulta = "SELECT id, CONCAT(nombre_es, ' / ', name_en) AS nombre_completo FROM modulos";
+                    MySqlDataAdapter da = new MySqlDataAdapter(consulta, conexion);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    cmbMateria.DataSource = dt;
+                    cmbMateria.DisplayMember = "nombre_completo";
+                    cmbMateria.ValueMember = "id";
+                }
+            }
+            catch (Exception ex) { MessageBox.Show("Error al cargar materias: " + ex.Message); }
+        }
+
+        private void ConfigurarComboCorrecta()
+        {
+            cmbCorrecta.Items.Clear();
+            cmbCorrecta.Items.AddRange(new string[] { "A", "B", "C", "D" });
+            cmbCorrecta.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void CargarDatosPregunta()
         {
             try
             {
-                string consulta = "SELECT enunciado, opcion_a, opcion_b, opcion_c, opcion_d, respuesta_correcta, materia FROM pregunta WHERE id = @id";
-
                 using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
-                using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                 {
-                    comando.Parameters.AddWithValue("@id", idPregunta);
                     conexion.Open();
-
-                    MySqlDataReader lector = comando.ExecuteReader();
-                    if (lector.Read())
+                    string consulta = "SELECT * FROM preguntas WHERE id = @id";
+                    using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                     {
-                        txtEnunciado.Text = lector["enunciado"].ToString();
-                        txtOpcionA.Text = lector["opcion_a"].ToString();
-                        txtOpcionB.Text = lector["opcion_b"].ToString();
-                        txtOpcionC.Text = lector["opcion_c"].ToString();
-                        txtOpcionD.Text = lector["opcion_d"].ToString();
-                        cmbRespuesta.SelectedItem = lector["respuesta_correcta"].ToString().ToUpper();
-                        cmbMateria.SelectedItem = lector["materia"].ToString();
+                        comando.Parameters.AddWithValue("@id", idPregunta);
+                        using (MySqlDataReader dr = comando.ExecuteReader())
+                        {
+                            if (dr.Read())
+                            {
+                                txtEnunciadoES.Text = dr["pregunta_es"].ToString();
+                                txtEnunciadoEN.Text = dr["pregunta_en"].ToString();
+                                txtOpcionAES.Text = dr["opcion_a_es"].ToString();
+                                txtOpcionAEN.Text = dr["opcion_a_en"].ToString();
+                                txtOpcionBES.Text = dr["opcion_b_es"].ToString();
+                                txtOpcionBEN.Text = dr["opcion_b_en"].ToString();
+                                txtOpcionCES.Text = dr["opcion_c_es"].ToString();
+                                txtOpcionCEN.Text = dr["opcion_c_en"].ToString();
+                                txtOpcionDES.Text = dr["opcion_d_es"].ToString();
+                                txtOpcionDEN.Text = dr["opcion_d_en"].ToString();
+                                cmbCorrecta.SelectedItem = dr["letra_correcta"].ToString();
+                                cmbMateria.SelectedValue = dr["id_modulo"];
+                            }
+                        }
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al cargar la pregunta: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            catch (Exception ex) { MessageBox.Show("Error al cargar pregunta: " + ex.Message); }
+        }
+
+        private void LimpiarCampos()
+        {
+            txtEnunciadoES.Clear();
+            txtEnunciadoEN.Clear();
+            txtOpcionAES.Clear();
+            txtOpcionAEN.Clear();
+            txtOpcionBES.Clear();
+            txtOpcionBEN.Clear();
+            txtOpcionCES.Clear();
+            txtOpcionCEN.Clear();
+            txtOpcionDES.Clear();
+            txtOpcionDEN.Clear();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtEnunciado.Text) ||
-                string.IsNullOrWhiteSpace(txtOpcionA.Text) ||
-                string.IsNullOrWhiteSpace(txtOpcionB.Text) ||
-                string.IsNullOrWhiteSpace(txtOpcionC.Text) ||
-                string.IsNullOrWhiteSpace(txtOpcionD.Text))
-            {
-                MessageBox.Show("Hay campos vacios, rellena todo.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (cmbRespuesta.SelectedIndex == -1)
-            {
-                MessageBox.Show("Selecciona la respuesta correcta.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (cmbMateria.SelectedIndex == -1)
-            {
-                MessageBox.Show("Selecciona la materia.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
             try
             {
-                string consulta;
-
-                if (idPregunta == -1)
-                    consulta = "INSERT INTO pregunta (enunciado, opcion_a, opcion_b, opcion_c, opcion_d, respuesta_correcta, materia) VALUES (@enunciado, @a, @b, @c, @d, @respuesta, @materia)";
-                else
-                    consulta = "UPDATE pregunta SET enunciado=@enunciado, opcion_a=@a, opcion_b=@b, opcion_c=@c, opcion_d=@d, respuesta_correcta=@respuesta, materia=@materia WHERE id=@id";
-
                 using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
-                using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                 {
-                    comando.Parameters.AddWithValue("@enunciado", txtEnunciado.Text.Trim());
-                    comando.Parameters.AddWithValue("@a", txtOpcionA.Text.Trim());
-                    comando.Parameters.AddWithValue("@b", txtOpcionB.Text.Trim());
-                    comando.Parameters.AddWithValue("@c", txtOpcionC.Text.Trim());
-                    comando.Parameters.AddWithValue("@d", txtOpcionD.Text.Trim());
-                    comando.Parameters.AddWithValue("@respuesta", cmbRespuesta.SelectedItem.ToString());
-                    comando.Parameters.AddWithValue("@materia", cmbMateria.SelectedItem.ToString());
-
-                    if (idPregunta != -1)
-                        comando.Parameters.AddWithValue("@id", idPregunta);
-
                     conexion.Open();
-                    comando.ExecuteNonQuery();
-                }
+                    string consulta;
+                    if (idPregunta == -1)
+                        consulta = "INSERT INTO preguntas (id_modulo, pregunta_es, pregunta_en, opcion_a_es, opcion_a_en, opcion_b_es, opcion_b_en, opcion_c_es, opcion_c_en, opcion_d_es, opcion_d_en, letra_correcta) VALUES (@id_mod, @pes, @pen, @aes, @aen, @bes, @ben, @ces, @cen, @des, @den, @cor)";
+                    else
+                        consulta = "UPDATE preguntas SET id_modulo=@id_mod, pregunta_es=@pes, pregunta_en=@pen, opcion_a_es=@aes, opcion_a_en=@aen, opcion_b_es=@bes, opcion_b_en=@ben, opcion_c_es=@ces, opcion_c_en=@cen, opcion_d_es=@des, opcion_d_en=@den, letra_correcta=@cor WHERE id=@id";
 
-                MessageBox.Show("Pregunta guardada con exito.", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    using (MySqlCommand cmd = new MySqlCommand(consulta, conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@id_mod", cmbMateria.SelectedValue);
+                        cmd.Parameters.AddWithValue("@pes", txtEnunciadoES.Text);
+                        cmd.Parameters.AddWithValue("@pen", txtEnunciadoEN.Text);
+                        cmd.Parameters.AddWithValue("@aes", txtOpcionAES.Text);
+                        cmd.Parameters.AddWithValue("@aen", txtOpcionAEN.Text);
+                        cmd.Parameters.AddWithValue("@bes", txtOpcionBES.Text);
+                        cmd.Parameters.AddWithValue("@ben", txtOpcionBEN.Text);
+                        cmd.Parameters.AddWithValue("@ces", txtOpcionCES.Text);
+                        cmd.Parameters.AddWithValue("@cen", txtOpcionCEN.Text);
+                        cmd.Parameters.AddWithValue("@des", txtOpcionDES.Text);
+                        cmd.Parameters.AddWithValue("@den", txtOpcionDEN.Text);
+                        cmd.Parameters.AddWithValue("@cor", cmbCorrecta.SelectedItem.ToString());
+                        if (idPregunta != -1) cmd.Parameters.AddWithValue("@id", idPregunta);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                MessageBox.Show("Guardado con éxito.");
                 this.Close();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al guardar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            catch (Exception ex) { MessageBox.Show("Error al guardar: " + ex.Message); }
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        private void btnCancelar_Click(object sender, EventArgs e) { this.Close(); }
     }
 }

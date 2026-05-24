@@ -1,4 +1,4 @@
-﻿namespace PlataformaEducativa.Formularios
+namespace PlataformaEducativa.Formularios
 {
     partial class QuizForm
     {
@@ -29,41 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuizForm));
-            pbMateriaIcon = new PictureBox();
-            lblMateria = new Label();
             lblPreguntaEnunciado = new Label();
-            label1 = new Label();
+            lblPreguntaActual = new Label();
             lblContadorPreguntas = new Label();
             lblPuntaje = new Label();
             btnAnterior = new Button();
             btnSiguiente = new Button();
-            pBar = new ProgressBar();
-            lblProgreso = new Label();
-            lblPorcentaje = new Label();
             pbImagenPregunta = new PictureBox();
             pictureBoxMichiLogin = new PictureBox();
+            rbOpciónB = new RadioButton();
+            rbOpciónC = new RadioButton();
+            rbOpciónD = new RadioButton();
+            lblPorcentaje = new Label();
+            pBar = new ProgressBar();
+            lblProgreso = new Label();
+            lblQuiz = new Label();
             rbOpciónA = new RadioButton();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton3 = new RadioButton();
-            ((System.ComponentModel.ISupportInitialize)pbMateriaIcon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbImagenPregunta).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMichiLogin).BeginInit();
             SuspendLayout();
-            // 
-            // pbMateriaIcon
-            // 
-            resources.ApplyResources(pbMateriaIcon, "pbMateriaIcon");
-            pbMateriaIcon.BackColor = Color.Transparent;
-            pbMateriaIcon.Name = "pbMateriaIcon";
-            pbMateriaIcon.TabStop = false;
-            // 
-            // lblMateria
-            // 
-            resources.ApplyResources(lblMateria, "lblMateria");
-            lblMateria.BackColor = Color.Transparent;
-            lblMateria.ForeColor = Color.White;
-            lblMateria.Name = "lblMateria";
             // 
             // lblPreguntaEnunciado
             // 
@@ -71,13 +55,14 @@
             lblPreguntaEnunciado.BackColor = Color.Transparent;
             lblPreguntaEnunciado.ForeColor = Color.White;
             lblPreguntaEnunciado.Name = "lblPreguntaEnunciado";
+            lblPreguntaEnunciado.Click += lblPreguntaEnunciado_Click;
             // 
-            // label1
+            // lblPreguntaActual
             // 
-            resources.ApplyResources(label1, "label1");
-            label1.BackColor = Color.Transparent;
-            label1.ForeColor = Color.White;
-            label1.Name = "label1";
+            resources.ApplyResources(lblPreguntaActual, "lblPreguntaActual");
+            lblPreguntaActual.BackColor = Color.Transparent;
+            lblPreguntaActual.ForeColor = Color.White;
+            lblPreguntaActual.Name = "lblPreguntaActual";
             // 
             // lblContadorPreguntas
             // 
@@ -108,6 +93,58 @@
             btnSiguiente.ForeColor = Color.White;
             btnSiguiente.Name = "btnSiguiente";
             btnSiguiente.UseVisualStyleBackColor = true;
+            btnSiguiente.Click += btnSiguiente_Click_1;
+            // 
+            // pbImagenPregunta
+            // 
+            pbImagenPregunta.BorderStyle = BorderStyle.FixedSingle;
+            resources.ApplyResources(pbImagenPregunta, "pbImagenPregunta");
+            pbImagenPregunta.Name = "pbImagenPregunta";
+            pbImagenPregunta.TabStop = false;
+            // 
+            // pictureBoxMichiLogin
+            // 
+            pictureBoxMichiLogin.BackColor = Color.Transparent;
+            resources.ApplyResources(pictureBoxMichiLogin, "pictureBoxMichiLogin");
+            pictureBoxMichiLogin.Name = "pictureBoxMichiLogin";
+            pictureBoxMichiLogin.TabStop = false;
+            // 
+            // rbOpciónB
+            // 
+            resources.ApplyResources(rbOpciónB, "rbOpciónB");
+            rbOpciónB.BackColor = Color.Transparent;
+            rbOpciónB.FlatAppearance.BorderSize = 0;
+            rbOpciónB.ForeColor = Color.White;
+            rbOpciónB.Name = "rbOpciónB";
+            rbOpciónB.TabStop = true;
+            rbOpciónB.UseVisualStyleBackColor = false;
+            // 
+            // rbOpciónC
+            // 
+            resources.ApplyResources(rbOpciónC, "rbOpciónC");
+            rbOpciónC.BackColor = Color.Transparent;
+            rbOpciónC.FlatAppearance.BorderSize = 0;
+            rbOpciónC.ForeColor = Color.White;
+            rbOpciónC.Name = "rbOpciónC";
+            rbOpciónC.TabStop = true;
+            rbOpciónC.UseVisualStyleBackColor = false;
+            // 
+            // rbOpciónD
+            // 
+            resources.ApplyResources(rbOpciónD, "rbOpciónD");
+            rbOpciónD.BackColor = Color.Transparent;
+            rbOpciónD.FlatAppearance.BorderSize = 0;
+            rbOpciónD.ForeColor = Color.White;
+            rbOpciónD.Name = "rbOpciónD";
+            rbOpciónD.TabStop = true;
+            rbOpciónD.UseVisualStyleBackColor = false;
+            // 
+            // lblPorcentaje
+            // 
+            resources.ApplyResources(lblPorcentaje, "lblPorcentaje");
+            lblPorcentaje.BackColor = Color.Transparent;
+            lblPorcentaje.ForeColor = Color.White;
+            lblPorcentaje.Name = "lblPorcentaje";
             // 
             // pBar
             // 
@@ -122,26 +159,12 @@
             lblProgreso.ForeColor = Color.White;
             lblProgreso.Name = "lblProgreso";
             // 
-            // lblPorcentaje
+            // lblQuiz
             // 
-            resources.ApplyResources(lblPorcentaje, "lblPorcentaje");
-            lblPorcentaje.BackColor = Color.Transparent;
-            lblPorcentaje.ForeColor = Color.White;
-            lblPorcentaje.Name = "lblPorcentaje";
-            // 
-            // pbImagenPregunta
-            // 
-            resources.ApplyResources(pbImagenPregunta, "pbImagenPregunta");
-            pbImagenPregunta.BorderStyle = BorderStyle.FixedSingle;
-            pbImagenPregunta.Name = "pbImagenPregunta";
-            pbImagenPregunta.TabStop = false;
-            // 
-            // pictureBoxMichiLogin
-            // 
-            resources.ApplyResources(pictureBoxMichiLogin, "pictureBoxMichiLogin");
-            pictureBoxMichiLogin.BackColor = Color.Transparent;
-            pictureBoxMichiLogin.Name = "pictureBoxMichiLogin";
-            pictureBoxMichiLogin.TabStop = false;
+            resources.ApplyResources(lblQuiz, "lblQuiz");
+            lblQuiz.BackColor = Color.Transparent;
+            lblQuiz.ForeColor = SystemColors.ButtonHighlight;
+            lblQuiz.Name = "lblQuiz";
             // 
             // rbOpciónA
             // 
@@ -153,44 +176,15 @@
             rbOpciónA.TabStop = true;
             rbOpciónA.UseVisualStyleBackColor = false;
             // 
-            // radioButton1
-            // 
-            resources.ApplyResources(radioButton1, "radioButton1");
-            radioButton1.BackColor = Color.Transparent;
-            radioButton1.FlatAppearance.BorderSize = 0;
-            radioButton1.ForeColor = Color.White;
-            radioButton1.Name = "radioButton1";
-            radioButton1.TabStop = true;
-            radioButton1.UseVisualStyleBackColor = false;
-            // 
-            // radioButton2
-            // 
-            resources.ApplyResources(radioButton2, "radioButton2");
-            radioButton2.BackColor = Color.Transparent;
-            radioButton2.FlatAppearance.BorderSize = 0;
-            radioButton2.ForeColor = Color.White;
-            radioButton2.Name = "radioButton2";
-            radioButton2.TabStop = true;
-            radioButton2.UseVisualStyleBackColor = false;
-            // 
-            // radioButton3
-            // 
-            resources.ApplyResources(radioButton3, "radioButton3");
-            radioButton3.BackColor = Color.Transparent;
-            radioButton3.FlatAppearance.BorderSize = 0;
-            radioButton3.ForeColor = Color.White;
-            radioButton3.Name = "radioButton3";
-            radioButton3.TabStop = true;
-            radioButton3.UseVisualStyleBackColor = false;
-            // 
             // QuizForm
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(45, 47, 51);
-            Controls.Add(radioButton3);
-            Controls.Add(radioButton2);
-            Controls.Add(radioButton1);
+            Controls.Add(lblQuiz);
+            Controls.Add(rbOpciónD);
+            Controls.Add(rbOpciónC);
+            Controls.Add(rbOpciónB);
             Controls.Add(rbOpciónA);
             Controls.Add(pictureBoxMichiLogin);
             Controls.Add(pbImagenPregunta);
@@ -201,12 +195,10 @@
             Controls.Add(btnAnterior);
             Controls.Add(lblPuntaje);
             Controls.Add(lblContadorPreguntas);
-            Controls.Add(label1);
+            Controls.Add(lblPreguntaActual);
             Controls.Add(lblPreguntaEnunciado);
-            Controls.Add(lblMateria);
-            Controls.Add(pbMateriaIcon);
             Name = "QuizForm";
-            ((System.ComponentModel.ISupportInitialize)pbMateriaIcon).EndInit();
+            Load += QuizForm_Load;
             ((System.ComponentModel.ISupportInitialize)pbImagenPregunta).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMichiLogin).EndInit();
             ResumeLayout(false);
@@ -214,23 +206,21 @@
         }
 
         #endregion
-
-        private PictureBox pbMateriaIcon;
-        private Label lblMateria;
         private Label lblPreguntaEnunciado;
-        private Label label1;
+        private Label lblPreguntaActual;
         private Label lblContadorPreguntas;
         private Label lblPuntaje;
         private Button btnAnterior;
         private Button btnSiguiente;
-        private ProgressBar pBar;
-        private Label lblProgreso;
-        private Label lblPorcentaje;
         private PictureBox pbImagenPregunta;
         private PictureBox pictureBoxMichiLogin;
+        private RadioButton rbOpciónB;
+        private RadioButton rbOpciónC;
+        private RadioButton rbOpciónD;
+        private Label lblPorcentaje;
+        private ProgressBar pBar;
+        private Label lblProgreso;
+        private Label lblQuiz;
         private RadioButton rbOpciónA;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
-        private RadioButton radioButton3;
     }
 }
