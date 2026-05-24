@@ -192,15 +192,8 @@ namespace PlataformaEducativa.Formularios
             // Guardamos el puntaje obtenido de forma segura en la base de datos
             GuardarHistorialEnBD();
 
-            // Mensaje de éxito final
-            if (ConfigIdiomas.IdiomaActual == "EN")
-            {
-                MessageBox.Show($"Quiz Completed!\nYour Score: {_puntosAcumulados} Pts", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show($"¡Cuestionario Completado!\nTu Puntuación: {_puntosAcumulados} Ptos", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            ResultadoForm resultadoForm = new ResultadoForm(_puntosAcumulados, _preguntas.Count);
+            resultadoForm.ShowDialog();
 
             // Cerramos este formulario para volver al Menú de Jugador
             this.Close();
