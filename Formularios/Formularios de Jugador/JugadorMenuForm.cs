@@ -31,22 +31,35 @@ namespace PlataformaEducativa
 
         private void AgregarBotonHistorial()
         {
+            string textoHistorial = ConfigIdiomas.IdiomaActual == "EN" ? "My History" : "Mi Historial";
+            string textoCerrar = ConfigIdiomas.IdiomaActual == "EN" ? "Log Out" : "Cerrar Sesión";
+
+            int anchoBoton = (panel1.ClientSize.Width - 30) / 2;
+            int yBotones = pictureBoxUsuario.Bottom + 8;
+
             Button btnHistorial = new Button();
-            btnHistorial.Text = ConfigIdiomas.IdiomaActual == "EN" ? "My History" : "Mi Historial";
-            btnHistorial.Size = new Size(120, 35);
-            btnHistorial.Location = new Point(20, this.ClientSize.Height - 60); // Bottom left
+            btnHistorial.Text = textoHistorial;
+            btnHistorial.Size = new Size(anchoBoton, btnCerrarSesion.Height);
+            btnHistorial.Location = new Point(5, yBotones);
             btnHistorial.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnHistorial.BackColor = Color.FromArgb(0, 150, 136);
+            btnHistorial.BackColor = btnCerrarSesion.BackColor;
             btnHistorial.ForeColor = Color.White;
-            btnHistorial.FlatStyle = FlatStyle.Flat;
-            btnHistorial.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnHistorial.FlatStyle = btnCerrarSesion.FlatStyle;
+            btnHistorial.Font = btnCerrarSesion.Font;
             btnHistorial.Cursor = Cursors.Hand;
-            btnHistorial.Click += (s, e) => {
+            btnHistorial.UseVisualStyleBackColor = btnCerrarSesion.UseVisualStyleBackColor;
+            btnHistorial.Click += (s, e) =>
+            {
                 HistorialForm historial = new HistorialForm(idUsuarioLogueado);
                 historial.ShowDialog();
             };
-            this.Controls.Add(btnHistorial);
+
+            btnCerrarSesion.Size = new Size(anchoBoton, btnCerrarSesion.Height);
+            btnCerrarSesion.Location = new Point(anchoBoton + 15, yBotones);
+
+            panel1.Controls.Add(btnHistorial);
             btnHistorial.BringToFront();
+            btnCerrarSesion.BringToFront();
         }
 
         private void CalcularNivelJugador()
