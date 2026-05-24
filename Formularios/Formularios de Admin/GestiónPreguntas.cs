@@ -8,7 +8,6 @@ namespace PlataformaEducativa.Formularios
 {
     public partial class GestiónPreguntas : Form
     {
-        string cadenaConexion = "Server=localhost; Database=peducativa; Uid = root; Pwd=;";
 
         public GestiónPreguntas()
         {
@@ -28,9 +27,8 @@ namespace PlataformaEducativa.Formularios
         {
             try
             {
-                using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
+                using (MySqlConnection conexion = ConexionBD.ObtenerConexion())
                 {
-                    conexion.Open();
                     string consulta = "SELECT id, nombre_es FROM modulos";
                     MySqlDataAdapter da = new MySqlDataAdapter(consulta, conexion);
                     DataTable dt = new DataTable();
@@ -51,9 +49,8 @@ namespace PlataformaEducativa.Formularios
         {
             try
             {
-                using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
+                using (MySqlConnection conexion = ConexionBD.ObtenerConexion())
                 {
-                    conexion.Open();
                     string consulta = @"SELECT id, 
                                 pregunta_es AS 'Pregunta (ES)', pregunta_en AS 'Question (EN)', 
                                 opcion_a_es AS 'A (ES)', opcion_a_en AS 'A (EN)',
@@ -153,9 +150,8 @@ namespace PlataformaEducativa.Formularios
             {
                 try
                 {
-                    using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
+                    using (MySqlConnection conexion = ConexionBD.ObtenerConexion())
                     {
-                        conexion.Open();
                         string consulta = "DELETE FROM preguntas WHERE id = @id";
 
                         using (MySqlCommand cmd = new MySqlCommand(consulta, conexion))
