@@ -28502,7 +28502,7 @@
     <value>NoControl</value>
   </data>
   <data name="BtnVolver.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1260, 439</value>
+    <value>1260, 654</value>
   </data>
   <data name="BtnVolver.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -28538,7 +28538,7 @@
     <value>51</value>
   </data>
   <data name="dgvPreguntas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1452, 338</value>
+    <value>1452, 553</value>
   </data>
   <data name="dgvPreguntas.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -28996,7 +28996,7 @@
     <value>Courier New, 12pt</value>
   </data>
   <data name="btnNuevaPregunta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>47, 430</value>
+    <value>47, 645</value>
   </data>
   <data name="btnNuevaPregunta.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -29502,7 +29502,7 @@
     <value>Courier New, 12pt</value>
   </data>
   <data name="btnEditar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>364, 430</value>
+    <value>364, 645</value>
   </data>
   <data name="btnEditar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -30002,7 +30002,7 @@
     <value>Courier New, 12pt</value>
   </data>
   <data name="btnEliminar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>563, 430</value>
+    <value>563, 645</value>
   </data>
   <data name="btnEliminar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -30035,7 +30035,7 @@
     <value>4, 5, 4, 5</value>
   </data>
   <data name="panelContenido.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1568, 522</value>
+    <value>1568, 737</value>
   </data>
   <data name="panelContenido.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -30598,7 +30598,7 @@
     <value>Stretch</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1598, 685</value>
+    <value>1598, 900</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 4, 3</value>

@@ -136,7 +136,7 @@
     <value>4, 0, 4, 0</value>
   </data>
   <data name="lblPreguntaEnunciado.Size" type="System.Drawing.Size, System.Drawing">
-    <value>600, 80</value>
+    <value>800, 100</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblPreguntaEnunciado.TabIndex" type="System.Int32, mscorlib">
@@ -263,7 +263,7 @@
     <value>Courier New, 10pt</value>
   </data>
   <data name="btnAnterior.Location" type="System.Drawing.Point, System.Drawing">
-    <value>640, 600</value>
+    <value>840, 700</value>
   </data>
   <data name="btnAnterior.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -299,7 +299,7 @@
     <value>Courier New, 10pt</value>
   </data>
   <data name="btnSiguiente.Location" type="System.Drawing.Point, System.Drawing">
-    <value>745, 600</value>
+    <value>945, 700</value>
   </data>
   <data name="btnSiguiente.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -326,7 +326,7 @@
     <value>10</value>
   </data>
   <data name="pbImagenPregunta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>715, 240</value>
+    <value>915, 240</value>
   </data>
   <data name="pbImagenPregunta.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -4722,7 +4722,7 @@
 </value>
   </data>
   <data name="pictureBoxMichiLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>780, 18</value>
+    <value>980, 18</value>
   </data>
   <data name="pictureBoxMichiLogin.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -5237,13 +5237,13 @@
     <value>NoControl</value>
   </data>
   <data name="rbOpciónB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 330</value>
+    <value>12, 360</value>
   </data>
   <data name="rbOpciónB.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
   </data>
   <data name="rbOpciónB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>600, 70</value>
+    <value>800, 80</value>
   </data>
   <data name="rbOpciónB.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -5752,13 +5752,13 @@
     <value>NoControl</value>
   </data>
   <data name="rbOpciónC.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 410</value>
+    <value>12, 450</value>
   </data>
   <data name="rbOpciónC.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
   </data>
   <data name="rbOpciónC.Size" type="System.Drawing.Size, System.Drawing">
-    <value>600, 70</value>
+    <value>800, 80</value>
   </data>
   <data name="rbOpciónC.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -6267,13 +6267,13 @@
     <value>NoControl</value>
   </data>
   <data name="rbOpciónD.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 490</value>
+    <value>12, 540</value>
   </data>
   <data name="rbOpciónD.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
   </data>
   <data name="rbOpciónD.Size" type="System.Drawing.Size, System.Drawing">
-    <value>600, 70</value>
+    <value>800, 80</value>
   </data>
   <data name="rbOpciónD.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -6303,7 +6303,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblPorcentaje.Location" type="System.Drawing.Point, System.Drawing">
-    <value>848, 180</value>
+    <value>1048, 180</value>
   </data>
   <data name="lblPorcentaje.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -6339,7 +6339,7 @@
     <value>NoControl</value>
   </data>
   <data name="pBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>630, 167</value>
+    <value>830, 167</value>
   </data>
   <data name="pBar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -6372,7 +6372,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblProgreso.Location" type="System.Drawing.Point, System.Drawing">
-    <value>630, 150</value>
+    <value>830, 150</value>
   </data>
   <data name="lblProgreso.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -6920,13 +6920,13 @@
     <value>NoControl</value>
   </data>
   <data name="rbOpciónA.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 250</value>
+    <value>12, 270</value>
   </data>
   <data name="rbOpciónA.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
   </data>
   <data name="rbOpciónA.Size" type="System.Drawing.Size, System.Drawing">
-    <value>600, 70</value>
+    <value>800, 80</value>
   </data>
   <data name="rbOpciónA.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -15619,7 +15619,7 @@
     <value>Stretch</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>900, 660</value>
+    <value>1100, 800</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
