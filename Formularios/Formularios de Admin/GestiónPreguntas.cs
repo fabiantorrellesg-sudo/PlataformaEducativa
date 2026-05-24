@@ -90,9 +90,7 @@ namespace PlataformaEducativa.Formularios
             {
                 MessageBox.Show("Error al cargar la tabla: " + ex.Message);
             }
-        }
-
-        private void btnVolverMenu_Click(object sender, EventArgs e)
+        }        private void btnVolverMenu_Click(object sender, EventArgs e)
         {
             this.Close();
             AdminMenuForm volver = new AdminMenuForm();
@@ -108,19 +106,22 @@ namespace PlataformaEducativa.Formularios
             }
         }
 
+        // Devuelve el id del módulo actualmente seleccionado en el filtro
+        private int ObtenerModuloActual()
+        {
+            if (cmbFiltro.SelectedValue != null && cmbFiltro.SelectedValue is int)
+                return Convert.ToInt32(cmbFiltro.SelectedValue);
+            return 0;
+        }
+
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
             if (dgvPreguntas.SelectedRows.Count > 0)
             {
-
                 int idSeleccionado = Convert.ToInt32(dgvPreguntas.SelectedRows[0].Cells["id"].Value);
-
-
                 EditorPreguntas editar = new EditorPreguntas(idSeleccionado);
                 editar.ShowDialog();
-
-                CargarPreguntas(0);
+                CargarPreguntas(ObtenerModuloActual());
             }
             else
             {
@@ -130,33 +131,28 @@ namespace PlataformaEducativa.Formularios
 
         private void btnNuevaPregunta_Click(object sender, EventArgs e)
         {
-            this.Close();
+            // Ya no cerramos esta ventana, la dejamos abierta como lista de fondo
             EditorPreguntas agregar = new EditorPreguntas(0);
             agregar.ShowDialog();
-
-            CargarPreguntas(0);
+            CargarPreguntas(ObtenerModuloActual());
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            // 1. Validar que el usuario haya seleccionado una fila válida en la tabla
             if (dgvPreguntas.CurrentRow == null || dgvPreguntas.CurrentRow.Index < 0)
             {
                 MessageBox.Show("Por favor, seleccione la pregunta que desea eliminar de la lista.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // 2. Obtener el ID de la pregunta desde la celda seleccionada (ajusta "id" al nombre de tu columna)
             int idSeleccionado = Convert.ToInt32(dgvPreguntas.CurrentRow.Cells["id"].Value);
 
-            // 3. Solicitar confirmación al usuario para evitar borrados accidentales
             DialogResult resultado = MessageBox.Show("¿Está seguro de que desea eliminar la pregunta seleccionada de forma permanente?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
             {
                 try
                 {
-                    // 4. Conectarse a MySQL y ejecutar la sentencia DELETE
                     using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
                     {
                         conexion.Open();
@@ -165,21 +161,12 @@ namespace PlataformaEducativa.Formularios
                         using (MySqlCommand cmd = new MySqlCommand(consulta, conexion))
                         {
                             cmd.Parameters.AddWithValue("@id", idSeleccionado);
-
                             int filasAfectadas = cmd.ExecuteNonQuery();
 
                             if (filasAfectadas > 0)
                             {
                                 MessageBox.Show("Pregunta eliminada con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                // 5. Refrescar la tabla pasando el idModulo que requiere tu método.
-                                // Obtenemos el ID del módulo actual desde el ComboBox de la pantalla (ajusta "cmbMateria" a tu combo)
-                                if (cmbFiltro.SelectedValue != null)
-                                {
-                                    int idModuloActual = Convert.ToInt32(
-                                        cmbFiltro.SelectedValue);
-                                    CargarPreguntas(idModuloActual);
-                                }
+                                CargarPreguntas(ObtenerModuloActual());
                             }
                             else
                             {
@@ -196,3 +183,4 @@ namespace PlataformaEducativa.Formularios
         }
     }
 }
+
