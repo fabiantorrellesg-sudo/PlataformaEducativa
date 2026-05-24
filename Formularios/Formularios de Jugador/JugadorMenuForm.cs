@@ -206,24 +206,56 @@ namespace PlataformaEducativa
             regreso.Show();
         }
 
+        private int ObtenerIdModuloPorPalabraClave(string palabraClave)
+        {
+            try
+            {
+                using (MySqlConnection conexion = ConexionBD.ObtenerConexion())
+                {
+                    string query = "SELECT id FROM modulos WHERE nombre_es LIKE @palabra LIMIT 1";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@palabra", "%" + palabraClave + "%");
+                        object resultado = cmd.ExecuteScalar();
+                        if (resultado != null && resultado != DBNull.Value)
+                            return Convert.ToInt32(resultado);
+                    }
+                }
+            }
+            catch { }
+            return -1; // No encontrado
+        }
+
+        private void LanzarCuestionarioSeguro(string palabraClave)
+        {
+            int idModulo = ObtenerIdModuloPorPalabraClave(palabraClave);
+            if (idModulo != -1)
+                IniciarCuestionario(idModulo);
+            else
+            {
+                string aviso = ConfigIdiomas.IdiomaActual == "EN" ? "Module not found in Database." : "Módulo no encontrado en la Base de Datos.";
+                MessageBox.Show(aviso, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void buttonComenzarArquitectura_Click_1(object sender, EventArgs e)
         {
-            IniciarCuestionario(1); // Id de Módulo 1 (Arquitectura)
+            LanzarCuestionarioSeguro("Arquitectura");
         }
 
         private void buttonComenzarAntropologia_Click_1(object sender, EventArgs e)
         {
-            IniciarCuestionario(3); // Id de Módulo 2 (Antropología)
+            LanzarCuestionarioSeguro("Antropolog");
         }
 
         private void buttonComenzarCalculo_Click_1(object sender, EventArgs e)
         {
-            IniciarCuestionario(2); // Id de Módulo 3 (Cálculo)
+            LanzarCuestionarioSeguro("Cálculo");
         }
 
         private void buttonComenzarDeporte_Click_1(object sender, EventArgs e)
         {
-            IniciarCuestionario(4); // Id de Módulo 4 (Deporte)
+            LanzarCuestionarioSeguro("Deporte");
         }
 
 
