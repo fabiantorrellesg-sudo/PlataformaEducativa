@@ -26,6 +26,27 @@ namespace PlataformaEducativa
 
             AplicarIdiomaInterfaz();
             CalcularNivelJugador();
+            AgregarBotonHistorial();
+        }
+
+        private void AgregarBotonHistorial()
+        {
+            Button btnHistorial = new Button();
+            btnHistorial.Text = ConfigIdiomas.IdiomaActual == "EN" ? "My History" : "Mi Historial";
+            btnHistorial.Size = new Size(120, 35);
+            btnHistorial.Location = new Point(20, this.ClientSize.Height - 60); // Bottom left
+            btnHistorial.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnHistorial.BackColor = Color.FromArgb(0, 150, 136);
+            btnHistorial.ForeColor = Color.White;
+            btnHistorial.FlatStyle = FlatStyle.Flat;
+            btnHistorial.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnHistorial.Cursor = Cursors.Hand;
+            btnHistorial.Click += (s, e) => {
+                HistorialForm historial = new HistorialForm(idUsuarioLogueado);
+                historial.ShowDialog();
+            };
+            this.Controls.Add(btnHistorial);
+            btnHistorial.BringToFront();
         }
 
         private void CalcularNivelJugador()
