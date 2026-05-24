@@ -1,4 +1,4 @@
-﻿using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient;
 using PlataformaEducativa.Clases;
 using System;
 using System.Collections.Generic;
@@ -206,50 +206,8 @@ namespace PlataformaEducativa.Formularios
             }
         }
 
-        private void btnSiguiente_Click_1(object sender, EventArgs e)
-        {
-            // 1. Validar cuál opción seleccionó el usuario
-            string seleccionUsuario = "";
-            if (rbOpciónA.Checked) seleccionUsuario = "A";
-            else if (rbOpciónB.Checked) seleccionUsuario = "B";
-            else if (rbOpciónC.Checked) seleccionUsuario = "C";
-            else if (rbOpciónD.Checked) seleccionUsuario = "D";
+        private void lblPreguntaEnunciado_Click(object sender, EventArgs e) { }
 
-            // Si no marcó ninguna opción, le advertimos según el idioma
-            if (string.IsNullOrEmpty(seleccionUsuario))
-            {
-                string advertencia = ConfigIdiomas.IdiomaActual == "EN"
-                    ? "Please select an answer before continuing!"
-                    : "¡Por favor, selecciona una respuesta antes de continuar!";
-                MessageBox.Show(advertencia, "Quiz", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // 2. Comparar con la letra correcta de la base de datos
-            Pregunta preguntaActual = _preguntas[_indiceActual];
-            if (seleccionUsuario.Equals(preguntaActual.LetraCorrecta, StringComparison.OrdinalIgnoreCase))
-            {
-                // Cada respuesta correcta le sumará 20 puntos (para que 5 preguntas sumen un total de 100)
-                _puntosAcumulados += 10;
-            }
-            else
-            {
-                _puntosAcumulados -= 5;
-            }
-
-            // 3. Mover el índice a la siguiente pregunta y refrescar los textos
-            _indiceActual++;
-            MostrarPregunta();
-        }
-
-        private void lblPreguntaEnunciado_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void QuizForm_Load(object sender, EventArgs e)
-        {
-
-        }
+        private void QuizForm_Load(object sender, EventArgs e) { }
     }
 }
