@@ -40,8 +40,6 @@ namespace PlataformaEducativa.Formularios
             btnVolverMenu = new Button();
             btnEliminar = new Button();
             btnCargarEditar = new Button();
-            btnLimpiar = new Button();
-            btnGuardar = new Button();
             txtNombreEN = new TextBox();
             lblNombreEN = new Label();
             lblNombreES = new Label();
@@ -70,8 +68,6 @@ namespace PlataformaEducativa.Formularios
             gbModulos.Controls.Add(btnVolverMenu);
             gbModulos.Controls.Add(btnEliminar);
             gbModulos.Controls.Add(btnCargarEditar);
-            gbModulos.Controls.Add(btnLimpiar);
-            gbModulos.Controls.Add(btnGuardar);
             gbModulos.Controls.Add(txtNombreEN);
             gbModulos.Controls.Add(lblNombreEN);
             gbModulos.Controls.Add(lblNombreES);
@@ -157,23 +153,6 @@ namespace PlataformaEducativa.Formularios
             btnCargarEditar.UseVisualStyleBackColor = true;
             btnCargarEditar.Click += btnCargarEditar_Click;
             // 
-            // btnLimpiar
-            // 
-            resources.ApplyResources(btnLimpiar, "btnLimpiar");
-            btnLimpiar.FlatAppearance.BorderSize = 0;
-            btnLimpiar.ForeColor = Color.White;
-            btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.UseVisualStyleBackColor = true;
-            btnLimpiar.Click += btnLimpiar_Click;
-            // 
-            // btnGuardar
-            // 
-            resources.ApplyResources(btnGuardar, "btnGuardar");
-            btnGuardar.FlatAppearance.BorderSize = 0;
-            btnGuardar.ForeColor = Color.White;
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Click += btnGuardar_Click;
             // 
             // txtNombreEN
             // 
@@ -242,9 +221,6 @@ namespace PlataformaEducativa.Formularios
         private Label lblNombreEN;
         private Label lblNombreES;
         private TextBox txtNombreEN;
-        private Button button2;
-        private Button btnGuardar;
-        private Button btnLimpiar;
         private Button btnVolverMenu;
         private Button btnEliminar;
         private Button btnCargarEditar;
