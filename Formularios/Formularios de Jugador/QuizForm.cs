@@ -1,157 +1,255 @@
+﻿using MySql.Data.MySqlClient;
+using PlataformaEducativa.Clases;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-using PlataformaEducativa;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace PlataformaEducativa.Formularios
 {
     public partial class QuizForm : Form
     {
-        private string cadena = "Server=localhost; Database=peducativa; Uid=root; Pwd=;";
-        private Jugador jugador;
-        private List<DataRow> preguntas = new List<DataRow>();
-        private int indiceActual = 0;
+        // Variables internas recibidas desde el Menú de Jugador
+        private List<Pregunta> _preguntas;
+        private int _idModulo;
+        private int _idUsuario;
 
-        public QuizForm(Jugador jugadorActivo)
+        // Variables de control del juego
+        private int _indiceActual = 0;
+        private int _puntosAcumulados = 0;
+        public QuizForm(List<Pregunta> preguntasDelModulo, int idMod, int idUsuario)
         {
             InitializeComponent();
-            this.jugador = jugadorActivo;
+
+            this._preguntas = preguntasDelModulo;
+            this._idModulo = idMod;
+            this._idUsuario = idUsuario;
+
+            ConfigurarEstilosIniciales();
+            MostrarPregunta();
         }
 
-        private void QuizForm_Load(object sender, EventArgs e)
+        private void ConfigurarEstilosIniciales()
         {
-            CargarPreguntas();
-            if (preguntas.Count > 0)
-                MostrarPregunta(0);
-            else
-                MessageBox.Show("No hay preguntas para esta materia todavia.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            rbOpciónA.BackColor = System.Drawing.Color.Transparent;
+            rbOpciónB.BackColor = System.Drawing.Color.Transparent;
+            rbOpciónC.BackColor = System.Drawing.Color.Transparent;
+            rbOpciónD.BackColor = System.Drawing.Color.Transparent;
         }
 
-        private void CargarPreguntas()
+        private void MostrarPregunta()
         {
-            try
+            // Verificamos si aún quedan preguntas por responder
+            if (_indiceActual < _preguntas.Count)
             {
-                string sql = "SELECT * FROM pregunta WHERE materia = @mat ORDER BY RAND() LIMIT 10";
-                using (MySqlConnection con = new MySqlConnection(cadena))
-                using (MySqlCommand cmd = new MySqlCommand(sql, con))
+                Pregunta preguntaActual = _preguntas[_indiceActual];
+
+                // Evaluamos el idioma global del juego
+                if (ConfigIdiomas.IdiomaActual == "EN")
                 {
-                    cmd.Parameters.AddWithValue("@mat", jugador.MateriaActual);
-                    con.Open();
-                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    foreach (DataRow fila in dt.Rows)
-                        preguntas.Add(fila);
+                    lblPreguntaActual.Text = "Current Question:";
+                    lblPreguntaEnunciado.Text = preguntaActual.PreguntaEn;
+                    rbOpciónA.Text = "A) " + preguntaActual.OpcionAEn;
+                    rbOpciónB.Text = "B) " + preguntaActual.OpcionBEn;
+                    rbOpciónC.Text = "C) " + preguntaActual.OpcionCEn;
+                    rbOpciónD.Text = "D) " + preguntaActual.OpcionDEn;
+                    btnAnterior.Text = "Former";
+                    btnSiguiente.Text = "Next";
+
+                    // Actualiza el contador de progreso (Ej: "Question 1 of 10")
+                    lblContadorPreguntas.Text = $"Question {_indiceActual + 1} of {_preguntas.Count}";
+                    lblPuntaje.Text = $"Score: {_puntosAcumulados}";
+                    lblProgreso.Text = "Progress:";
                 }
+                else
+                {
+                    lblPreguntaActual.Text = "Pregunta Actual:";
+                    lblPreguntaEnunciado.Text = preguntaActual.PreguntaEs;
+                    rbOpciónA.Text = "A) " + preguntaActual.OpcionAEs;
+                    rbOpciónB.Text = "B) " + preguntaActual.OpcionBEs;
+                    rbOpciónC.Text = "C) " + preguntaActual.OpcionCEs;
+                    rbOpciónD.Text = "D) " + preguntaActual.OpcionDEs;
+                    btnAnterior.Text = "Anterior";
+                    btnSiguiente.Text = "Siguiente";
+
+                    // Actualiza el contador de progreso (Ej: "Pregunta 1 de 10")
+                    lblContadorPreguntas.Text = $"Pregunta {_indiceActual + 1} de {_preguntas.Count}";
+                    lblPuntaje.Text = $"Puntaje: {_puntosAcumulados}";
+                    lblProgreso.Text = "Progress:";
+                }
+
+
+                pBar.Minimum = 0;
+                pBar.Maximum = _preguntas.Count;
+
+                pBar.Value = _indiceActual;
+                int porcentaje = (int)(((double)_indiceActual / _preguntas.Count) * 100);
+                lblPorcentaje.Text = $"{porcentaje}%";
+
+                try
+                {
+                    pbImagenPregunta.Image = Properties.Resources._default;
+                    pbImagenPregunta.Visible = true;
+
+                    string nombreImagen = "img_" + preguntaActual.Id;
+
+                    object objetoRecurso = Properties.Resources.ResourceManager.GetObject(nombreImagen);
+
+                    if (objetoRecurso != null)
+                    {
+                        pbImagenPregunta.Image = (System.Drawing.Image)objetoRecurso;
+                    }
+                }
+                catch (Exception)
+                {
+                    pbImagenPregunta.Image = Properties.Resources._default;
+                }
+
+                // Desmarcar los botones para la nueva pregunta
+                rbOpciónA.Checked = false;
+                rbOpciónB.Checked = false;
+                rbOpciónC.Checked = false;
+                rbOpciónD.Checked = false;
+
+
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error cargando preguntas: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void MostrarPregunta(int indice)
-        {
-            if (indice < 0 || indice >= preguntas.Count) return;
-
-            DataRow p = preguntas[indice];
-            lblMateria.Text = jugador.MateriaActual;
-            lblPreguntaEnunciado.Text = p["enunciado"].ToString();
-            rbOpciónA.Text = "A) " + p["opcion_a"].ToString();
-            radioButton1.Text = "B) " + p["opcion_b"].ToString();
-            radioButton2.Text = "C) " + p["opcion_c"].ToString();
-            radioButton3.Text = "D) " + p["opcion_d"].ToString();
-
-            rbOpciónA.Checked = false;
-            radioButton1.Checked = false;
-            radioButton2.Checked = false;
-            radioButton3.Checked = false;
-
-            lblContadorPreguntas.Text = $"Pregunta {indice + 1} de {preguntas.Count}";
-            lblPuntaje.Text = "Puntaje: " + jugador.Puntuacion;
-
-            int porcentaje = (int)((indice + 1) * 100.0 / preguntas.Count);
-            pBar.Value = Math.Min(porcentaje, 100);
-            lblPorcentaje.Text = porcentaje + "%";
-
-            btnAnterior.Enabled = indice > 0;
-        }
-
-        private string ObtenerRespuestaSeleccionada()
-        {
-            if (rbOpciónA.Checked) return "A";
-            if (radioButton1.Checked) return "B";
-            if (radioButton2.Checked) return "C";
-            if (radioButton3.Checked) return "D";
-            return "";
-        }
-
-        private void EvaluarRespuesta()
-        {
-            string seleccion = ObtenerRespuestaSeleccionada();
-            if (string.IsNullOrEmpty(seleccion)) return;
-
-            string correcta = preguntas[indiceActual]["respuesta_correcta"].ToString().ToUpper();
-            if (seleccion == correcta)
-                jugador.RegistrarCorrecta();
             else
-                jugador.RegistrarIncorrecta();
+            {
+                // Si el índice supera la cantidad de preguntas, el juego termina
+                FinalizarCuestionario();
+            }
         }
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            if (ObtenerRespuestaSeleccionada() == "")
+            string seleccionUsuario = "";
+            if (rbOpciónA.Checked) seleccionUsuario = "A";
+            else if (rbOpciónB.Checked) seleccionUsuario = "B";
+            else if (rbOpciónC.Checked) seleccionUsuario = "C";
+            else if (rbOpciónD.Checked) seleccionUsuario = "D";
+
+            // Si no marcó ninguna opción, le advertimos según el idioma
+            if (string.IsNullOrEmpty(seleccionUsuario))
             {
-                MessageBox.Show("Selecciona una opcion antes de continuar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                string advertencia = ConfigIdiomas.IdiomaActual == "EN"
+                    ? "Please select an answer before continuing!"
+                    : "¡Por favor, selecciona una respuesta antes de continuar!";
+                MessageBox.Show(advertencia, "Quiz", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            EvaluarRespuesta();
-
-            if (indiceActual < preguntas.Count - 1)
+            Pregunta preguntaActual = _preguntas[_indiceActual];
+            if (seleccionUsuario.Equals(preguntaActual.LetraCorrecta, StringComparison.OrdinalIgnoreCase))
             {
-                indiceActual++;
-                MostrarPregunta(indiceActual);
+                // Cada respuesta correcta le sumará 10 puntos
+                _puntosAcumulados += 10;
             }
             else
             {
-                MostrarResultado();
+                // Cada respuesta incorrecta le restará 5 puntos
+                _puntosAcumulados -= 5;
+
+                // Si el puntaje bajó de cero, lo nivelamos en 0
+                if (_puntosAcumulados < 0)
+                {
+                    _puntosAcumulados = 0;
+                }
             }
+
+            _indiceActual++;
+            MostrarPregunta();
         }
 
-        private void btnAnterior_Click(object sender, EventArgs e)
+        private void FinalizarCuestionario()
         {
-            if (indiceActual > 0)
-            {
-                indiceActual--;
-                MostrarPregunta(indiceActual);
-            }
-        }
+            // Guardamos el puntaje obtenido de forma segura en la base de datos
+            GuardarHistorialEnBD();
 
-        private void MostrarResultado()
-        {
-            string resumen = jugador.ObtenerResumen();
-            DialogResult r = MessageBox.Show(
-                $"Quiz terminado!\n\n{resumen}\n\n¿Quieres jugar otra vez?",
-                "Resultado",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Information
-            );
-
-            if (r == DialogResult.Yes)
+            // Mensaje de éxito final
+            if (ConfigIdiomas.IdiomaActual == "EN")
             {
-                jugador.ReiniciarSesion();
-                preguntas.Clear();
-                indiceActual = 0;
-                CargarPreguntas();
-                MostrarPregunta(0);
+                MessageBox.Show($"Quiz Completed!\nYour Score: {_puntosAcumulados} Pts", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                this.Close();
+                MessageBox.Show($"¡Cuestionario Completado!\nTu Puntuación: {_puntosAcumulados} Ptos", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+            // Cerramos este formulario para volver al Menú de Jugador
+            this.Close();
+        }
+
+        private void GuardarHistorialEnBD()
+        {
+            // Insertamos los datos usando la estructura exacta de tu tabla 'historial'
+            string queryInsert = "INSERT INTO historial (id_usuario, id_modulo, puntuacion) VALUES (@idUser, @idMod, @puntos)";
+
+            try
+            {
+                using (MySqlConnection conexion = ConexionBD.ObtenerConexion())
+                {
+                    using (MySqlCommand cmd = new MySqlCommand(queryInsert, conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@idUser", this._idUsuario);
+                        cmd.Parameters.AddWithValue("@idMod", this._idModulo);
+                        cmd.Parameters.AddWithValue("@puntos", this._puntosAcumulados);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar el progreso: " + ex.Message, "Error BD", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnSiguiente_Click_1(object sender, EventArgs e)
+        {
+            // 1. Validar cuál opción seleccionó el usuario
+            string seleccionUsuario = "";
+            if (rbOpciónA.Checked) seleccionUsuario = "A";
+            else if (rbOpciónB.Checked) seleccionUsuario = "B";
+            else if (rbOpciónC.Checked) seleccionUsuario = "C";
+            else if (rbOpciónD.Checked) seleccionUsuario = "D";
+
+            // Si no marcó ninguna opción, le advertimos según el idioma
+            if (string.IsNullOrEmpty(seleccionUsuario))
+            {
+                string advertencia = ConfigIdiomas.IdiomaActual == "EN"
+                    ? "Please select an answer before continuing!"
+                    : "¡Por favor, selecciona una respuesta antes de continuar!";
+                MessageBox.Show(advertencia, "Quiz", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // 2. Comparar con la letra correcta de la base de datos
+            Pregunta preguntaActual = _preguntas[_indiceActual];
+            if (seleccionUsuario.Equals(preguntaActual.LetraCorrecta, StringComparison.OrdinalIgnoreCase))
+            {
+                // Cada respuesta correcta le sumará 20 puntos (para que 5 preguntas sumen un total de 100)
+                _puntosAcumulados += 10;
+            }
+            else
+            {
+                _puntosAcumulados -= 5;
+            }
+
+            // 3. Mover el índice a la siguiente pregunta y refrescar los textos
+            _indiceActual++;
+            MostrarPregunta();
+        }
+
+        private void lblPreguntaEnunciado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void QuizForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
