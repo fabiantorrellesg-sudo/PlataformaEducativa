@@ -208,6 +208,8 @@ namespace PlataformaEducativa.Formularios
 
         private void GuardarHistorialEnBD()
         {
+            if (_puntosAcumulados <= 0) return; // No guardamos si el puntaje es 0 o negativo
+
             // Insertamos los datos usando la estructura exacta de tu tabla 'historial'
             string queryInsert = "INSERT INTO historial (id_usuario, id_modulo, puntuacion) VALUES (@idUser, @idMod, @puntos)";
 
