@@ -33,20 +33,30 @@ namespace PlataformaEducativa
         {
             string textoHistorial = ConfigIdiomas.IdiomaActual == "EN" ? "My History" : "Mi Historial";
 
-            int altoBoton = 35;
+            int altoBoton = 40;
             int anchoPanel = panel1.ClientSize.Width;
-            int margen = 8;
+            int margen = 10;
             int anchoBoton = (anchoPanel - (margen * 3)) / 2;
-            int yBotones = pictureBoxUsuario.Bottom + margen;
+            int yBotones = pictureBoxUsuario.Bottom + 15;
+
+            // Asegurar que el panel tenga suficiente altura para mostrar los botones
+            if (panel1.Height < yBotones + altoBoton + margen)
+            {
+                panel1.Height = yBotones + altoBoton + margen;
+            }
+
+            // Eliminar anclajes que puedan aplastar los botones al redimensionar
+            btnCerrarSesion.Anchor = AnchorStyles.Top | AnchorStyles.Left;
 
             Button btnHistorial = new Button();
             btnHistorial.Text = textoHistorial;
             btnHistorial.Size = new Size(anchoBoton, altoBoton);
             btnHistorial.Location = new Point(margen, yBotones);
+            btnHistorial.Anchor = AnchorStyles.Top | AnchorStyles.Left;
             btnHistorial.BackColor = btnCerrarSesion.BackColor;
             btnHistorial.ForeColor = Color.White;
             btnHistorial.FlatStyle = FlatStyle.Flat;
-            btnHistorial.Font = new Font("Segoe UI", 9F, FontStyle.Regular);
+            btnHistorial.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnHistorial.Cursor = Cursors.Hand;
             btnHistorial.UseVisualStyleBackColor = false;
             btnHistorial.Click += (s, e) =>
