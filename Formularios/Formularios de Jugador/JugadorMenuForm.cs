@@ -18,7 +18,6 @@ namespace PlataformaEducativa
 
         public JugadorMenuForm(int idUsuario, string nombre)
         {
-
             InitializeComponent();
 
             this.idUsuarioLogueado = idUsuario;
@@ -26,36 +25,38 @@ namespace PlataformaEducativa
 
             AplicarIdiomaInterfaz();
             CalcularNivelJugador();
-            AgregarBotonHistorial();
+
+            this.Load += (s, e) => AgregarBotonHistorial();
         }
 
         private void AgregarBotonHistorial()
         {
             string textoHistorial = ConfigIdiomas.IdiomaActual == "EN" ? "My History" : "Mi Historial";
-            string textoCerrar = ConfigIdiomas.IdiomaActual == "EN" ? "Log Out" : "Cerrar Sesión";
 
-            int anchoBoton = (panel1.ClientSize.Width - 30) / 2;
-            int yBotones = pictureBoxUsuario.Bottom + 8;
+            int altoBoton = 35;
+            int anchoPanel = panel1.ClientSize.Width;
+            int margen = 8;
+            int anchoBoton = (anchoPanel - (margen * 3)) / 2;
+            int yBotones = pictureBoxUsuario.Bottom + margen;
 
             Button btnHistorial = new Button();
             btnHistorial.Text = textoHistorial;
-            btnHistorial.Size = new Size(anchoBoton, btnCerrarSesion.Height);
-            btnHistorial.Location = new Point(5, yBotones);
-            btnHistorial.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnHistorial.Size = new Size(anchoBoton, altoBoton);
+            btnHistorial.Location = new Point(margen, yBotones);
             btnHistorial.BackColor = btnCerrarSesion.BackColor;
             btnHistorial.ForeColor = Color.White;
-            btnHistorial.FlatStyle = btnCerrarSesion.FlatStyle;
-            btnHistorial.Font = btnCerrarSesion.Font;
+            btnHistorial.FlatStyle = FlatStyle.Flat;
+            btnHistorial.Font = new Font("Segoe UI", 9F, FontStyle.Regular);
             btnHistorial.Cursor = Cursors.Hand;
-            btnHistorial.UseVisualStyleBackColor = btnCerrarSesion.UseVisualStyleBackColor;
+            btnHistorial.UseVisualStyleBackColor = false;
             btnHistorial.Click += (s, e) =>
             {
                 HistorialForm historial = new HistorialForm(idUsuarioLogueado);
                 historial.ShowDialog();
             };
 
-            btnCerrarSesion.Size = new Size(anchoBoton, btnCerrarSesion.Height);
-            btnCerrarSesion.Location = new Point(anchoBoton + 15, yBotones);
+            btnCerrarSesion.Size = new Size(anchoBoton, altoBoton);
+            btnCerrarSesion.Location = new Point(margen * 2 + anchoBoton, yBotones);
 
             panel1.Controls.Add(btnHistorial);
             btnHistorial.BringToFront();
