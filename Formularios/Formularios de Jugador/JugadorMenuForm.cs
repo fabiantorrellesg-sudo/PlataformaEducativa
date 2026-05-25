@@ -39,10 +39,20 @@ namespace PlataformaEducativa
             int anchoBoton = (anchoPanel - (margen * 3)) / 2;
             int yBotones = pictureBoxUsuario.Bottom + 15;
 
-            // Asegurar que el panel tenga suficiente altura para mostrar los botones
-            if (panel1.Height < yBotones + altoBoton + margen)
+            int altoRequerido = yBotones + altoBoton + margen;
+
+            // Asegurar que el panel tenga suficiente altura para mostrar los botones y empujar lo demás
+            if (panel1.Height < altoRequerido)
             {
-                panel1.Height = yBotones + altoBoton + margen;
+                int deltaY = altoRequerido - panel1.Height;
+                panel1.Height = altoRequerido;
+
+                panel2.Top += deltaY;
+                panel3.Top += deltaY;
+                panel4.Top += deltaY;
+                panel5.Top += deltaY;
+
+                this.Height += deltaY;
             }
 
             // Eliminar anclajes que puedan aplastar los botones al redimensionar
