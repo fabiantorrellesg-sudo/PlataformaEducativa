@@ -1,4 +1,5 @@
 using MySql.Data.MySqlClient;
+using PlataformaEducativa.Clases;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -7,7 +8,6 @@ namespace PlataformaEducativa.Formularios
 {
     public partial class EditorPreguntas : Form
     {
-        private string cadenaConexion = "Server=localhost; Database=peducativa; Uid=root; Pwd=;";
         private int idPregunta;
 
         // Constructor: Recibe ID para editar, o -1 para crear nueva
@@ -40,9 +40,8 @@ namespace PlataformaEducativa.Formularios
         {
             try
             {
-                using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
+                using (MySqlConnection conexion = ConexionBD.ObtenerConexion())
                 {
-                    conexion.Open();
                     string consulta = "SELECT id, CONCAT(nombre_es, ' / ', name_en) AS nombre_completo FROM modulos";
                     MySqlDataAdapter da = new MySqlDataAdapter(consulta, conexion);
                     DataTable dt = new DataTable();
@@ -67,9 +66,8 @@ namespace PlataformaEducativa.Formularios
         {
             try
             {
-                using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
+                using (MySqlConnection conexion = ConexionBD.ObtenerConexion())
                 {
-                    conexion.Open();
                     string consulta = "SELECT * FROM preguntas WHERE id = @id";
                     using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                     {
@@ -116,11 +114,10 @@ namespace PlataformaEducativa.Formularios
         {
             try
             {
-                using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
+                using (MySqlConnection conexion = ConexionBD.ObtenerConexion())
                 {
-                    conexion.Open();
                     string consulta;
-                    if (idPregunta == -1)
+                    if (idPregunta == 0)
                         consulta = "INSERT INTO preguntas (id_modulo, pregunta_es, pregunta_en, opcion_a_es, opcion_a_en, opcion_b_es, opcion_b_en, opcion_c_es, opcion_c_en, opcion_d_es, opcion_d_en, letra_correcta) VALUES (@id_mod, @pes, @pen, @aes, @aen, @bes, @ben, @ces, @cen, @des, @den, @cor)";
                     else
                         consulta = "UPDATE preguntas SET id_modulo=@id_mod, pregunta_es=@pes, pregunta_en=@pen, opcion_a_es=@aes, opcion_a_en=@aen, opcion_b_es=@bes, opcion_b_en=@ben, opcion_c_es=@ces, opcion_c_en=@cen, opcion_d_es=@des, opcion_d_en=@den, letra_correcta=@cor WHERE id=@id";
@@ -139,7 +136,7 @@ namespace PlataformaEducativa.Formularios
                         cmd.Parameters.AddWithValue("@des", txtOpcionDES.Text);
                         cmd.Parameters.AddWithValue("@den", txtOpcionDEN.Text);
                         cmd.Parameters.AddWithValue("@cor", cmbCorrecta.SelectedItem.ToString());
-                        if (idPregunta != -1) cmd.Parameters.AddWithValue("@id", idPregunta);
+                        if (idPregunta != 0) cmd.Parameters.AddWithValue("@id", idPregunta);
 
                         cmd.ExecuteNonQuery();
                     }

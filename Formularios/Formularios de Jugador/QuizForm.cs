@@ -1,4 +1,4 @@
-﻿using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient;
 using PlataformaEducativa.Clases;
 using System;
 using System.Collections.Generic;
@@ -19,6 +19,8 @@ namespace PlataformaEducativa.Formularios
         // Variables de control del juego
         private int _indiceActual = 0;
         private int _puntosAcumulados = 0;
+        // Guarda lo que respondió en cada pregunta para deshacer al volver
+        private Dictionary<int, string> _respuestasGuardadas = new Dictionary<int, string>();
         public QuizForm(List<Pregunta> preguntasDelModulo, int idMod, int idUsuario)
         {
             InitializeComponent();
@@ -37,6 +39,24 @@ namespace PlataformaEducativa.Formularios
             rbOpciónB.BackColor = System.Drawing.Color.Transparent;
             rbOpciónC.BackColor = System.Drawing.Color.Transparent;
             rbOpciónD.BackColor = System.Drawing.Color.Transparent;
+
+            // Hacer la ventana más grande
+            this.Size = new System.Drawing.Size(900, 650);
+            this.MinimumSize = new System.Drawing.Size(700, 500);
+
+            // Anclajes para que se expanda bien
+            lblPreguntaEnunciado.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblPreguntaEnunciado.Width = this.ClientSize.Width - 100;
+            
+            rbOpciónA.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            rbOpciónB.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            rbOpciónC.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            rbOpciónD.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+
+            // Ajustar posición si es necesario, o dejar que el anclaje lo maneje
+            btnSiguiente.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnAnterior.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            pBar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         }
 
         private void MostrarPregunta()
@@ -130,7 +150,6 @@ namespace PlataformaEducativa.Formularios
             else if (rbOpciónC.Checked) seleccionUsuario = "C";
             else if (rbOpciónD.Checked) seleccionUsuario = "D";
 
-            // Si no marcó ninguna opción, le advertimos según el idioma
             if (string.IsNullOrEmpty(seleccionUsuario))
             {
                 string advertencia = ConfigIdiomas.IdiomaActual == "EN"
@@ -141,25 +160,49 @@ namespace PlataformaEducativa.Formularios
             }
 
             Pregunta preguntaActual = _preguntas[_indiceActual];
-            if (seleccionUsuario.Equals(preguntaActual.LetraCorrecta, StringComparison.OrdinalIgnoreCase))
+
+            // Si ya había respondido esta pregunta antes, deshago su puntaje anterior
+            if (_respuestasGuardadas.ContainsKey(_indiceActual))
             {
-                // Cada respuesta correcta le sumará 10 puntos
-                _puntosAcumulados += 10;
+                string respuestaAnterior = _respuestasGuardadas[_indiceActual];
+                if (respuestaAnterior.Equals(preguntaActual.LetraCorrecta, StringComparison.OrdinalIgnoreCase))
+                    _puntosAcumulados -= 10;
+                else
+                    _puntosAcumulados += 5;
             }
+
+            // Guardo la respuesta actual
+            _respuestasGuardadas[_indiceActual] = seleccionUsuario;
+
+            if (seleccionUsuario.Equals(preguntaActual.LetraCorrecta, StringComparison.OrdinalIgnoreCase))
+                _puntosAcumulados += 10;
             else
             {
-                // Cada respuesta incorrecta le restará 5 puntos
                 _puntosAcumulados -= 5;
-
-                // Si el puntaje bajó de cero, lo nivelamos en 0
-                if (_puntosAcumulados < 0)
-                {
-                    _puntosAcumulados = 0;
-                }
+                if (_puntosAcumulados < 0) _puntosAcumulados = 0;
             }
 
             _indiceActual++;
             MostrarPregunta();
+        }
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            if (_indiceActual > 0)
+            {
+                _indiceActual--;
+                MostrarPregunta();
+
+                // Restauro la selección que tenía el jugador en esta pregunta
+                if (_respuestasGuardadas.ContainsKey(_indiceActual))
+                {
+                    string previa = _respuestasGuardadas[_indiceActual];
+                    rbOpciónA.Checked = previa == "A";
+                    rbOpciónB.Checked = previa == "B";
+                    rbOpciónC.Checked = previa == "C";
+                    rbOpciónD.Checked = previa == "D";
+                }
+            }
         }
 
         private void FinalizarCuestionario()
@@ -167,15 +210,8 @@ namespace PlataformaEducativa.Formularios
             // Guardamos el puntaje obtenido de forma segura en la base de datos
             GuardarHistorialEnBD();
 
-            // Mensaje de éxito final
-            if (ConfigIdiomas.IdiomaActual == "EN")
-            {
-                MessageBox.Show($"Quiz Completed!\nYour Score: {_puntosAcumulados} Pts", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show($"¡Cuestionario Completado!\nTu Puntuación: {_puntosAcumulados} Ptos", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            ResultadoForm resultadoForm = new ResultadoForm(_puntosAcumulados, _preguntas.Count);
+            resultadoForm.ShowDialog();
 
             // Cerramos este formulario para volver al Menú de Jugador
             this.Close();
@@ -183,6 +219,8 @@ namespace PlataformaEducativa.Formularios
 
         private void GuardarHistorialEnBD()
         {
+            if (_puntosAcumulados <= 0) return; // No guardamos si el puntaje es 0 o negativo
+
             // Insertamos los datos usando la estructura exacta de tu tabla 'historial'
             string queryInsert = "INSERT INTO historial (id_usuario, id_modulo, puntuacion) VALUES (@idUser, @idMod, @puntos)";
 
@@ -206,50 +244,8 @@ namespace PlataformaEducativa.Formularios
             }
         }
 
-        private void btnSiguiente_Click_1(object sender, EventArgs e)
-        {
-            // 1. Validar cuál opción seleccionó el usuario
-            string seleccionUsuario = "";
-            if (rbOpciónA.Checked) seleccionUsuario = "A";
-            else if (rbOpciónB.Checked) seleccionUsuario = "B";
-            else if (rbOpciónC.Checked) seleccionUsuario = "C";
-            else if (rbOpciónD.Checked) seleccionUsuario = "D";
+        private void lblPreguntaEnunciado_Click(object sender, EventArgs e) { }
 
-            // Si no marcó ninguna opción, le advertimos según el idioma
-            if (string.IsNullOrEmpty(seleccionUsuario))
-            {
-                string advertencia = ConfigIdiomas.IdiomaActual == "EN"
-                    ? "Please select an answer before continuing!"
-                    : "¡Por favor, selecciona una respuesta antes de continuar!";
-                MessageBox.Show(advertencia, "Quiz", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // 2. Comparar con la letra correcta de la base de datos
-            Pregunta preguntaActual = _preguntas[_indiceActual];
-            if (seleccionUsuario.Equals(preguntaActual.LetraCorrecta, StringComparison.OrdinalIgnoreCase))
-            {
-                // Cada respuesta correcta le sumará 20 puntos (para que 5 preguntas sumen un total de 100)
-                _puntosAcumulados += 10;
-            }
-            else
-            {
-                _puntosAcumulados -= 5;
-            }
-
-            // 3. Mover el índice a la siguiente pregunta y refrescar los textos
-            _indiceActual++;
-            MostrarPregunta();
-        }
-
-        private void lblPreguntaEnunciado_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void QuizForm_Load(object sender, EventArgs e)
-        {
-
-        }
+        private void QuizForm_Load(object sender, EventArgs e) { }
     }
 }

@@ -18,7 +18,6 @@ namespace PlataformaEducativa
 
         public JugadorMenuForm(int idUsuario, string nombre)
         {
-
             InitializeComponent();
 
             this.idUsuarioLogueado = idUsuario;
@@ -26,6 +25,65 @@ namespace PlataformaEducativa
 
             AplicarIdiomaInterfaz();
             CalcularNivelJugador();
+
+            this.Load += (s, e) => AgregarBotonHistorial();
+        }
+
+        private void AgregarBotonHistorial()
+        {
+            string textoHistorial = ConfigIdiomas.IdiomaActual == "EN" ? "My History" : "Mi Historial";
+
+            int altoBoton = 40;
+            int anchoPanel = panel1.ClientSize.Width;
+            int margen = 10;
+            int anchoBoton = (anchoPanel - (margen * 3)) / 2;
+            int yBotones = pictureBoxUsuario.Bottom + 15;
+
+            int altoRequerido = yBotones + altoBoton + margen;
+
+            // Asegurar que el panel tenga suficiente altura para mostrar los botones y empujar lo demás
+            if (panel1.Height < altoRequerido)
+            {
+                int deltaY = altoRequerido - panel1.Height;
+                panel1.Height = altoRequerido;
+
+                panel2.Top += deltaY;
+                panel3.Top += deltaY;
+                panel4.Top += deltaY;
+                panel5.Top += deltaY;
+
+                this.Height += deltaY;
+            }
+
+            // Eliminar anclajes que puedan aplastar los botones al redimensionar
+            btnCerrarSesion.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+
+            Button btnHistorial = new Button();
+            btnHistorial.Text = textoHistorial;
+            btnHistorial.Size = new Size(anchoBoton, altoBoton);
+            btnHistorial.Location = new Point(margen, yBotones);
+            btnHistorial.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            btnHistorial.BackgroundImage = Properties.Resources.tramoDeMadera;
+            btnHistorial.BackgroundImageLayout = ImageLayout.Stretch;
+            btnHistorial.ForeColor = Color.White;
+            btnHistorial.FlatStyle = FlatStyle.Flat;
+            btnHistorial.FlatAppearance.BorderColor = Color.White;
+            btnHistorial.FlatAppearance.BorderSize = 1;
+            btnHistorial.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnHistorial.Cursor = Cursors.Hand;
+            btnHistorial.UseVisualStyleBackColor = false;
+            btnHistorial.Click += (s, e) =>
+            {
+                HistorialForm historial = new HistorialForm(idUsuarioLogueado);
+                historial.ShowDialog();
+            };
+
+            btnCerrarSesion.Size = new Size(anchoBoton, altoBoton);
+            btnCerrarSesion.Location = new Point(margen * 2 + anchoBoton, yBotones);
+
+            panel1.Controls.Add(btnHistorial);
+            btnHistorial.BringToFront();
+            btnCerrarSesion.BringToFront();
         }
 
         private void CalcularNivelJugador()
@@ -206,24 +264,56 @@ namespace PlataformaEducativa
             regreso.Show();
         }
 
+        private int ObtenerIdModuloPorPalabraClave(string palabraClave)
+        {
+            try
+            {
+                using (MySqlConnection conexion = ConexionBD.ObtenerConexion())
+                {
+                    string query = "SELECT id FROM modulos WHERE nombre_es LIKE @palabra LIMIT 1";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@palabra", "%" + palabraClave + "%");
+                        object resultado = cmd.ExecuteScalar();
+                        if (resultado != null && resultado != DBNull.Value)
+                            return Convert.ToInt32(resultado);
+                    }
+                }
+            }
+            catch { }
+            return -1; // No encontrado
+        }
+
+        private void LanzarCuestionarioSeguro(string palabraClave)
+        {
+            int idModulo = ObtenerIdModuloPorPalabraClave(palabraClave);
+            if (idModulo != -1)
+                IniciarCuestionario(idModulo);
+            else
+            {
+                string aviso = ConfigIdiomas.IdiomaActual == "EN" ? "Module not found in Database." : "Módulo no encontrado en la Base de Datos.";
+                MessageBox.Show(aviso, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void buttonComenzarArquitectura_Click_1(object sender, EventArgs e)
         {
-            IniciarCuestionario(1); // Id de Módulo 1 (Arquitectura)
+            LanzarCuestionarioSeguro("Arquitectura");
         }
 
         private void buttonComenzarAntropologia_Click_1(object sender, EventArgs e)
         {
-            IniciarCuestionario(3); // Id de Módulo 2 (Antropología)
+            LanzarCuestionarioSeguro("Antropolog");
         }
 
         private void buttonComenzarCalculo_Click_1(object sender, EventArgs e)
         {
-            IniciarCuestionario(2); // Id de Módulo 3 (Cálculo)
+            LanzarCuestionarioSeguro("Cálculo");
         }
 
         private void buttonComenzarDeporte_Click_1(object sender, EventArgs e)
         {
-            IniciarCuestionario(4); // Id de Módulo 4 (Deporte)
+            LanzarCuestionarioSeguro("Deporte");
         }
 
 
