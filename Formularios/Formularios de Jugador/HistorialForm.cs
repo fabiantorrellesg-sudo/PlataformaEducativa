@@ -78,14 +78,15 @@ namespace PlataformaEducativa.Formularios
 
             Button btnCerrar = new Button();
             btnCerrar.Text = ConfigIdiomas.IdiomaActual == "EN" ? "Close" : "Cerrar";
-            btnCerrar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            btnCerrar.BackColor = Color.FromArgb(60, 60, 65);
-            btnCerrar.ForeColor = Color.FromArgb(220, 220, 220);
+            btnCerrar.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnCerrar.BackgroundImage = Properties.Resources.tramoDeMadera;
+            btnCerrar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnCerrar.ForeColor = Color.White;
             btnCerrar.FlatStyle = FlatStyle.Flat;
-            btnCerrar.FlatAppearance.BorderColor = Color.FromArgb(90, 90, 95);
-            btnCerrar.FlatAppearance.MouseOverBackColor = Color.FromArgb(80, 80, 88);
-            btnCerrar.Size = new Size(110, 34);
-            btnCerrar.Location = new Point(506, 380);
+            btnCerrar.FlatAppearance.BorderColor = Color.White;
+            btnCerrar.FlatAppearance.BorderSize = 1;
+            btnCerrar.Size = new Size(150, 40);
+            btnCerrar.Location = new Point(225, 330);
             btnCerrar.Cursor = Cursors.Hand;
             btnCerrar.Click += (s, e) => this.Close();
             this.Controls.Add(btnCerrar);

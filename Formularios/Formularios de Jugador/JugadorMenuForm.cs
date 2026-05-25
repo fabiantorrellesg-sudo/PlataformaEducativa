@@ -63,9 +63,12 @@ namespace PlataformaEducativa
             btnHistorial.Size = new Size(anchoBoton, altoBoton);
             btnHistorial.Location = new Point(margen, yBotones);
             btnHistorial.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-            btnHistorial.BackColor = btnCerrarSesion.BackColor;
+            btnHistorial.BackgroundImage = Properties.Resources.tramoDeMadera;
+            btnHistorial.BackgroundImageLayout = ImageLayout.Stretch;
             btnHistorial.ForeColor = Color.White;
             btnHistorial.FlatStyle = FlatStyle.Flat;
+            btnHistorial.FlatAppearance.BorderColor = Color.White;
+            btnHistorial.FlatAppearance.BorderSize = 1;
             btnHistorial.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnHistorial.Cursor = Cursors.Hand;
             btnHistorial.UseVisualStyleBackColor = false;
