@@ -153,7 +153,6 @@ namespace PlataformaEducativa.Formularios
             btnCargarEditar.UseVisualStyleBackColor = true;
             btnCargarEditar.Click += btnCargarEditar_Click;
             // 
-            // 
             // txtNombreEN
             // 
             txtNombreEN.BackColor = Color.FromArgb(55, 55, 55);

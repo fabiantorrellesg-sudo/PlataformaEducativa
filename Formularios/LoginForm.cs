@@ -26,7 +26,6 @@ namespace PlataformaEducativa
 
         private void InitializeComponent()
         {
-
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             txtLogin = new Label();
             textBoxUsuario = new TextBox();
@@ -115,12 +114,12 @@ namespace PlataformaEducativa
             // btnVerClave
             // 
             btnVerClave.BackColor = Color.FromArgb(227, 214, 179);
-            btnVerClave.FlatStyle = FlatStyle.Flat;
-            btnVerClave.FlatAppearance.BorderSize = 0;
-            btnVerClave.Text = "👁";
             btnVerClave.Cursor = Cursors.Hand;
-            btnVerClave.Click += btnVerClave_Click;
+            btnVerClave.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btnVerClave, "btnVerClave");
             btnVerClave.Name = "btnVerClave";
+            btnVerClave.UseVisualStyleBackColor = false;
+            btnVerClave.Click += btnVerClave_Click;
             // 
             // LoginForm
             // 

@@ -36,6 +36,7 @@ namespace PlataformaEducativa.Formularios
             button1 = new Button();
             pictureBoxUsuarioLogin = new PictureBox();
             pictureBoxCandado = new PictureBox();
+            btnVerClave = new Button();
             textBoxClave = new TextBox();
             textBoxUsuario = new TextBox();
             listBoxRol = new ListBox();
@@ -101,6 +102,16 @@ namespace PlataformaEducativa.Formularios
             pictureBoxCandado.Name = "pictureBoxCandado";
             pictureBoxCandado.TabStop = false;
             // 
+            // btnVerClave
+            // 
+            btnVerClave.BackColor = Color.FromArgb(227, 214, 179);
+            btnVerClave.Cursor = Cursors.Hand;
+            btnVerClave.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btnVerClave, "btnVerClave");
+            btnVerClave.Name = "btnVerClave";
+            btnVerClave.UseVisualStyleBackColor = false;
+            btnVerClave.Click += btnVerClave_Click;
+            // 
             // textBoxClave
             // 
             textBoxClave.BackColor = Color.FromArgb(227, 214, 179);
@@ -115,17 +126,6 @@ namespace PlataformaEducativa.Formularios
             resources.ApplyResources(textBoxUsuario, "textBoxUsuario");
             textBoxUsuario.ForeColor = Color.IndianRed;
             textBoxUsuario.Name = "textBoxUsuario";
-            // 
-            // btnVerClave
-            // 
-            btnVerClave = new Button();
-            btnVerClave.BackColor = Color.FromArgb(227, 214, 179);
-            btnVerClave.FlatStyle = FlatStyle.Flat;
-            btnVerClave.FlatAppearance.BorderSize = 0;
-            btnVerClave.Text = "👁";
-            btnVerClave.Cursor = Cursors.Hand;
-            btnVerClave.Click += btnVerClave_Click;
-            btnVerClave.Name = "btnVerClave";
             // 
             // listBoxRol
             // 
@@ -234,7 +234,6 @@ namespace PlataformaEducativa.Formularios
             // 
             // pictureBoxCat1
             // 
-            pictureBoxCat1.Image = Properties.Resources.michiIcon;
             resources.ApplyResources(pictureBoxCat1, "pictureBoxCat1");
             pictureBoxCat1.Name = "pictureBoxCat1";
             pictureBoxCat1.TabStop = false;
@@ -254,8 +253,8 @@ namespace PlataformaEducativa.Formularios
             Controls.Add(panel1);
             DoubleBuffered = true;
             Name = "GestionUsuarios";
-            Load += GestionUsuarios_Load;
             SizeGripStyle = SizeGripStyle.Show;
+            Load += GestionUsuarios_Load;
             panelContenido.ResumeLayout(false);
             panelContenido.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUsuarioLogin).EndInit();
